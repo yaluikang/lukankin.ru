@@ -12,14 +12,14 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
-        /*'urlManager' => [
+        'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
                 '/' => 'site/index',
                 '<action:\w+>' => 'site/<action>'
             ]
-        ],*/
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'xVc1uwEa9h45DOXzMbJ5fr04_9JDlCUf',
