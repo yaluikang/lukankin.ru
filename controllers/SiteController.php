@@ -13,17 +13,17 @@ use yii\web\Controller;
         }
         public function actionFilms ()
         {
-            echo '123';
-            return $this->render('index');
+            echo 'films';
+            //return $this->render('index');
         }
         public function actionTvseries ()
         {
-            echo '123';
-            return $this->render('index');
+            echo 'tvseries';
+            //return $this->render('index');
         }
         public function actionNewItems ()
         {
             echo 'TEST123';
-            return $this->render('index');
+            //return $this->render('index');
         }
     }
