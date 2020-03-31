@@ -58,13 +58,13 @@ AppAsset::register($this);
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="860babe7-f43c-4b69-a54f-20c544d3282e.jpg" class="d-block w-100" alt="...">
+                        <img src="css/860babe7-f43c-4b69-a54f-20c544d3282e.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="6577fdb5-22a2-4952-9cdc-9c6d8a69c2eb.jpg" class="d-block w-100" alt="...">
+                        <img src="css/6577fdb5-22a2-4952-9cdc-9c6d8a69c2eb.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="5bcf14c5-fc1b-484c-acb0-7c07ffaaba29.jpg" class="d-block w-100" alt="...">
+                        <img src="css/5bcf14c5-fc1b-484c-acb0-7c07ffaaba29.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
