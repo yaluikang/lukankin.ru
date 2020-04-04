@@ -31,6 +31,6 @@ class SiteController extends Controller
     public function actionTest (/*$movie, array $limit*/)
     {
         $rows = new Sqlquery();
-        $rows->getMovies();
+        echo($rows->getMovies());
     }
 }
