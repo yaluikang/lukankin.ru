@@ -28,7 +28,7 @@ class SiteController extends Controller
         echo 'TEST123';
         //return $this->render('index');
     }
-    public function actionTest ($movie, array $limit)
+    public function actionTest (/*$movie, array $limit*/)
     {
         $rows = new Sqlquery();
         $rows->getMovies();
