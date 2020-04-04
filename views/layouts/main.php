@@ -6,9 +6,11 @@ use yii\helpers\Url;
 AppAsset::register($this);
 $action = Yii::$app->controller->action->id;
 
+
 ?>
 <!DOCTYPE html>
 <html>
+<?php $this->beginPage(); ?>
 <head>
     <title>HappyViewer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -19,6 +21,7 @@ $action = Yii::$app->controller->action->id;
     <!--<link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/newstyle.css" type="text/css">-->
 </head>
+<?php $this->beginBody(); ?>
 <body>
 <header class="container">
     <div class="row margin MyMovies">
@@ -108,7 +111,9 @@ $action = Yii::$app->controller->action->id;
         </div>
     </div >
 </footer>
+<?php $this->EndBody(); ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type="application/javascript" src="js/index.js"></script>
 </html>
+<?php $this->endPage(); ?>
