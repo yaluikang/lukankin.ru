@@ -4,8 +4,8 @@ namespace app\controllers;
 
 
 use app\models\Movies;
+use app\models\Movies_has_genre;
 use yii\web\Controller;
-
 use app\models\Sqlquery;
 
 class SiteController extends Controller
@@ -33,8 +33,8 @@ class SiteController extends Controller
     {
         /*$rows = new Sqlquery();
         echo($rows->getMovies());*/
-        $movie = Movies::find(2);
-        $moviesHasGenre = $movie->moviesHasGenre;
+        $movies = Movies::find(2);
+        $moviesHasGenre = $movies->moviesHasGenre;
         echo($moviesHasGenre);
     }
 }
