@@ -33,8 +33,8 @@ class SiteController extends Controller
     {
         /*$rows = new Sqlquery();
         echo($rows->getMovies());*/
-        $movie = Movies::find(2);
+        /*$movie = Movies::find(2);
         $genre = $movie->moviesHasGenre;
-        echo($genre);
+        echo($genre);*/
     }
 }
