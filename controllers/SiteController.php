@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 
+use app\models\Movies;
 use yii\web\Controller;
 
 use app\models\Sqlquery;
@@ -30,7 +31,10 @@ class SiteController extends Controller
     }
     public function actionTest ($movie, array $limit)
     {
-        $rows = new Sqlquery();
-        echo($rows->getMovies());
+        /*$rows = new Sqlquery();
+        echo($rows->getMovies());*/
+        $movie = Movies::find(2);
+        $genre = $movie->moviesHasGenre;
+        echo($genre);
     }
 }
