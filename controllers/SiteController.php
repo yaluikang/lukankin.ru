@@ -31,10 +31,10 @@ class SiteController extends Controller
     }
     public function actionTest (/*$movie, array $limit*/)
     {
-        /*$rows = new Sqlquery();
-        echo($rows->getMovies());*/
+        $rows = new Sqlquery();
+        echo($rows->getMovies());/*
         $movies = Movies::find(2);
         $moviesHasGenre = $movies->moviesHasGenre;
-        echo($moviesHasGenre);
+        echo($moviesHasGenre);*/
     }
 }
