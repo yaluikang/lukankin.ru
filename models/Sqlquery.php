@@ -16,8 +16,14 @@ class Sqlquery extends Query
         $sql = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->offset($borders['offset'])->limit($borders['limit'])->all();
         return json_encode($sql,JSON_UNESCAPED_UNICODE);
     }
+    public function addGenresForMovies($movies)
+    {
+        //Вызвать функцию getIdOfMovies для составления запроса в базу данных по id
+        //
+    }
     public function getIdOfMovies()
     {
+        $arrayIdOfMovies = [];
 
     }
     public function pagination()
@@ -33,7 +39,7 @@ class Sqlquery extends Query
         $numOfMovies = $this->numOfMovies;
         $pageNumber = $this->pageNumber;
         $numInclude = 1;
-        $borderArray = array( 'limit' => $numOfMovies, 'offset' => 1 );
+        $borderArray = array( 'limit' => $numOfMovies - 1, 'offset' => 0 );
         if( $pageNumber - $numInclude != 0 )
         {
             $numInclude = $numOfMovies * ( $pageNumber - $numInclude );
