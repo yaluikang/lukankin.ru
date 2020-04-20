@@ -8,6 +8,7 @@ use yii\db\Movies_has_genre;
 
 class Movies extends ActiveRecord
 {
+    public $test = 1;
     public function getMoviesHasGenre()
     {
         return $this->hasMany(Movies_has_genre::className(), ['movies_id' => 'movies_id']);
