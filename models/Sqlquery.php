@@ -39,7 +39,7 @@ class Sqlquery extends Query
         $numOfMovies = $this->numOfMovies;
         $pageNumber = $this->pageNumber;
         $numInclude = 1;
-        $borderArray = array( 'limit' => $numOfMovies - 1, 'offset' => 0 );
+        $borderArray = array( 'limit' => $numOfMovies, 'offset' => 0 );
         if( $pageNumber - $numInclude != 0 )
         {
             $numInclude = $numOfMovies * ( $pageNumber - $numInclude );
