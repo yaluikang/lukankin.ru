@@ -7,7 +7,7 @@ function addFilms(){
             let $json = $.parseJSON( data );
             console.log($json);
             //$('#see-more').css('display','block');
-            /*for( let $i = 0; $i < $json.length; $i++ )
+            for( let $i = 0; $i < $json.length; $i++ )
             {
                 let $posterDiv = $('<div>',{
                     class: 'col-md-6 col-sm-12 col-lg-auto text-center new'
@@ -22,7 +22,7 @@ function addFilms(){
                 });
                 $posterFigure.appendTo($posterA);
                 let $posterImg = $('<img>',{
-                    src: '../Images/' + $json['movies_url_poster'][$i],
+                    src: '../Images/' + $json[$i]['movies_url_poster'],
                     class: 'figure-img img-fluid rounded'
                 });
                 $posterImg.appendTo($posterFigure);
@@ -32,15 +32,15 @@ function addFilms(){
                 $posterFigcaption.appendTo($posterFigure);
                 let $posterNameP = $('<p>',{
                     class: 'zagolovok',
-                    text: $json['movies_name'][$i]
+                    text: $json[$i]['movies_name']
                 });
                 $posterNameP.appendTo($posterFigcaption);
                 let $posterYearGenreP = $('<p>',{
                     class: 'fontzhanr',
-                    text: $json['genres_name'][$i] + ', ' + $json['movies_date'][$i] + ' год'
+                    text: $json[$i]['genres_name'] + ', ' + $json[$i]['movies_date'] + ' год'
                 });
                 $posterYearGenreP.appendTo($posterFigcaption);
-            }*/
+            }
         }
     });
 };
