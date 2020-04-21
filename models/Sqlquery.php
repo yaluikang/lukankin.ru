@@ -23,14 +23,14 @@ class Sqlquery extends Query
         //цикл для инъекции жанров в массив $movies
         $ids = $this->getIdOfMovies( $movies );
         $genresOfMovies = $this->select('movies_id, genres_name' )->FROM('movies_has_genre' )->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id' )->where(['movies_id' => $ids ])->all();
-        return $ids; //array_merge_recursive( $movies, $genresOfMovies );
+        return $genresOfMovies; //array_merge_recursive( $movies, $genresOfMovies );
     }
     public function getIdOfMovies($movies)
     {
         $arrayIdOfMovies = [];
         for( $i = 0; $i < count($movies); $i++ )
         {
-            array_push( $arrayIdOfMovies, $movies[0]['movies_id'] );
+            array_push( $arrayIdOfMovies, $movies[$i]['movies_id'] );
         }
         return $arrayIdOfMovies;
     }
