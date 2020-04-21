@@ -22,7 +22,8 @@ class Sqlquery extends Query
         //Вызвать функцию getIdOfMovies для составления запроса в базу данных по id
         //цикл для инъекции жанров в массив $movies
         $ids = $this->getIdOfMovies( $movies );
-        $genresOfMovies = $this->select('movies_id, genres_name' )->FROM('movies_has_genre' )->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id' )->where(['movies_id' => $ids ])->limit(100)->all();
+        $this->limit = null;
+        $genresOfMovies = $this->select('movies_id, genres_name' )->FROM('movies_has_genre' )->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id' )->where(['movies_id' => $ids ])->all();
         return $genresOfMovies; //array_merge_recursive( $movies, $genresOfMovies );
     }
     public function getIdOfMovies($movies)
