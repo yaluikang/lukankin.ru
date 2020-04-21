@@ -6,6 +6,8 @@ function addFilms(){
         success: function(data){
             let $json = $.parseJSON( data );
             console.log($json);
+            console.log($json.length);
+            console.log($json[0]['movies_name']);
             //$('#see-more').css('display','block');
             for( let $i = 0; $i < $json.length; $i++ )
             {
