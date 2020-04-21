@@ -5,8 +5,9 @@ function addFilms(){
         async: false,
         success: function(data){
             let $json = $.parseJSON( data );
+            console.log($json);
             //$('#see-more').css('display','block');
-            for( let $i = 0; $i < $json.length; $i++ )
+            /*for( let $i = 0; $i < $json.length; $i++ )
             {
                 let $posterDiv = $('<div>',{
                     class: 'col-md-6 col-sm-12 col-lg-auto text-center new'
@@ -39,7 +40,7 @@ function addFilms(){
                     text: $json['genres_name'][$i] + ', ' + $json['movies_date'][$i] + ' год'
                 });
                 $posterYearGenreP.appendTo($posterFigcaption);
-            }
+            }*/
         }
     });
 };
