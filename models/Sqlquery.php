@@ -28,6 +28,7 @@ class Sqlquery extends Query
         {
             for( $j = 0; $j < count( $genresOfMovies ); $j++)
             {
+                $movies[$i]['genres_name'] = [];
                 if( $movies[$i]['movies_id'] == $genresOfMovies[$j]['movies_id'] )
                 {
                     array_push( $movies[$i]['genres_name'], $genresOfMovies[$i]['genres_name']);
