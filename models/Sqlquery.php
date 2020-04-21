@@ -30,7 +30,8 @@ class Sqlquery extends Query
             {
                 if( $movies[$i]['movies_id'] == $genresOfMovies[$j]['movies_id'] )
                 {
-                    $movies[$i]['genres_name'] = $genresOfMovies[$i]['genres_name'];
+                    array_push( $movies[$i]['genres_name'], $genresOfMovies[$i]['genres_name']);
+                    //$movies[$i]['genres_name'] = $genresOfMovies[$i]['genres_name'];
                 }
             }
         }
