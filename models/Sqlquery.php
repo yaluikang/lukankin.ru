@@ -26,9 +26,9 @@ class Sqlquery extends Query
         $genresOfMovies = $this->select('movies_id, genres_name' )->FROM('movies_has_genre' )->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id' )->where(['movies_id' => $ids ])->all();
         for( $i = 0; $i < count( $movies ); $i++ )
         {
+            $movies[$i]['genres_name'] = [];
             for( $j = 0; $j < count( $genresOfMovies ); $j++)
             {
-                $movies[$i]['genres_name'] = [];
                 if( $movies[$i]['movies_id'] == $genresOfMovies[$j]['movies_id'] )
                 {
                     array_push( $movies[$i]['genres_name'], $genresOfMovies[$i]['genres_name']);
