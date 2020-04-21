@@ -13,7 +13,7 @@ function addFilms(){
                 });
                 $posterDiv.appendTo('#colorposter');
                 let $posterA = $('<a>',{
-                    href: $direct + '/movie.php?id=' + $json['movies_id'][$i]
+                    href: "#"
                 });
                 $posterA.appendTo($posterDiv);
                 let $posterFigure = $('<figure>',{
