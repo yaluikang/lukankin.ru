@@ -24,7 +24,17 @@ class Sqlquery extends Query
         $ids = $this->getIdOfMovies( $movies );
         $this->limit = null;
         $genresOfMovies = $this->select('movies_id, genres_name' )->FROM('movies_has_genre' )->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id' )->where(['movies_id' => $ids ])->all();
-        return $genresOfMovies; //array_merge_recursive( $movies, $genresOfMovies );
+        for( $i = 0; $i < count( $movies ); $i++ )
+        {
+            for( $j = 0; $j < count( $genresOfMovies ); $j++)
+            {
+                if( $movies[$i]['movies_id'] == $genresOfMovies[$j]['movies_id'] )
+                {
+                    $movies[$i]['genres_name'] = $genresOfMovies[$i]['genres_name'];
+                }
+            }
+        }
+        return $movies; //array_merge_recursive( $movies, $genresOfMovies );
     }
     public function getIdOfMovies($movies)
     {
