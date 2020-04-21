@@ -24,7 +24,7 @@ function addFilms(){
                 });
                 $posterFigure.appendTo($posterA);
                 let $posterImg = $('<img>',{
-                    src: '../Images/' + $json[$i]['movies_url_poster'],
+                    src: '../images/' + $json[$i]['movies_url_poster'],
                     class: 'figure-img img-fluid rounded'
                 });
                 $posterImg.appendTo($posterFigure);
