@@ -109,8 +109,3 @@
         <button type="button" class="btn btn-primary btn-lg btn-block">Показать ещё</button>
     </div>
 </div>
-<div class="container postop" id="see-more">
-    <div class="row  MyButton">
-        <button type="button" class="btn btn-primary btn-lg btn-block">Показать ещё</button>
-    </div>
-</div>

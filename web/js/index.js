@@ -1,4 +1,4 @@
-function addFilms(){
+/*function addFilms(){
     $.ajax({
         method: "GET",
         url: "http://lukankin.ru/test",
@@ -45,7 +45,13 @@ function addFilms(){
             }
         }
     });
-};
+};*/
 $(window).on('load',function(){
-    addFilms();
-})
+    //addFilms();
+    let ajaxBuilder = new AjaxBuilder( "http://lukankin.ru/test", "GET" );
+    ajaxBuilder.ajaxRequest();
+});
+$('#see-more').on( 'click', function(){
+    let ajaxBuilder = new AjaxBuilder( "http://lukankin.ru/pagination", "GET" );
+    ajaxBuilder.ajaxRequest();
+} );

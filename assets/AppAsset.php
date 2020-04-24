@@ -24,6 +24,7 @@ class AppAsset extends AssetBundle
         'css/newstyle.css'
     ];
     public $js = [
+        'js/AjaxBuilder.js',
         'js/index.js'
     ];
     public $depends = [
