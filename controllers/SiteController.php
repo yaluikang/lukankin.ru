@@ -32,9 +32,11 @@ class SiteController extends Controller
     public function actionTest (/*$movie, array $limit*/)
     {
         $rows = new Sqlquery();
-        echo($rows->getMovies());/*
-        $movies = Movies::find(2);
-        $moviesHasGenre = $movies->moviesHasGenre;
-        echo($moviesHasGenre);*/
+        echo($rows->getMovies());
+    }
+    public function actionPagination()
+    {
+        $row = new Sqlquery();
+        echo($row->pagination());
     }
 }

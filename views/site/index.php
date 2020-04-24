@@ -104,3 +104,13 @@
 </div>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
 </div>
+<div class="container postop" id="see-more">
+    <div class="row  MyButton">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Показать ещё</button>
+    </div>
+</div>
+<div class="container postop" id="see-more">
+    <div class="row  MyButton">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Показать ещё</button>
+    </div>
+</div>
