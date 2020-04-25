@@ -23,15 +23,15 @@ class AjaxBuilder
             method: this.getMethod(),
             url: this.getUrl(),
             async: false,
-            success: this.controllerOfRequests(data)
+            success: this.controllerOfRequests()
         })
     }
 
-    controllerOfRequests( data )
+    controllerOfRequests()
     {
         if( $this.getUrl() == "test" || $this.getUrl() == "pagination" )
         {
-            $this.addMovies( data );
+            $this.addMovies();
         }
     }
 
