@@ -39,7 +39,7 @@ class AjaxBuilder
 
     controllerOfRequests()
     {
-        if( this.getUrl() == "test" || this.getUrl() == "pagination" )
+        if( this.getUrl() == "http://lukankin.ru/test" || this.getUrl() == "http://lukankin.ru/pagination" )
         {
             this.addMovies( this.json );
         }
