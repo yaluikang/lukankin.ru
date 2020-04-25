@@ -20,6 +20,7 @@ class AjaxBuilder
     ajaxRequest()
     {
         console.log( this.url );
+        let $json;
         $.ajax({
             method: this.getMethod(),
             url: this.getUrl(),
@@ -27,12 +28,13 @@ class AjaxBuilder
             success: function( data )
             {
                 console.log( this.json );
-                let $json = $.parseJSON( data );
-                this.json = $json;
+                $json = $.parseJSON( data );
                 console.log( this.json );
             }
                 //this.controllerOfRequests(data)
         });
+        console.log( $json );
+        this.json = $json;
         this.controllerOfRequests();
     }
 
