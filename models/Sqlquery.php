@@ -55,6 +55,7 @@ class Sqlquery extends Query
         echo(1);
         $this->increasePageNumber();
         echo($this->pageNumber);
+        echo($this->getBorders());
         //$this->getMovies( $this->getBorders() );
     }
     public function getBorders()
