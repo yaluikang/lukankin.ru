@@ -18,6 +18,7 @@ class AjaxBuilder
 
     ajaxRequest()
     {
+        console.log( $this.url );
         $.ajax({
             method: $this.getMethod(),
             url: $this.getUrl(),
