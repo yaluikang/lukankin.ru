@@ -8,6 +8,8 @@ class Sqlquery extends Query
 {
     private $pageNumber = 1;
     private $numOfMovies = 9;
+
+
     public function getMovies()
     {
         //$sql = $this->select(["movies_id, movies_name, movies_url_poster, movies_date, GROUP_CONCAT(genres_name SEPARATOR ', ') AS `genres_name` FROM (SELECT movies.movies_id, movies_name, genres_name, movies_url_poster, movies_date FROM movies JOIN movies_has_genre ON `movies`.`movies_id`=`movies_has_genre`.`movies_id` JOIN genres ON `movies_has_genre`.`movies_genre`=`genres`.`genres_id` WHERE `movies_qualifier`=1 AND movies.movies_id= ANY(SELECT movies.movies_id FROM movies JOIN movies_has_genre ON `movies`.`movies_id`=`movies_has_genre`.`movies_id` JOIN genres ON `movies_has_genre`.`movies_genre`=`genres`.`genres_id` WHERE `movies_qualifier`=1)) AS `table`"])->groupBy('movies_id')->limit(9)->all();
@@ -54,8 +56,9 @@ class Sqlquery extends Query
         //Вызвать эту функцию с новыми лимитом и оффсетом
         echo(1);
         $this->increasePageNumber();
-        echo($this->pageNumber);
-        echo($this->getBorders());
+        echo( $this->pageNumber );
+        $arr = $this->getBorders();
+        echo( $arr );
         //$this->getMovies( $this->getBorders() );
     }
     public function getBorders()
