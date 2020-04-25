@@ -18,10 +18,10 @@ class AjaxBuilder
 
     ajaxRequest()
     {
-        console.log( $this.url );
+        console.log( this.url );
         $.ajax({
-            method: $this.getMethod(),
-            url: $this.getUrl(),
+            method: this.getMethod(),
+            url: this.getUrl(),
             async: false,
             success: this.controllerOfRequests(data)
         })
