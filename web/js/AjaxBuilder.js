@@ -35,21 +35,29 @@ class AjaxBuilder
         return this;
     }
 
+    hideButton()
+    {
+        $('#see-more').css('display','none');
+    }
+
+    checkArray( arr )
+    {
+        if( arr.length < 9 )
+        {
+            this.hideButton()
+        }
+    }
     pagination()
     {
         //прибавить страничку
         //поменять url, добавляя get параметр
         this.increasePageNumber();
-        console.log( this.getUrl());
         this.setPageNumberToUrl();
-        console.log( this.getUrl());
     }
 
     setPageNumberToUrl()
     {
-        console.log( this.getUrl());
         this.url = this.url + '?p=' + this.getPageNumber();
-        console.log( this.getUrl());
     }
 
     increasePageNumber()
@@ -61,7 +69,6 @@ class AjaxBuilder
     {
         if( this.getUrl() == 'http://lukankin.ru/pagination' )
         {
-            console.log( 'controllerOfGetParameters' );
             this.pagination();
         }
     }
@@ -70,7 +77,6 @@ class AjaxBuilder
     {
         let $json;
         this.controllerOfGetParameters();
-        console.log( this.getUrl());
         $.ajax({
             method: this.getMethod(),
             url: this.getUrl(),
@@ -80,9 +86,7 @@ class AjaxBuilder
                 $json = data;
             }
         });
-        console.log( $json );
         this.json = $json;
-        console.log( this.json );
         this.controllerOfActions();
     }
 
@@ -96,11 +100,8 @@ class AjaxBuilder
 
     addMovies( data )
     {
-        console.log( data );
         let $json = $.parseJSON( data );
-        console.log($json);
-        console.log($json.length);
-        console.log($json[0]['movies_name']);
+        this.checkArray( $json );
         for( let $i = 0; $i < $json.length; $i++ )
         {
             let $posterDiv = $('<div>',{
