@@ -4,6 +4,7 @@ class AjaxBuilder
     {
         this.url = url;
         this.method = method;
+        this.json = "Нет данных";
     }
 
     getUrl()
@@ -23,20 +24,27 @@ class AjaxBuilder
             method: this.getMethod(),
             url: this.getUrl(),
             async: false,
-            success: this.controllerOfRequests()
+            success: function( data )
+            {
+                let $json = $.parseJSON( data );
+                this.json = $json;
+            }
+                //this.controllerOfRequests(data)
         })
+        this.controllerOfRequests();
     }
 
     controllerOfRequests()
     {
         if( this.getUrl() == "test" || this.getUrl() == "pagination" )
         {
-            this.addMovies();
+            this.addMovies( this.json );
         }
     }
 
     addMovies( data )
     {
+        console.log( data );
         let $json = $.parseJSON( data );
         console.log($json);
         console.log($json.length);
