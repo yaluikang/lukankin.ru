@@ -29,7 +29,6 @@ class AjaxBuilder
             {
                 $json = data;
             }
-                //this.controllerOfRequests(data)
         });
         console.log( $json );
         this.json = $json;
