@@ -38,5 +38,11 @@ class SiteController extends Controller
     {
         $row = new Sqlquery();
         echo($row->pagination());
+
     }
+    public function actionTesting( $par )
+    {
+        echo $par;
+    }
+
 }
