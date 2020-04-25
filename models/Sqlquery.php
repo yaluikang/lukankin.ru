@@ -49,12 +49,12 @@ class Sqlquery extends Query
         }
         return $arrayIdOfMovies;
     }
-    public function pagination()
+    public function pagination( $p )
     {
         //Увеличить $pageNumber
         //Задать новые лимит и оффсет для функции getMovies
         //Вызвать эту функцию с новыми лимитом и оффсетом
-        $this->increasePageNumber();
+        $this->setPageNumber( $p );
         $this->getMovies();
     }
     public function getBorders()
@@ -70,9 +70,9 @@ class Sqlquery extends Query
         }
         return $borderArray;
     }
-    public function increasePageNumber()
+    public function setPageNumber( $p )
     {
-        $this->pageNumber++;
+        $this->pageNumber = $p;
     }
     public function increaseNumOfMovies($num)
     {

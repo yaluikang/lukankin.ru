@@ -5,6 +5,7 @@ class AjaxBuilder
         this.url = url;
         this.method = method;
         this.json = "Нет данных";
+        this.pageNumber = 1;
     }
 
     getUrl()
@@ -17,10 +18,53 @@ class AjaxBuilder
         return this.method;
     }
 
+    getPageNumber()
+    {
+        return this.pageNumber;
+    }
+
+    setUrl( url )
+    {
+        this.url = url;
+        return this;
+    }
+
+    setMethod( method )
+    {
+        this.method = method;
+        return this;
+    }
+
+    pagination()
+    {
+        //прибавить страничку
+        //поменять url, добавляя get параметр
+        this.increasePageNumber();
+        this.setPageNumberToUrl();
+    }
+
+    setPageNumberToUrl()
+    {
+        this.url =+ "?p=" + this.getPageNumber();
+    }
+
+    increasePageNumber()
+    {
+        this.pageNumber++;
+    }
+
+    controllerOfGetParameters()
+    {
+        if( this.getUrl() == "http://lukankin.ru/pagination" )
+        {
+            this.pagination();
+        }
+    }
+
     ajaxRequest()
     {
-        console.log( this.url );
         let $json;
+        this.controllerOfGetParameters();
         $.ajax({
             method: this.getMethod(),
             url: this.getUrl(),
@@ -33,10 +77,10 @@ class AjaxBuilder
         console.log( $json );
         this.json = $json;
         console.log( this.json );
-        this.controllerOfRequests();
+        this.controllerOfActions();
     }
 
-    controllerOfRequests()
+    controllerOfActions()
     {
         if( this.getUrl() == "http://lukankin.ru/test" || this.getUrl() == "http://lukankin.ru/pagination" )
         {

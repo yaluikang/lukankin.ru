@@ -34,15 +34,11 @@ class SiteController extends Controller
         $rows = new Sqlquery();
         echo($rows->getMovies());
     }
-    public function actionPagination()
+    public function actionPagination( $p )
     {
         $row = new Sqlquery();
-        echo($row->pagination());
+        echo($row->pagination( $p ));
 
-    }
-    public function actionTesting( $par )
-    {
-        echo $par;
     }
 
 }
