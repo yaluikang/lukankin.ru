@@ -47,7 +47,9 @@ class AjaxBuilder
 
     setPageNumberToUrl()
     {
-        this.url =+ '?p=' + this.getPageNumber();
+        console.log( this.getUrl());
+        this.url = this.url + '?p=' + this.getPageNumber();
+        console.log( this.getUrl());
     }
 
     increasePageNumber()
