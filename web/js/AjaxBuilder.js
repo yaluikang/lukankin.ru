@@ -29,9 +29,9 @@ class AjaxBuilder
 
     controllerOfRequests()
     {
-        if( $this.getUrl() == "test" || $this.getUrl() == "pagination" )
+        if( this.getUrl() == "test" || this.getUrl() == "pagination" )
         {
-            $this.addMovies();
+            this.addMovies();
         }
     }
 
