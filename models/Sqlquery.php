@@ -15,9 +15,9 @@ class Sqlquery extends Query
         //$sql = $this->select(["movies_id, movies_name, movies_url_poster, movies_date, GROUP_CONCAT(genres_name SEPARATOR ', ') AS `genres_name` FROM (SELECT movies.movies_id, movies_name, genres_name, movies_url_poster, movies_date FROM movies JOIN movies_has_genre ON `movies`.`movies_id`=`movies_has_genre`.`movies_id` JOIN genres ON `movies_has_genre`.`movies_genre`=`genres`.`genres_id` WHERE `movies_qualifier`=1 AND movies.movies_id= ANY(SELECT movies.movies_id FROM movies JOIN movies_has_genre ON `movies`.`movies_id`=`movies_has_genre`.`movies_id` JOIN genres ON `movies_has_genre`.`movies_genre`=`genres`.`genres_id` WHERE `movies_qualifier`=1)) AS `table`"])->groupBy('movies_id')->limit(9)->all();
         //$sql = $this->createCommand();
         $borders = $this->getBorders();
-        return json_encode( $borders['offset'],JSON_UNESCAPED_UNICODE );
+        echo ('getMovies');
         $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->offset( $borders['offset'] )->limit( $borders['limit'] )->createCommand()->sql;
-
+        //return json_encode( $movies,JSON_UNESCAPED_UNICODE );
         //$moviesWithGenres = $this->addGenresForMovies($movies);
         //return json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
     }
@@ -57,6 +57,7 @@ class Sqlquery extends Query
         //Задать новые лимит и оффсет для функции getMovies
         //Вызвать эту функцию с новыми лимитом и оффсетом
         $this->increasePageNumber();
+        echo ('pagination');
         $this->getMovies();
     }
     public function getBorders()
