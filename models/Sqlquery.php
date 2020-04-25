@@ -16,7 +16,8 @@ class Sqlquery extends Query
         //$sql = $this->createCommand();
         $borders = $this->getBorders();
         echo( $borders['offset'] );
-        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->offset( $borders['offset'] )->limit( $borders['limit'] )->all();
+        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->offset( $borders['offset'] )->limit( $borders['limit'] )->createCommand()->rawSql();
+        echo $movies;
         $moviesWithGenres = $this->addGenresForMovies($movies);
         //return json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
     }
