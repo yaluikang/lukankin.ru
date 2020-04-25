@@ -40,7 +40,9 @@ class AjaxBuilder
         //прибавить страничку
         //поменять url, добавляя get параметр
         this.increasePageNumber();
+        console.log( this.getUrl());
         this.setPageNumberToUrl();
+        console.log( this.getUrl());
     }
 
     setPageNumberToUrl()
@@ -57,6 +59,7 @@ class AjaxBuilder
     {
         if( this.getUrl() == 'http://lukankin.ru/pagination' )
         {
+            console.log( 'controllerOfGetParameters' );
             this.pagination();
         }
     }
