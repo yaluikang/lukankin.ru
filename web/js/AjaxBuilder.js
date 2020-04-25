@@ -27,7 +27,7 @@ class AjaxBuilder
             async: false,
             success: function( data )
             {
-                $json = $.parseJSON( data );
+                $json = data;
             }
                 //this.controllerOfRequests(data)
         });
