@@ -58,7 +58,7 @@ class Sqlquery extends Query
         $this->increasePageNumber();
         echo( $this->pageNumber );
         $arr = $this->getBorders();
-        echo( $arr );
+        return json_encode( $arr,JSON_UNESCAPED_UNICODE );
         //$this->getMovies( $this->getBorders() );
     }
     public function getBorders()
