@@ -26,11 +26,13 @@ class AjaxBuilder
             async: false,
             success: function( data )
             {
+                console.log( this.json );
                 let $json = $.parseJSON( data );
                 this.json = $json;
+                console.log( this.json );
             }
                 //this.controllerOfRequests(data)
-        })
+        });
         this.controllerOfRequests();
     }
 
