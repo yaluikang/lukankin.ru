@@ -65,6 +65,7 @@ class AjaxBuilder
     {
         let $json;
         this.controllerOfGetParameters();
+        console.log( this.getUrl());
         $.ajax({
             method: this.getMethod(),
             url: this.getUrl(),
