@@ -4,7 +4,7 @@ class AjaxBuilder
     {
         this.url = url;
         this.method = method;
-        this.json = "Нет данных";
+        this.json = 'Нет данных';
         this.pageNumber = 1;
     }
 
@@ -45,7 +45,7 @@ class AjaxBuilder
 
     setPageNumberToUrl()
     {
-        this.url =+ "?p=" + this.getPageNumber();
+        this.url =+ '?p=' + this.getPageNumber();
     }
 
     increasePageNumber()
@@ -55,7 +55,7 @@ class AjaxBuilder
 
     controllerOfGetParameters()
     {
-        if( this.getUrl() == "http://lukankin.ru/pagination" )
+        if( this.getUrl() == 'http://lukankin.ru/pagination' )
         {
             this.pagination();
         }
@@ -83,10 +83,10 @@ class AjaxBuilder
 
     controllerOfActions()
     {
-        if( this.getUrl() == "http://lukankin.ru/test" || this.getUrl() == "http://lukankin.ru/pagination" )
-        {
+        /*if( this.getUrl() == 'http://lukankin.ru/test' || this.getUrl() == 'http://lukankin.ru/pagination' )
+        {*/
             this.addMovies( this.json );
-        }
+        /*}*/
     }
 
     addMovies( data )
