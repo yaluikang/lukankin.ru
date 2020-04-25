@@ -66,7 +66,6 @@ class Sqlquery extends Query
         if( $pageNumber - $numInclude != 0 )
         {
             $numInclude = $numOfMovies * ( $pageNumber - $numInclude );
-            $borderArray['limit'] += $numInclude;
             $borderArray['offset'] += $numInclude;
         }
         return $borderArray;
