@@ -24,7 +24,7 @@ class Sqlquery extends Query
         $ids = $this->getIdOfMovies( $movies );
         $this->limit = null;
         $this->offset = null;
-        $genresOfMovies = $this->select('movies_id, genres_name' )->FROM('movies_has_genre' )->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id' )->where(['movies_id' => $ids ])->createCommand()->sql;
+        $genresOfMovies = $this->select('movies_id, genres_name' )->FROM('movies_has_genre' )->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id' )->where(['movies_id' => $ids ])->all();
         for( $i = 0; $i < count( $movies ); $i++ )
         {
             $movies[$i]['genres_name'] = [];
