@@ -38,7 +38,7 @@ class Sqlquery extends Query
                 }
             }
         }*/
-        return $genresOfMovies; //array_merge_recursive( $movies, $genresOfMovies );
+        return $ids; //array_merge_recursive( $movies, $genresOfMovies );
     }
     public function getIdOfMovies($movies)
     {
