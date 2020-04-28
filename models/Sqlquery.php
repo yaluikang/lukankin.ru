@@ -58,9 +58,8 @@ class Sqlquery extends Query
         //Увеличить $pageNumber
         //Задать новые лимит и оффсет для функции getMovies
         //Вызвать эту функцию с новыми лимитом и оффсетом
-        $this->setMoviesQualifier( $q );
         $this->setPageNumber( $p );
-        $this->getMovies();
+        $this->getMovies( $q );
     }
     public function getBorders()
     {
