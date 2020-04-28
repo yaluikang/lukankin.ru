@@ -1,0 +1,9 @@
+class Site
+{
+    constructor()
+    {
+
+    }
+
+
+}

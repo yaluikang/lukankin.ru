@@ -6,6 +6,7 @@ class AjaxBuilder
         this.method = method;
         this.json = 'Нет данных';
         this.pageNumber = 1;
+        this.moviesQualifier = 1;
     }
 
     getUrl()
@@ -23,9 +24,20 @@ class AjaxBuilder
         return this.pageNumber;
     }
 
+    getMoviesQualifier()
+    {
+        return this.moviesQualifier;
+    }
+
     setUrl( url )
     {
         this.url = url;
+        return this;
+    }
+
+    setMoviesQualifier( q )
+    {
+        this.moviesQualifier = q;
         return this;
     }
 
@@ -57,9 +69,13 @@ class AjaxBuilder
 
     setPageNumberToUrl()
     {
-        this.url = this.url + '?p=' + this.getPageNumber();
+        this.url = this.url + '&p=' + this.getPageNumber();
     }
 
+    setMoviesQualifierToUrl()
+    {
+        this.url = this.url + '?q=' + this.getMoviesQualifier();
+    }
     increasePageNumber()
     {
         this.pageNumber++;
@@ -67,6 +83,10 @@ class AjaxBuilder
 
     controllerOfGetParameters()
     {
+        if( this.getUrl() == 'http://lukankin.ru/pagination' || this.getUrl() == 'http://lukankin.ru/getmovies')
+        {
+            this.setMoviesQualifierToUrl();
+        }
         if( this.getUrl() == 'http://lukankin.ru/pagination' )
         {
             this.pagination();

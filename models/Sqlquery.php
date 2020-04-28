@@ -8,12 +8,13 @@ class Sqlquery extends Query
 {
     private $pageNumber = 1;
     private $numOfMovies = 9;
+    private $moviesQualifier = 1;
 
-
-    public function getMovies()
+    public function getMovies( $q )
     {
+        $this->setMoviesQualifier( $q );
         $borders = $this->getBorders();
-        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->offset( $borders['offset'] )->limit( $borders['limit'] )->all();
+        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->where(['movies_qualifier' => $this->moviesQualifier])->offset( $borders['offset'] )->limit( $borders['limit'] )->all();
         $moviesWithGenres = $this->addGenresForMovies($movies);
         echo json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
     }
@@ -47,11 +48,17 @@ class Sqlquery extends Query
         }
         return $arrayIdOfMovies;
     }
-    public function pagination( $p )
+
+    public function setMoviesQualifier( $q )
+    {
+        $this->moviesQualifier = $q;
+    }
+    public function pagination( $p, $q )
     {
         //Увеличить $pageNumber
         //Задать новые лимит и оффсет для функции getMovies
         //Вызвать эту функцию с новыми лимитом и оффсетом
+        $this->setMoviesQualifier( $q );
         $this->setPageNumber( $p );
         $this->getMovies();
     }

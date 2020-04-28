@@ -1,10 +1,10 @@
 <div class="row MyMovies">
     <ul class="nav nav-tabs col-md col-sm col-" id="myTab" role="tablist">
         <li class="nav-item col-md-auto col-sm-auto col-auto paddingnol">
-            <a class="nav-link active films" id="home-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true">Фильмы</a>
+            <a class="nav-link active films" id="films" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true">Фильмы</a>
         </li>
         <li class="nav-item col-md-auto col-sm-auto col-auto paddingnol">
-            <a class="nav-link tvSeries" id="profile-tab" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="false">Сериалы</a>
+            <a class="nav-link tvSeries" id="tvSeries" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="false">Сериалы</a>
         </li>
     </ul>
 </div>

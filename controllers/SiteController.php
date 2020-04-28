@@ -29,15 +29,15 @@ class SiteController extends Controller
         echo 'TEST123';
         //return $this->render('index');
     }
-    public function actionTest (/*$movie, array $limit*/)
+    public function actionGetmovies ( $q )
     {
         $rows = new Sqlquery();
-        echo($rows->getMovies());
+        echo($rows->getMovies( $q ));
     }
-    public function actionPagination( $p )
+    public function actionPagination( $p, $q )
     {
         $row = new Sqlquery();
-        echo($row->pagination( $p ));
+        echo($row->pagination( $p, $q ));
 
     }
 
