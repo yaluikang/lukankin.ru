@@ -15,6 +15,7 @@ $('#see-more').on( 'click', function(){
 $('#films').on( 'click', function(){
     //удалить весь контент с фильмами
     //сделать ajax-запрос по фильмам
+    console.log( 'yes' );
     $('#colorposter').empty();
     $ajaxBuilder.setMoviesQualifier( 1 ).ajaxRequest();
 });
