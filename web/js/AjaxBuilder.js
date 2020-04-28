@@ -87,7 +87,7 @@ class AjaxBuilder
         {
             this.setMoviesQualifierToUrl();
         }
-        if( this.getUrl() == 'http://lukankin.ru/pagination' )
+        if( this.getUrl().match('http://lukankin.ru/pagination'))
         {
             this.pagination();
         }
