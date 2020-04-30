@@ -11,22 +11,6 @@ class Pagination extends AjaxBuilder
         return this.pageNumber;
     }
 
-    checkArray( arr )
-    {
-        if( arr.length < 9 )
-        {
-            this.hideButton()
-        } else {
-            this.unHideButton();
-        }
-    }
-
-
-    setPageNumberToUrl()
-    {
-        this.url = this.url + '&p=' + this.getPageNumber();
-    }
-
     resetPageNumber()
     {
         this.pageNumber = 1;
@@ -46,6 +30,5 @@ class Pagination extends AjaxBuilder
         this.increasePageNumber();
         this.setGetParameter('p', this.getPageNumber());
         super.ajaxRequest();
-        this.checkArray( this.json );
     }
 }
