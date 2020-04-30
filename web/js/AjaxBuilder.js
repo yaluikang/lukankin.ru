@@ -59,20 +59,16 @@ class AjaxBuilder
     {
         let $str;
         let $getParameters = this.getGetParameters();
-        console.log( $getParameters );
         let $counter = 0;
         for( let $key in $getParameters )
         {
-            console.log( $getParameters[$key] );
             if( $counter == 0 )
             {
                 $str = '?' + $key + '=' + $getParameters[$key];
-                console.log( $str );
+            } else {
+                $str = $str + '&' + $key + '=' + $getParameters[$key];
             }
-            $str = $str + '&' + $key + '=' + $getParameters[$key];
-            console.log( $str );
         }
-        console.log( $str );
         this.url += $str;
     }
 
