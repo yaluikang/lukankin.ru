@@ -23,11 +23,6 @@ class AjaxBuilder
         return this.method;
     }
 
-    getMoviesQualifier()
-    {
-        return this.moviesQualifier;
-    }
-
     setUrl( url )
     {
         this.url = url;
@@ -50,12 +45,17 @@ class AjaxBuilder
         $('#see-more').css('display','block');
     }
 
-    increaseGetParameter( key, name )
+    setGetParameter( key, name )
     {
         this.getParameters[key] = name;
     }
 
-    increaseGetParametersToUrl()
+    deleteGetParameter( key )
+    {
+        delete this.getParameters[key];
+    }
+
+    setGetParametersToUrl()
     {
         let $str;
         let $getParameters = this.getGetParameters();
@@ -76,7 +76,7 @@ class AjaxBuilder
     ajaxRequest()
     {
         let $json;
-        this.increaseGetParametersToUrl();
+        this.setGetParametersToUrl();
         console.log( this.url );
         $.ajax({
             method: this.getMethod(),

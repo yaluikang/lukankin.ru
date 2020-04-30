@@ -30,6 +30,7 @@ class Pagination extends AjaxBuilder
     resetPageNumber()
     {
         this.pageNumber = 1;
+        this.deleteGetParameter('p');
     }
 
 
@@ -43,7 +44,7 @@ class Pagination extends AjaxBuilder
         //прибавить страничку
         //поменять url, добавляя get параметр
         this.increasePageNumber();
-        this.increaseGetParameter('p', this.getPageNumber());
+        this.setGetParameter('p', this.getPageNumber());
         super.ajaxRequest();
         this.checkArray( this.json );
     }
