@@ -31,6 +31,7 @@ class Site
     addMovies( data )
     {
         let $json = $.parseJSON( data );
+        this.checkArray( $json );
         for( let $i = 0; $i < $json.length; $i++ )
         {
             let $posterDiv = $('<div>',{
