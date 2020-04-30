@@ -59,6 +59,7 @@ class AjaxBuilder
     {
         let $str;
         let $getParameters = this.getGetParameters();
+        console.log( $getParameters );
         let $counter = 0;
         for( let $key in $getParameters )
         {
@@ -68,6 +69,7 @@ class AjaxBuilder
             }
             $str = $str + '&' + $key + '=' + $getParameters[$key];
         }
+        console.log( $str );
         this.url += $str;
     }
 
