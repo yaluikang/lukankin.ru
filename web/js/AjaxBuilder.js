@@ -2,7 +2,7 @@ class AjaxBuilder extends Site
 {
     constructor( url, method )
     {
-        super();
+        super( 123 );
         this.url = url;
         this.method = method;
         this.json = 'Нет данных';

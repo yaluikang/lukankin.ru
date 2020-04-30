@@ -1,8 +1,8 @@
 class Site
 {
-    constructor()
+    constructor( something )
     {
-
+        this.something = something;
     }
 
     hideButton()
