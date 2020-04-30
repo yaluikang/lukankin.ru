@@ -63,6 +63,7 @@ class AjaxBuilder
         let $counter = 0;
         for( let $key in $getParameters )
         {
+            console.log( $getParameters[$key] );
             if( $counter = 0 )
             {
                 $str = '?' + $key + '=' + $getParameters[$key];
