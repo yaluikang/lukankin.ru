@@ -19,6 +19,7 @@ $('#films').on( 'click', function(){
     $('#colorposter').empty();
     $ajaxBuilder.setMoviesQualifier( 1 );
     console.log( $ajaxBuilder.getMoviesQualifier());
+    $ajaxBuilder.ajaxRequest();
 });
 
 $('#tvSeries').on( 'click', function(){
@@ -27,4 +28,5 @@ $('#tvSeries').on( 'click', function(){
     $('#colorposter').empty();
     $ajaxBuilder.setMoviesQualifier( 2 );
     console.log( $ajaxBuilder.getMoviesQualifier());
+    $ajaxBuilder.ajaxRequest();
 });
