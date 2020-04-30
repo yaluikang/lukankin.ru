@@ -17,12 +17,14 @@ $('#films').on( 'click', function(){
     //сделать ajax-запрос по фильмам
     console.log( 'yes' );
     $('#colorposter').empty();
-    //$ajaxBuilder.setMoviesQualifier( 1 ).ajaxRequest();
+    $ajaxBuilder.setMoviesQualifier( 1 );
+    console.log( $ajaxBuilder.getMoviesQualifier());
 });
 
 $('#tvSeries').on( 'click', function(){
     //удалить весь контент с сериалами
     //сделать ajax-запрос по сериалам
     $('#colorposter').empty();
-    //$ajaxBuilder.setMoviesQualifier( 2 ).ajaxRequest();
+    $ajaxBuilder.setMoviesQualifier( 2 );
+    console.log( $ajaxBuilder.getMoviesQualifier());
 });
