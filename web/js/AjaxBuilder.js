@@ -97,6 +97,7 @@ class AjaxBuilder
     {
         let $json;
         this.controllerOfGetParameters();
+        console.log( this.url );
         $.ajax({
             method: this.getMethod(),
             url: this.getUrl(),
@@ -106,7 +107,6 @@ class AjaxBuilder
                 $json = data;
             }
         });
-        console.log( $json );
         this.json = $json;
         this.controllerOfActions();
     }
