@@ -58,7 +58,7 @@ class AjaxBuilder
     increaseGetParametersToUrl()
     {
         let $str;
-        let $getParameters = this.getParameters();
+        let $getParameters = this.getGetParameters();
         let $counter = 0;
         for( let $key in $getParameters )
         {
