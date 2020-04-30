@@ -68,6 +68,7 @@ class AjaxBuilder
             } else {
                 $str = $str + '&' + $key + '=' + $getParameters[$key];
             }
+            $counter++;
         }
         this.url += $str;
     }
