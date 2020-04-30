@@ -83,7 +83,7 @@ class AjaxBuilder
 
     controllerOfGetParameters()
     {
-        if( this.getUrl() == 'http://lukankin.ru/pagination' || this.getUrl() == 'http://lukankin.ru/getmovies')
+        if( this.getUrl().match('http://lukankin.ru/pagination') || this.getUrl().match('http://lukankin.ru/getmovies'))
         {
             this.setMoviesQualifierToUrl();
         }
