@@ -24,6 +24,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/AjaxBuilder.js',
+        'js/Pagination.js',
         'js/index.js'
     ];
     public $depends = [
