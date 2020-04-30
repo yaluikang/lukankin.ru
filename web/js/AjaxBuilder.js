@@ -1,11 +1,16 @@
 class AjaxBuilder
 {
-    constructor( url, method, moviesQualifier )
+    constructor( url, method )
     {
         this.url = url;
         this.method = method;
         this.json = 'Нет данных';
-        this.moviesQualifier = moviesQualifier;
+        this.getParameters = {};
+    }
+
+    getGetParameters()
+    {
+        return this.getParameters;
     }
 
     getUrl()
@@ -29,12 +34,6 @@ class AjaxBuilder
         return this;
     }
 
-    setMoviesQualifier( q )
-    {
-        this.moviesQualifier = q;
-        return this;
-    }
-
     setMethod( method )
     {
         this.method = method;
@@ -51,27 +50,31 @@ class AjaxBuilder
         $('#see-more').css('display','block');
     }
 
-    setMoviesQualifierToUrl()
+    increaseGetParameter( key, name )
     {
-        this.url = this.url + '?q=' + this.getMoviesQualifier();
-    }
-    increasePageNumber()
-    {
-        this.pageNumber++;
+        this.getParameters[key] = name;
     }
 
-    controllerOfGetParameters()
+    increaseGetParametersToUrl()
     {
-        if( this.getUrl().match('http://lukankin.ru/pagination') || this.getUrl().match('http://lukankin.ru/getmovies'))
+        let $str;
+        let $getParameters = this.getParameters();
+        let $counter = 0;
+        for( let $key in $getParameters )
         {
-            this.setMoviesQualifierToUrl();
+            if( $counter = 0 )
+            {
+                $str = '?' + $key + '=' + $getParameters[$key];
+            }
+            $str = $str + '&' + $key + '=' + $getParameters[$key];
         }
+        this.url += $str;
     }
 
     ajaxRequest()
     {
         let $json;
-        this.controllerOfGetParameters();
+        this.increaseGetParametersToUrl();
         console.log( this.url );
         $.ajax({
             method: this.getMethod(),
@@ -97,7 +100,6 @@ class AjaxBuilder
     addMovies( data )
     {
         let $json = $.parseJSON( data );
-        this.checkArray( $json );
         for( let $i = 0; $i < $json.length; $i++ )
         {
             let $posterDiv = $('<div>',{

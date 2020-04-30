@@ -32,9 +32,10 @@ $('#tvSeries').on( 'click', function(){
     $tvSeries.ajaxRequest();
 });*/
 
-let $pagination = new Pagination("http://lukankin.ru/getmovies", "GET", 1);
+let $pagination = new Pagination("http://lukankin.ru/getmovies", "GET");
 
 $(window).on('load',function(){
+    $pagination.increaseGetParameter('q', 1);
     $pagination.ajaxRequest();
 });
 
@@ -47,9 +48,8 @@ $('#films').on( 'click', function(){
     //удалить весь контент с фильмами
     //сделать ajax-запрос по фильмам
     $pagination.resetPageNumber();
-    $pagination.setMoviesQualifier( 1 );
     $('#colorposter').empty();
-    let $getFilms = new AjaxBuilder("http://lukankin.ru/getmovies", "GET",1);
+    let $getFilms = new AjaxBuilder("http://lukankin.ru/getmovies", "GET");
     console.log( $getFilms.getMoviesQualifier());
     $getFilms.ajaxRequest();
 });
@@ -58,9 +58,8 @@ $('#tvSeries').on( 'click', function(){
     //удалить весь контент с сериалами
     //сделать ajax-запрос по сериалам
     $pagination.resetPageNumber();
-    $pagination.setMoviesQualifier( 2 );
     $('#colorposter').empty();
-    let $tvSeries = new AjaxBuilder("http://lukankin.ru/getmovies", "GET", 2);
+    let $tvSeries = new AjaxBuilder("http://lukankin.ru/getmovies", "GET");
     console.log( $tvSeries.getMoviesQualifier());
     $tvSeries.ajaxRequest();
 });

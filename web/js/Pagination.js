@@ -1,8 +1,8 @@
 class Pagination extends AjaxBuilder
 {
-    constructor( url, method, moviesQualifier )
+    constructor( url, method )
     {
-        super( url, method, moviesQualifier );
+        super( url, method );
         this.pageNumber = 1;
     }
 
@@ -32,12 +32,19 @@ class Pagination extends AjaxBuilder
         this.pageNumber = 1;
     }
 
+
+    increasePageNumber()
+    {
+        this.pageNumber++;
+    }
+
     pagination()
     {
         //прибавить страничку
         //поменять url, добавляя get параметр
         this.increasePageNumber();
-        this.setPageNumberToUrl();
+        this.increaseGetParameter('p', this.getPageNumber());
         super.ajaxRequest();
+        this.checkArray( this.json );
     }
 }
