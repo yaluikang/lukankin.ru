@@ -106,6 +106,7 @@ class AjaxBuilder
                 $json = data;
             }
         });
+        console.log( $json );
         this.json = $json;
         this.controllerOfActions();
     }
