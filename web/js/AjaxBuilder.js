@@ -64,11 +64,13 @@ class AjaxBuilder
         for( let $key in $getParameters )
         {
             console.log( $getParameters[$key] );
-            if( $counter = 0 )
+            if( $counter == 0 )
             {
                 $str = '?' + $key + '=' + $getParameters[$key];
+                console.log( $str );
             }
             $str = $str + '&' + $key + '=' + $getParameters[$key];
+            console.log( $str );
         }
         console.log( $str );
         this.url += $str;
