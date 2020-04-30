@@ -52,11 +52,17 @@ class AjaxBuilder
         $('#see-more').css('display','none');
     }
 
+    unHideButton()
+    {
+        $('#see-more').css('display','block');
+    }
     checkArray( arr )
     {
         if( arr.length < 9 )
         {
             this.hideButton()
+        } else {
+            this.unHideButton();
         }
     }
     pagination()
