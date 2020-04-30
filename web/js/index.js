@@ -15,18 +15,19 @@ $('#see-more').on( 'click', function(){
 $('#films').on( 'click', function(){
     //удалить весь контент с фильмами
     //сделать ajax-запрос по фильмам
-    console.log( 'yes' );
     $('#colorposter').empty();
-    $ajaxBuilder.setMoviesQualifier( 1 );
-    console.log( $ajaxBuilder.getMoviesQualifier());
-    $ajaxBuilder.ajaxRequest();
+    let $getFilms = new AjaxBuilder("http://lukankin.ru/getmovies", "GET");
+    $getFilms.setMoviesQualifier( 1 );
+    console.log( $getFilms.getMoviesQualifier());
+    $getFilms.ajaxRequest();
 });
 
 $('#tvSeries').on( 'click', function(){
     //удалить весь контент с сериалами
     //сделать ajax-запрос по сериалам
     $('#colorposter').empty();
-    $ajaxBuilder.setMoviesQualifier( 2 );
-    console.log( $ajaxBuilder.getMoviesQualifier());
-    $ajaxBuilder.ajaxRequest();
+    let $tvSeries = new AjaxBuilder("http://lukankin.ru/getmovies", "GET");
+    $tvSeries.setMoviesQualifier( 2 );
+    console.log( $tvSeries.getMoviesQualifier());
+    $tvSeries.ajaxRequest();
 });
