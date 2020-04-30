@@ -20,8 +20,10 @@ class Site
         if( arr.length < 9 )
         {
             this.hideButton()
+            return true;
         } else {
             this.unHideButton();
+            return false;
         }
     }
 
