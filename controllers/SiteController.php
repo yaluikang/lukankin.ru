@@ -40,7 +40,7 @@ class SiteController extends Controller
         echo($row->pagination( $p, $q, $genre ));
 
     }
-    public function actionMoviesByGenre( $q, $genre )
+    public function actionMoviesbygenre( $q, $genre )
     {
         $row = new Sqlquery();
         echo($row->findMoviesByGenre( $genre, $q ));
