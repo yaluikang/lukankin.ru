@@ -30,3 +30,13 @@ $('#tvSeries').on( 'click', function(){
     $pagination.setUrl( "http://lukankin.ru/getmovies" );
     $pagination.ajaxRequest();
 });
+
+$('.search-genre').each(function(){
+    $(this).on('click', function(){
+        $pagination.resetPageNumber();
+        $('#colorposter').empty();
+        $pagination.setUrl( "http://lukankin.ru/moviesbygenre" );
+        $pagination.setGetParameter('genre', $(this).text());
+        $pagination.ajaxRequest();
+    });
+});
