@@ -31,7 +31,14 @@ class Sqlquery extends Query
         echo json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
     }
 
-    public function addGenresForMovies($movies)
+    public function getContentForMovie( $id )
+    {
+        $contentOfMovie = $this->select('*')->FROM('movies')->where(['movies_id' => $id])->all();
+        $contentOfMovie = $this->addGenresForMovies( $contentOfMovie );
+        return $contentOfMovie;
+    }
+
+    public function addGenresForMovies( $movies )
     {
         //Вызвать функцию getIdOfMovies для составления запроса в базу данных по id
         //цикл для инъекции жанров в массив $movies
@@ -53,7 +60,7 @@ class Sqlquery extends Query
         return $movies;
     }
 
-    public function getIdOfMovies($movies)
+    public function getIdOfMovies( $movies )
     {
         $arrayIdOfMovies = [];
         for( $i = 0; $i < count($movies); $i++ )
@@ -101,7 +108,7 @@ class Sqlquery extends Query
         $this->pageNumber = $p;
     }
 
-    public function increaseNumOfMovies($num)
+    public function increaseNumOfMovies( $num )
     {
         $this->numOfMovies = $num;
     }

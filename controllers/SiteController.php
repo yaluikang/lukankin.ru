@@ -24,10 +24,11 @@ class SiteController extends Controller
         echo 'tvseries';
         //return $this->render('index');
     }
-    public function actionNewItems ()
+    public function actionMovie ( $id )
     {
-        echo 'TEST123';
-        //return $this->render('index');
+        $contentForMovie = new Sqlquery();
+        $contentForMovie = $contentForMovie->getContentForMovie( $id );
+        return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
     }
     public function actionGetmovies ( $q )
     {
