@@ -39,7 +39,7 @@ class Site
             });
             $posterDiv.appendTo('#colorposter');
             let $posterA = $('<a>',{
-                href: "lukankin.ru/movie?id=" + $json[$i]['movies_id']
+                href: "movie?id=" + $json[$i]['movies_id']
             });
             $posterA.appendTo($posterDiv);
             let $posterFigure = $('<figure>',{
