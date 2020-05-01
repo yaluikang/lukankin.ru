@@ -46,9 +46,12 @@ class AjaxBuilder extends Site
         delete this.getParameters[key];
     }
 
-    deleteAllGetParameters()
+    checkGetParameterGenre()
     {
-        this.getParameters = {};
+        if( this.getParameters['genre'] )
+        {
+            this.deleteGetParameter('genre');
+        }
     }
 
     setGetParametersToUrl()
