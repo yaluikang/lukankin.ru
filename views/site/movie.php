@@ -1,13 +1,13 @@
 <?php
 
-//echo json_encode( $contentForMovie,JSON_UNESCAPED_UNICODE );
+echo json_encode( $contentForMovie[0],JSON_UNESCAPED_UNICODE );
 ?>
-<div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
+<!--<div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <h2></h2>
     <div class="col-md-6 col-sm-12 col-lg-6 text-center">
         <a href="#">
             <figure class="figure">
-                <img src="<?php echo 'images/' . $contentForMovie[0]['movies_url_poster'] ?>" class="figure-img rounded" alt="...">
+                <img src="<?php /*echo 'images/' . $contentForMovie[0]['movies_url_poster'] */?>" class="figure-img rounded" alt="...">
                 <figcaption class="figure-caption figuremaxwidth"><p class="zagolovok"></p></figcaption>
             </figure>
         </a>
@@ -15,7 +15,7 @@
     <div class="col-lg-6">
         <ul class="film-main-info">
             <li>
-                <span><h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2></span>
+                <span><h2><?php /*echo $contentForMovie[0]["movies_name"]; */?></h2></span>
 <p>The Ticket</p>
 </li>
 <li>
@@ -24,7 +24,7 @@
 </li>
 <li>
     <span class="key">Год:</span>
-    <span class="value"><?php echo $contentForMovie[0]['movies_date'] ?></span>
+    <span class="value"><?php /*echo $contentForMovie[0]['movies_date'] */?></span>
 </li>
 <li>
     <span class="key">Время:</span>
@@ -40,7 +40,7 @@
 </li>
 <li>
     <span class="key">Жанр:</span>
-    <span class="value"><?php echo $contentForMovie[0]['genres_name'] ?></span>
+    <span class="value"><?php /*echo $contentForMovie[0]['genres_name'] */?></span>
 </li>
 <li>
     <span class="key">Перевод:</span>
@@ -65,7 +65,7 @@
     <p class="films-text">Все вокруг завертелось после исцеления, персонаж получил повышение по службе, решил сменить автомобиль на более престижный, поменял гардероб. Вскоре господин стал чувствовать некий дискомфорт и тяготиться опекой супруги, превращаясь в брюзгу. Чем большим был доход, тем ниже становились моральные принципы, теряя реальность, бедняга утратил веру, превращаясь в холодного эгоиста, видимо не достаточно было покаяния, если слепота физическая превратилась в духовную нищету. В паутине духовной слепоты бедняга перестал слышать близких людей, надежды разорваны в клочья, остались лишь обрывки эмоций и разрушительная тишина.</p>
 </div>
 <div class="col-lg-12 video">
-    <span><h2 class="heading"><?php echo 'Смотреть фильм ' . contentForMovie[0]['movies_name'].' онлайн.'; ?></h2></span>
+    <span><h2 class="heading"><?php /*echo 'Смотреть фильм ' . contentForMovie[0]['movies_name'].' онлайн.'; */?></h2></span>
     <video controls="controls"></video>
 </div>
-</div>
+</div>-->
