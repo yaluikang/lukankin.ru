@@ -18,6 +18,18 @@ class Sqlquery extends Query
         $moviesWithGenres = $this->addGenresForMovies($movies);
         echo json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
     }
+
+    public function findMoviesByGenre( $genre, $q )
+    {
+        $this->setMoviesQualifier( $q );
+        $borders = $this->getBorders();
+        $movies = $this->select("movies_id")->FROM('movies_has_genre')->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id')->where(['genres_name' => $genre, ])->all();
+        $ids = $this->getIdOfMovies( $movies );
+        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->where(['movies_qualifier' => $this->moviesQualifier])->offset( $borders['offset'] )->andWhere(['movies_id' => $ids ])->all();
+        $moviesWithGenres = $this->addGenresForMovies($movies);
+        echo json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
+    }
+
     public function addGenresForMovies($movies)
     {
         //Вызвать функцию getIdOfMovies для составления запроса в базу данных по id
@@ -39,6 +51,7 @@ class Sqlquery extends Query
         }
         return $movies;
     }
+
     public function getIdOfMovies($movies)
     {
         $arrayIdOfMovies = [];
@@ -53,14 +66,21 @@ class Sqlquery extends Query
     {
         $this->moviesQualifier = $q;
     }
-    public function pagination( $p, $q )
+
+    public function pagination( $p, $q, $genre )
     {
         //Увеличить $pageNumber
         //Задать новые лимит и оффсет для функции getMovies
         //Вызвать эту функцию с новыми лимитом и оффсетом
         $this->setPageNumber( $p );
-        $this->getMovies( $q );
+        if( $genre == null ){
+            $this->getMovies( $q );
+        } else {
+            $this->findMoviesByGenre( $genre, $q );
+        }
+
     }
+
     public function getBorders()
     {
         $numOfMovies = $this->numOfMovies;
@@ -74,10 +94,12 @@ class Sqlquery extends Query
         }
         return $borderArray;
     }
+
     public function setPageNumber( $p )
     {
         $this->pageNumber = $p;
     }
+
     public function increaseNumOfMovies($num)
     {
         $this->numOfMovies = $num;
