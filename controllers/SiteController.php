@@ -28,8 +28,7 @@ class SiteController extends Controller
     {
         $contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( $id );
-        echo json_encode( $contentForMovie,JSON_UNESCAPED_UNICODE );
-        //return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
+        return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
     }
     public function actionGetmovies ( $q )
     {
