@@ -15,6 +15,7 @@ $('#films').on( 'click', function(){
     //удалить весь контент с фильмами
     //сделать ajax-запрос по фильмам
     $pagination.resetPageNumber();
+    $pagination.deleteAllGetParameters();
     $('#colorposter').empty();
     $pagination.setGetParameter('q',1);
     $pagination.setUrl( "http://lukankin.ru/getmovies" );
@@ -25,6 +26,7 @@ $('#tvSeries').on( 'click', function(){
     //удалить весь контент с сериалами
     //сделать ajax-запрос по сериалам
     $pagination.resetPageNumber();
+    $pagination.deleteAllGetParameters();
     $('#colorposter').empty();
     $pagination.setGetParameter('q',2);
     $pagination.setUrl( "http://lukankin.ru/getmovies" );
@@ -34,6 +36,7 @@ $('#tvSeries').on( 'click', function(){
 $('.search-genre').each(function(){
     $(this).on('click', function(){
         $pagination.resetPageNumber();
+        $pagination.deleteAllGetParameters();
         $('#colorposter').empty();
         $pagination.setUrl( "http://lukankin.ru/moviesbygenre" );
         $pagination.setGetParameter('genre', $(this).text());

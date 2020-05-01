@@ -46,6 +46,11 @@ class AjaxBuilder extends Site
         delete this.getParameters[key];
     }
 
+    deleteAllGetParameters()
+    {
+        this.getParameters = {};
+    }
+
     setGetParametersToUrl()
     {
         let $str;

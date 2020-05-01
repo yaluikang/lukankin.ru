@@ -14,7 +14,6 @@ class Pagination extends AjaxBuilder
     resetPageNumber()
     {
         this.pageNumber = 1;
-        this.deleteGetParameter('p');
     }
 
 
