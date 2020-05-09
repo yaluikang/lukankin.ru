@@ -23,12 +23,12 @@ class Sqlquery extends Query
     {
         $this->setMoviesQualifier( $q );
         $borders = $this->getBorders();
-        $movies = $this->select("movies_id")->FROM('movies_has_genre')->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id')->where(['genres_name' => $genre, ])->offset( $borders['offset'] )->limit( $borders['limit'] )->all();
+        $movies = $this->select("movies_id")->FROM('movies_has_genre')->join('JOIN', 'genres', 'movies_has_genre.movies_genre=genres.genres_id')->where(['genres_name' => $genre, ])->andWhere(['movies_qualifier' => $this->moviesQualifier])->offset( $borders['offset'] )->limit( $borders['limit'] )->all();
         $ids = $this->getIdOfMovies( $movies );
         $this->join = null;
         $this->limit = null;
         $this->offset = null;
-        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->where(['movies_qualifier' => $this->moviesQualifier])->andWhere(['movies_id' => $ids ])->all();
+        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->where(['movies_id' => $ids ])->all();
         $moviesWithGenres = $this->addGenresForMovies($movies);
         echo json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
     }
