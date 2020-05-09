@@ -16,7 +16,7 @@ class Sqlquery extends Query
         $borders = $this->getBorders();
         $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->where(['movies_qualifier' => $this->moviesQualifier])->offset( $borders['offset'] )->limit( $borders['limit'] )->all();
         $moviesWithGenres = $this->addGenresForMovies($movies);
-        echo json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
+        echo json_encode( $borders,JSON_UNESCAPED_UNICODE );
     }
 
     public function findMoviesByGenre( $genre, $q )
