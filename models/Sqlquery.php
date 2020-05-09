@@ -28,7 +28,7 @@ class Sqlquery extends Query
         //$this->join = null;
         //$movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->where(['movies_qualifier' => $this->moviesQualifier])->offset( $borders['offset'] )->andWhere(['movies_id' => $ids ])->all();
         //$moviesWithGenres = $this->addGenresForMovies($movies);
-        echo json_encode( $borders,JSON_UNESCAPED_UNICODE );
+        echo json_encode( $movies,JSON_UNESCAPED_UNICODE );
     }
 
     public function getContentForMovie( $id )
