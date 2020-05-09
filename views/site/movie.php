@@ -3,6 +3,7 @@
 //echo json_encode( $contentForMovie[0],JSON_UNESCAPED_UNICODE );
 /*echo $contentForMovie[0]['movies_name'];
 echo 'images/' . $contentForMovie[0]['movies_url_poster'];*/
+\app\assets\AppAsset::setJs([]);
 ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <h2></h2>
