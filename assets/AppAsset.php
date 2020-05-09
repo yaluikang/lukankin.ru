@@ -33,7 +33,7 @@ class AppAsset extends AssetBundle
         /*'yii\bootstrap\BootstrapAsset',*/
     ];
 
-    public function setJs( $arr )
+    public static function setJs( $arr )
     {
         $this->js = $arr;
     }
