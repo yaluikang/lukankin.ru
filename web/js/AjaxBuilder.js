@@ -74,15 +74,17 @@ class AjaxBuilder extends Site
 
     checkThePage()
     {
+        let $ans;
         $.ajax({
             method: this.getMethod(),
             url: 'http://lukankin.ru/checkthepage',
             async: false,
             success: function( data )
             {
-                return data;
+                $ans =  data;
             }
         });
+        console.log($ans);
     }
 
     ajaxRequest()

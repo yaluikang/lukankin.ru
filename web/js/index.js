@@ -6,7 +6,7 @@ $(window).on('load',function(){
     $pagination.ajaxRequest();*/
     //Отправить запрос проверки странички
     //Получить ответ - запустить нужный скрипт
-    console.log($pagination.checkThePage());
+    $pagination.checkThePage();
 });
 
 $('#see-more').on( 'click', function(){
