@@ -25,8 +25,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/Site.js',
         'js/AjaxBuilder.js',
-        'js/Pagination.js',
-        'js/index.js'
+        'js/Pagination.js'
     ];
     public $depends = [
         'yii\web\YiiAsset'

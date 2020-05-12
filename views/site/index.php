@@ -1,3 +1,6 @@
+<?php
+    echo yii\helpers\Html::jsFile("@web/js/index.js");
+?>
 <div class="row MyMovies">
     <ul class="nav nav-tabs col-md col-sm col-" id="myTab" role="tablist">
         <li class="nav-item col-md-auto col-sm-auto col-auto paddingnol">
