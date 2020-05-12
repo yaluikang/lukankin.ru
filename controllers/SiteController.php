@@ -49,6 +49,6 @@ class SiteController extends Controller
 
     public function actionCheckthepage()
     {
-        return 123; /*$_SERVER['REQUEST_URI'];*/
+        return $_SERVER['REQUEST_URI'];
     }
 }
