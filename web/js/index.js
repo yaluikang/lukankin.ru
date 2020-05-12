@@ -1,13 +1,10 @@
 
 let $pagination = new Pagination("http://lukankin.ru/getmovies", "GET");
 
-$(window).on('load',function(){
+/*$(window).on('load',function(){
     $pagination.setGetParameter('q', 1);
     $pagination.ajaxRequest();
-    //Отправить запрос проверки странички
-    //Получить ответ - запустить нужный скрипт
-    //$pagination.checkThePage();
-});
+});*/
 
 $('#see-more').on( 'click', function(){
     $pagination.setUrl( "http://lukankin.ru/pagination" );

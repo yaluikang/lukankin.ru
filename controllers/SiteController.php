@@ -16,13 +16,11 @@ class SiteController extends Controller
     }
     public function actionFilms ()
     {
-        echo 'films';
-        //return $this->render('index');
+        return $this->render('index');
     }
     public function actionTvseries ()
     {
-        echo 'tvseries';
-        //return $this->render('index');
+        return $this->render('index');
     }
     public function actionMovie ( $id )
     {

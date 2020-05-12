@@ -72,21 +72,6 @@ class AjaxBuilder extends Site
         this.url += $str;
     }
 
-    checkThePage()
-    {
-        let $ans;
-        $.ajax({
-            method: this.getMethod(),
-            url: 'http://lukankin.ru/checkthepage',
-            async: false,
-            success: function( data )
-            {
-                $ans =  data;
-            }
-        });
-        console.log($ans);
-    }
-
     ajaxRequest()
     {
         let $json;

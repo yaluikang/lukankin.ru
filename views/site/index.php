@@ -1,6 +1,12 @@
 <?php
-    //echo yii\helpers\Html::jsFile("@web/js/index.js");
-    $this->registerJsFile('js/index.js'/*, ['position'=>\yii\web\View::POS_END]*/, ['depends' => [\app\assets\AppAsset::class]]);
+    $this->registerJsFile('js/index.js', ['depends' => [\app\assets\AppAsset::class]]);
+    if( $_SERVER['REQUEST_URI'] == '/tvseries' )
+    {
+        $this->registerJsFile('js/tvseries.js', ['depends' => [\app\assets\AppAsset::class]]);
+    } else if( $_SERVER['REQUEST_URI'] == '/films' )
+    {
+        $this->registerJsFile('js/films.js', ['depends' => [\app\assets\AppAsset::class]]);
+    }
 ?>
 <div class="row MyMovies">
     <ul class="nav nav-tabs col-md col-sm col-" id="myTab" role="tablist">
