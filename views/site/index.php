@@ -1,6 +1,6 @@
 <?php
     //echo yii\helpers\Html::jsFile("@web/js/index.js");
-    $this->registerJsFile('js/index.js', ['position'=>\yii\web\View::POS_END]);
+    $this->registerJsFile('js/index.js', ['position'=>\yii\web\View::POS_END], ['depends' => [\app\assets\AppAsset::class]]);
 ?>
 <div class="row MyMovies">
     <ul class="nav nav-tabs col-md col-sm col-" id="myTab" role="tablist">
