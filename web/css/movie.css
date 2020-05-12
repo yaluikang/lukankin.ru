@@ -1,0 +1,35 @@
+.film-main-info > li  {
+    margin-bottom: 22px;
+    font-size: 18px;
+    color: white;
+    list-style-type: none;
+}
+.search-genre {
+    cursor: pointer;
+}
+.key {
+    display: inline-block;
+    width: 120px;
+}
+.films-text {
+    font-size: 18px;
+    color: white;
+    padding: 0 60px;
+}
+.figure {
+    padding-left: 100px;
+}
+.figure-img {
+    border: 1px solid hsla(0, 0%, 100%, 0.8);
+}
+.heading {
+    color: white;
+    text-align: left;
+}
+.video {
+    padding: 0 60px;
+    margin: 50px 0;
+}
+video {
+    width: 100%;
+}
