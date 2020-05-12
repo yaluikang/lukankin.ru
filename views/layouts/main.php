@@ -24,7 +24,7 @@ $action = Yii::$app->controller->action->id;
 <header class="container">
     <div class="row margin MyMovies">
         <nav class="navbar navbar-expand-lg navbar-light col-sm-12 col-md-12 col-auto" id="nav">
-            <div><a class="navbar-brand col-6" href="/" id="navnav">HappyViewer</a></div>
+            <div><a class="navbar-brand col-6" href="<?php echo Url::to(['site/index']); ?>" id="navnav">HappyViewer</a></div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
