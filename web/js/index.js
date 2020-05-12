@@ -2,8 +2,10 @@
 let $pagination = new Pagination("http://lukankin.ru/getmovies", "GET");
 
 $(window).on('load',function(){
-    $pagination.setGetParameter('q', 1);
-    $pagination.ajaxRequest();
+    /*$pagination.setGetParameter('q', 1);
+    $pagination.ajaxRequest();*/
+    //Отправить запрос проверки странички
+    //Получить ответ - запустить нужный скрипт
 });
 
 $('#see-more').on( 'click', function(){

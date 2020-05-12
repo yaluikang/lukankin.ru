@@ -47,4 +47,8 @@ class SiteController extends Controller
         echo($row->findMoviesByGenre( $genre, $q ));
     }
 
+    public function actionCheckthepage()
+    {
+        return $_SERVER['REQUEST_URI'];
+    }
 }
