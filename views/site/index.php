@@ -3,7 +3,7 @@
     if( $_SERVER['REQUEST_URI'] == '/tvseries' )
     {
         $this->registerJsFile('js/tvseries.js', ['depends' => [\app\assets\AppAsset::class]]);
-    } else if( $_SERVER['REQUEST_URI'] == '/films' )
+    } else if( $_SERVER['REQUEST_URI'] == '/films' || $_SERVER['REQUEST_URI'] == '/index' )
     {
         $this->registerJsFile('js/films.js', ['depends' => [\app\assets\AppAsset::class]]);
     }
