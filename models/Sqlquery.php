@@ -19,6 +19,17 @@ class Sqlquery extends Query
         echo json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
     }
 
+    public function getMovieBySearch( $search )
+    {
+        //провести поиск запроса по названиям фильма, году
+        //если ничего не найдено - провести поиск по жанрам
+        //отдать объект json с найденными результами
+        //если ничего не нашлось - отдать ошибку в поиске
+        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->where(['like', 'movies_name', $search, 'or like', 'movies_date', $search ])->createCommand()->sql;
+        echo json_encode( $movies,JSON_UNESCAPED_UNICODE );
+    }
+
+    //Поиск фильмов по жанру
     public function findMoviesByGenre( $genre, $q )
     {
         $this->setMoviesQualifier( $q );
@@ -33,6 +44,7 @@ class Sqlquery extends Query
         echo json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
     }
 
+    //Выдает весь контент по экземпляру фильма
     public function getContentForMovie( $id )
     {
         $contentOfMovie = $this->select('*')->FROM('movies')->where(['movies_id' => $id])->all();
@@ -40,6 +52,7 @@ class Sqlquery extends Query
         return $contentOfMovie;
     }
 
+    //Функция для добавляения списка жанров списку фильмов
     public function addGenresForMovies( $movies )
     {
         //Вызвать функцию getIdOfMovies для составления запроса в базу данных по id
@@ -62,6 +75,7 @@ class Sqlquery extends Query
         return $movies;
     }
 
+    //Выдает id объектов фильмов
     public function getIdOfMovies( $movies )
     {
         $arrayIdOfMovies = [];
