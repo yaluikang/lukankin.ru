@@ -30,6 +30,7 @@ class Sqlquery extends Query
         {
 
         }*/
+        $movies = $this->addGenresForMovies( $movies );
         echo json_encode( $movies,JSON_UNESCAPED_UNICODE );
     }
 
