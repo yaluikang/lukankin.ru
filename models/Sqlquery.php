@@ -25,7 +25,8 @@ class Sqlquery extends Query
         //если ничего не найдено - провести поиск по жанрам
         //отдать объект json с найденными результами
         //если ничего не нашлось - отдать ошибку в поиске
-        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->where(['like', 'movies_name', $search])->createCommand()->sql;
+        $movies = $this->select("movies_id, movies_name, movies_url_poster, movies_date")->FROM("movies")->where(['like', 'movies_name', $search])->orWhere('like','movies_date', $search)->all();
+
         echo json_encode( $movies,JSON_UNESCAPED_UNICODE );
     }
 
