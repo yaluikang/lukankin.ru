@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Url;
 
+$this->registerJsFile('js/index.js', ['depends' => [\app\assets\AppAsset::class]]);
+$this->registerJsFile('js/search.js', ['depends' => [\app\assets\AppAsset::class]]);
 ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <div class="col-md-12 col-sm-12 col-lg-12 text-center new row">
