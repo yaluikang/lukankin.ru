@@ -43,7 +43,7 @@ $action = Yii::$app->controller->action->id;
                         <a class="nav-link" href="#">Что посмотреть?</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 col-md-auto col-sm-auto search" action="search/search.php">
+                <form class="form-inline my-2 my-lg-0 col-md-auto col-sm-auto search" action="<?php echo Url::to(['site/search']); ?>">
                     <input class="form-control mr-sm-2 search" id="test" value="" name="search" type="search" placeholder="Поиск">
                     <button class="btn btn-outline-success my-2 my-sm-0 search" type="submit">Найти</button>
                 </form>

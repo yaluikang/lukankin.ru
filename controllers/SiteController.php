@@ -45,7 +45,12 @@ class SiteController extends Controller
         echo($row->findMoviesByGenre( $genre, $q ));
     }
 
-    public function actionSearch( $search )
+    public function actionSearch()
+    {
+        return $this->render('search');
+    }
+
+    public function actionSearchform( $search )
     {
         $row = new Sqlquery();
         echo($row->getMovieBySearch( $search ));
