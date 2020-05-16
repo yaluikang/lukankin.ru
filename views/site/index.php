@@ -110,7 +110,7 @@
     </div>
     <div class=" col-md-auto col-sm-auto col-auto margin-top paddingimp">
         <form class="form-inline my-lg-0" action="<?php echo Url::to(['site/search']); ?>">
-            <input class="form-control mr-sm-2 col-md col-sm" type="search" placeholder="Поиск">
+            <input class="form-control mr-sm-2 col-md col-sm" value="" name="search" type="search" placeholder="Поиск">
         </form>
         <a href="#"><p class="text-capitalize text-nowrap">Расширенный поиск</p></a>
     </div>
