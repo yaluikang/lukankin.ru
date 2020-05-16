@@ -50,7 +50,7 @@ class SiteController extends Controller
         Yii::$app->user->login($uid);*/
         $userJoinForm = new UserJoinForm();
 
-        return $this->render('authorization', ['userJoinFrom' => $userJoinForm]);
+        return $this->render('authorization', ['userJoinForm' => $userJoinForm]);
     }
 
     public function actionGetmovies ( $q )
