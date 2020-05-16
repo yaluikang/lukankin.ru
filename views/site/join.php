@@ -6,7 +6,7 @@ $this->registerCssFIle("@web/css/authorization.css");
 ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <div class="col-md-12 col-sm-12 col-lg-12 text-center row justify-content-center">
-        <div class="col-lg-auto shipping-form display-none" id="registration">
+        <div class="col-lg-auto shipping-form" id="registration">
             <h5 class="color-white font-weight-600">Регистрация</h5>
             <?php $form = ActiveForm::begin(['id' => 'user-join-form']); ?>
             <?= $form->field($userJoinForm, 'name') ?>
