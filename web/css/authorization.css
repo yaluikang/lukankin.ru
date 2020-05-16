@@ -1,0 +1,42 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.form-authorization {
+    width: 350px!important;
+}
+.shipping-form {
+    margin: auto;
+}
+#content {
+    height: 80%;
+}
+.registration_authorization{
+    margin-top: 20px;
+}
+footer {
+    height: 20%;
+}
+.display-none {
+    display: none!important;
+}
+.color-white {
+    color: white;
+}
+.toggle-button {
+    cursor: pointer;
+}
+.font-weight-600{
+    font-weight: 600;
+}
+#colorposter {
+    height: 100%;
+    padding-top: 56px!important;
+}
+input[type=submit].authorization{
+
+}
+.authorization {
+    margin: 20px 0;
+}
