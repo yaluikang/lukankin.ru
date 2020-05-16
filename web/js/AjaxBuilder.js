@@ -95,8 +95,8 @@ class AjaxBuilder extends Site
     {
         /*if( this.getUrl() == 'http://lukankin.ru/test' || this.getUrl() == 'http://lukankin.ru/pagination' )
         {*/
-        console.log( $.parseJSON( this.json.length ) );
-        if( $.parseJSON( this.json.length ) < 1 )
+        console.log( $.parseJSON( this.json ).length );
+        if( $.parseJSON( this.json ).length < 1 )
         {
             console.log( 'nothing' );
             this.nothing();
