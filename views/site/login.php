@@ -11,6 +11,7 @@ $this->registerCssFIle("@web/css/authorization.css");
             <?php $form = ActiveForm::begin(['id' => 'user-login-form']); ?>
             <?= $form->field($userLoginForm, 'email') ?>
             <?= $form->field($userLoginForm, 'password')->passwordInput(); ?>
+            <?= $form->field($userLoginForm, 'remember')->checkbox() ?>
             <?= \yii\helpers\Html::submitButton('Enter',
                 ['class' => 'btn']) ?>
             <?php ActiveForm::end(); ?>
