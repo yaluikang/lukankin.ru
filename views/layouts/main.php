@@ -48,6 +48,14 @@ $action = Yii::$app->controller->action->id;
                     <button class="btn btn-outline-success my-2 my-sm-0 search" type="submit">Найти</button>
                 </form>
             </div>
+            <?php
+                if(Yii::$app->user->isGuest)
+                {
+                    echo '<a href="../authorization/authorization.php">Вход</a>';
+                } else {
+                    echo "<a href='../authorization/authorization.php'>Личный кабинет</a><a href='/' style='margin-left: 10px;'>Выход</a>";
+                }
+            ?>
         </nav>
     </div>
 </header>
