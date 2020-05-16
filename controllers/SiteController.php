@@ -74,4 +74,10 @@ class SiteController extends Controller
         echo($row->getMovieBySearch( $search ));
     }
 
+    public function actionLogout()
+    {
+        Yii:$app->user->logout();
+        return $this->redirect("/");
+    }
+
 }
