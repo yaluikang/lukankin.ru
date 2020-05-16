@@ -84,7 +84,7 @@ class Site
         });
         $posterFigure.appendTo($posterA);
         let $posterImg = $('<img>',{
-            src: '../Posters/image.jpg',
+            src: '../images/image.jpg',
             class: 'figure-img img-fluid rounded'
         });
         $posterImg.appendTo($posterFigure);
