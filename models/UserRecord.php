@@ -20,4 +20,12 @@ class UserRecord extends ActiveRecord
         $this->passhash = "TEST";
         $this->status = 2;
     }
+
+    public function setUserJoinForm($userJoinForm)
+    {
+        $this->name = $userJoinForm->name;
+        $this->email = $userJoinForm->email;
+        $this->passhash = $userJoinForm->password;
+        $this->status = 1;
+    }
 }
