@@ -5,6 +5,7 @@ namespace app\controllers;
 
 use app\models\Movies;
 use app\models\Movies_has_genre;
+use app\models\UserIdentity;
 use app\models\UserRecord;
 use yii\web\Controller;
 use app\models\Sqlquery;
@@ -40,9 +41,11 @@ class SiteController extends Controller
 
     public function actionAuthorization()
     {
-        $userRecord = new UserRecord();
+        /*$userRecord = new UserRecord();
         $userRecord->setTestUser();
-        $userRecord->save();
+        $userRecord->save();*/
+        $uid = UserIdentity::findIdentity(1);
+        Yii::$app->user->login($uid);
 
         return $this->render('authorization');
     }
