@@ -20,21 +20,12 @@ $this->registerCssFIle("@web/css/authorization.css");
         <div class="col-lg-auto shipping-form display-none" id="registration">
             <h5 class="color-white font-weight-600">Регистрация</h5>
             <form class="form-authorization" action="/authorization/authorization.php" method="post">
-                <input class="form-control mr-sm-2 authorization" data-hint="Подсказка" value="" name="mail_r" type="search" placeholder="Mail" />
-                <input class="form-control mr-sm-2 authorization" value="" name="login_r" type="search" placeholder="Логин" />
-                <input class="form-control mr-sm-2 authorization" value="" name="password_r" type="password" placeholder="Пароль" />
+                <input class="form-control mr-sm-2 authorization" data-hint="Подсказка" value="" name="UserJoinForm[email]" type="search" placeholder="Mail" />
+                <input class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[name]" type="search" placeholder="Логин" />
+                <input class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[password]" type="password" placeholder="Пароль" />
+                <input class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[password2]" type="password" placeholder="Повторите пароль" />
                 <input class="btn btn-outline-success my-2 my-sm-0 authorization" name="reg_in" type="submit" value="Зарегистрироваться" />
             </form>
-            <?php $form = ActiveForm::begin(['id' => 'user-join-form']); ?>
-                <?= $form->field($userJoinForm,'name') ?>
-                <?= $form->field($userJoinForm,'email') ?>
-                <?= $form->field($userJoinForm,'password')->passwordInput() ?>
-                <?= $form->field($userJoinForm,'password2')->passwordInput() ?>
-                <?= Html::submitButton('Create', ['class' => 'btn btn-outline-success my-2 my-sm-0 authorization']) ?>
-            <?php ActiveForm::end(); ?>
-
-
-
             <div class="registration_authorization row justify-content-center color-white"><div class="toggle-button" style="margin-right: 5px;">Вход </div><div>  в существующую учетную запись</div></div>
         </div>
     </div>
