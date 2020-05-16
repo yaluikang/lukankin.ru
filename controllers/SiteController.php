@@ -14,20 +14,34 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
     public function actionFilms ()
     {
         return $this->render('index');
     }
+
     public function actionTvseries ()
     {
         return $this->render('index');
     }
+
     public function actionMovie ( $id )
     {
         $contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( $id );
         return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
     }
+
+    public function actionSearch()
+    {
+        return $this->render('search');
+    }
+
+    public function actionAuthorization()
+    {
+        return$this->render('authorization');
+    }
+
     public function actionGetmovies ( $q )
     {
         $rows = new Sqlquery();
@@ -45,14 +59,10 @@ class SiteController extends Controller
         echo($row->findMoviesByGenre( $genre, $q ));
     }
 
-    public function actionSearch()
-    {
-        return $this->render('search');
-    }
-
     public function actionSearchform( $search )
     {
         $row = new Sqlquery();
         echo($row->getMovieBySearch( $search ));
     }
+
 }
