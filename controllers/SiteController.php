@@ -37,6 +37,10 @@ class SiteController extends Controller
         return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
     }
 
+    public function actionAccount()
+    {
+        return $this->render('account');
+    }
     public function actionSearch()
     {
         return $this->render('search');
