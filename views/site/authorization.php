@@ -19,7 +19,7 @@ $this->registerCssFIle("@web/css/authorization.css");
         </div>
         <div class="col-lg-auto shipping-form display-none" id="registration">
             <h5 class="color-white font-weight-600">Регистрация</h5>
-            <form class="form-authorization" action="/authorization" method="post">
+            <!--<form class="form-authorization" action="/authorization" method="post">
                 <div class="form-group field-userjoinform-email">
                     <label class="control-label" for="userjoinform-email">Email</label>
                     <input id="userjoinform-email" class="form-control mr-sm-2 authorization" data-hint="Подсказка" value="" name="UserJoinForm[email]" type="search" placeholder="Mail" />
@@ -41,7 +41,15 @@ $this->registerCssFIle("@web/css/authorization.css");
                     <div class="help-block"></div>
                 </div>
                 <input class="btn btn-outline-success my-2 my-sm-0 authorization" type="submit" value="Зарегистрироваться" />
-            </form>
+            </form>-->
+            <?php $form = ActiveForm::begin(['id' => 'user-join-form']); ?>
+            <?= $form->field($userJoinForm, 'name') ?>
+            <?= $form->field($userJoinForm, 'email') ?>
+            <?= $form->field($userJoinForm, 'password')->passwordInput(); ?>
+            <?= $form->field($userJoinForm, 'password2')->passwordInput(); ?>
+            <?= \yii\helpers\Html::submitButton('Create',
+                ['class' => 'btn']) ?>
+            <?php ActiveForm::end(); ?>
             <div class="registration_authorization row justify-content-center color-white"><div class="toggle-button" style="margin-right: 5px;">Вход </div><div>  в существующую учетную запись</div></div>
         </div>
     </div>
