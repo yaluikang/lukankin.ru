@@ -14,7 +14,7 @@ $this->registerCssFIle("@web/css/authorization.css");
             <?= \yii\helpers\Html::submitButton('Enter',
                 ['class' => 'btn']) ?>
             <?php ActiveForm::end(); ?>
-            <div class="registration_authorization row justify-content-center color-white"><div class="toggle-button" style="margin-right: 5px;">Регистрация </div><div>  нового пользователя</div></div>
+            <div class="registration_authorization row justify-content-center color-white"><div class="toggle-button" style="margin-right: 5px;"><a href="/join">Регистрация</a> </div><div>  нового пользователя</div></div>
         </div>
     </div>
 </div>
