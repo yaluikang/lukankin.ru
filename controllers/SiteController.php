@@ -5,6 +5,7 @@ namespace app\controllers;
 
 use app\models\Movies;
 use app\models\Movies_has_genre;
+use app\models\UserRecord;
 use yii\web\Controller;
 use app\models\Sqlquery;
 
@@ -39,7 +40,11 @@ class SiteController extends Controller
 
     public function actionAuthorization()
     {
-        return$this->render('authorization');
+        $userRecord = new UserRecord();
+        $userRecord->setTestUser();
+        $userRecord->save();
+
+        return $this->render('authorization');
     }
 
     public function actionGetmovies ( $q )
