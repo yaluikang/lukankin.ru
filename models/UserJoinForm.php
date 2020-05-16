@@ -28,8 +28,18 @@ class UserJoinForm extends Model
         ];
     }
 
+    public function setUserRecord($userRecord)
+    {
+        $this->name = $userRecord->name;
+        $this->email = $userRecord->email;
+        $this->password = $this->password2 = "qwas";
+    }
+
     public function errorIfEmailUsed()
     {
-        //$this->addError('email', 'Email занят');
+        if ($this->hasErrors())
+            return;
+        if (UserRecord::existsEmail($this->email))
+            $this->addError('email', 'This e-mail already exists');
     }
 }

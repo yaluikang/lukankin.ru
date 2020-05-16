@@ -7,6 +7,7 @@ use app\models\Movies;
 use app\models\Movies_has_genre;
 use app\models\UserIdentity;
 use app\models\UserJoinForm;
+use app\models\UserLoginForm;
 use app\models\UserRecord;
 use Yii;
 use yii\web\Controller;
@@ -41,19 +42,14 @@ class SiteController extends Controller
         return $this->render('search');
     }
 
-    public function actionAuthorization()
+    public function actionJoin()
     {
-        /*$userRecord = new UserRecord();
-        $userRecord->setTestUser();
-        $userRecord->save();*/
-        /*$uid = UserIdentity::findIdentity(1);
-        Yii::$app->user->login($uid);*/
         $userJoinForm = new UserJoinForm();
         if(Yii::$app->request->isPost)
             return $this->actionJoinPost();
         $userJoinForm = new UserJoinForm();
 
-        return $this->render('authorization', ['userJoinForm' => $userJoinForm]);
+        return $this->render('join', ['userJoinForm' => $userJoinForm]);
     }
 
     private function actionJoinPost()
@@ -66,7 +62,27 @@ class SiteController extends Controller
                 $userRecord->save();
                 return $this->redirect('/authorization');
             }
-        return $this->render('authorization', ['userJoinForm' => $userJoinForm]);
+        return $this->render('join', ['userJoinForm' => $userJoinForm]);
+    }
+
+    public function actionLogin ()
+    {
+        if (Yii::$app->request->isPost)
+            return $this->actionLoginPost();
+        $userLoginForm = new UserLoginForm();
+        return $this->render('login', compact('userLoginForm'));
+    }
+
+    private function actionLoginPost()
+    {
+        $userLoginForm = new UserLoginForm();
+        if ($userLoginForm->load(Yii::$app->request->post()))
+            if ($userLoginForm->validate())
+            {
+                $userLoginForm->login();
+                return $this->redirect('/');
+            }
+        return $this->render('login', compact('userLoginForm'));
     }
 
     public function actionGetmovies ( $q )

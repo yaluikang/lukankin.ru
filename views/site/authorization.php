@@ -10,11 +10,17 @@ $this->registerCssFIle("@web/css/authorization.css");
     <div class="col-md-12 col-sm-12 col-lg-12 text-center row justify-content-center">
         <div class="col-lg-auto shipping-form" id="authorization">
             <h5 class="color-white font-weight-600">Авторизация</h5>
-            <form class="form-authorization" action="/authorization/authorization.php" method="post">
+            <!--<form class="form-authorization" action="/authorization/authorization.php" method="post">
                 <input class="form-control mr-sm-2 authorization" id="test" data-hint="Подсказка" value="" name="login" type="search" placeholder="Логин" />
                 <input class="form-control mr-sm-2 authorization" value="" name="password" type="password" placeholder="Пароль" />
                 <input class="btn btn-outline-success my-2 my-sm-0 authorization" name="log_in" type="submit" value="Войти" />
-            </form>
+            </form>-->
+            <?php $form = ActiveForm::begin(['id' => 'user-login-form']); ?>
+            <?= $form->field($userLoginForm, 'email') ?>
+            <?= $form->field($userLoginForm, 'password')->passwordInput(); ?>
+            <?= \yii\helpers\Html::submitButton('Enter',
+                ['class' => 'btn']) ?>
+            <?php ActiveForm::end(); ?>
             <div class="registration_authorization row justify-content-center color-white"><div class="toggle-button" style="margin-right: 5px;">Регистрация </div><div>  нового пользователя</div></div>
         </div>
         <div class="col-lg-auto shipping-form display-none" id="registration">
