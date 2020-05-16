@@ -51,7 +51,7 @@ $action = Yii::$app->controller->action->id;
             <?php
                 if(Yii::$app->user->isGuest)
                 {
-                    echo '<a href="/authorization">Вход</a>';
+                    echo '<a href="/login">Вход</a>';
                 } else {
                     $name = Yii::$app->user->getIdentity()->name;
                     $urlLogout = Url::to(['site/logout']);
