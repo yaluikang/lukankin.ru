@@ -38,7 +38,6 @@ class UserLoginForm extends Model
     {
         if ($this->hasErrors())
             return;
-        $this->userRecord = UserRecord::findUserByEmail($this->email);
         if ($this->userRecord->passhash != $this->password)
             $this->addError('password', 'Wrong password');
     }
@@ -47,8 +46,7 @@ class UserLoginForm extends Model
     {
         if($this->hasErrors())
             return;
-        $userRecord = UserRecord::findUserByEmail($this->email);
-        $userIdentity = UserIdentity::findIdentity($userRecord->id);
+        $userIdentity = UserIdentity::findIdentity($this->userRecord->id);
         Yii::$app->user->login($userIdentity);
     }
 }
