@@ -1,6 +1,11 @@
 <?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
 $this->registerCssFIle("@web/css/authorization.css");
-?>
+
+ ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <div class="col-md-12 col-sm-12 col-lg-12 text-center row justify-content-center">
         <div class="col-lg-auto shipping-form" id="authorization">
@@ -20,6 +25,16 @@ $this->registerCssFIle("@web/css/authorization.css");
                 <input class="form-control mr-sm-2 authorization" value="" name="password_r" type="password" placeholder="Пароль" />
                 <input class="btn btn-outline-success my-2 my-sm-0 authorization" name="reg_in" type="submit" value="Зарегистрироваться" />
             </form>
+            <?php $form = ActiveForm::begin(['id' => 'user-join-form']); ?>
+                <?= $form->field($userJoinForm,'name') ?>
+                <?= $form->field($userJoinForm,'email') ?>
+                <?= $form->field($userJoinForm,'password')->passwordInput() ?>
+                <?= $form->field($userJoinForm,'password2')->passwordInput() ?>
+                <?= Html::submitButton('Create', ['class' => 'btn btn-outline-success my-2 my-sm-0 authorization']) ?>
+            <?php ActiveForm::end(); ?>
+
+
+
             <div class="registration_authorization row justify-content-center color-white"><div class="toggle-button" style="margin-right: 5px;">Вход </div><div>  в существующую учетную запись</div></div>
         </div>
     </div>

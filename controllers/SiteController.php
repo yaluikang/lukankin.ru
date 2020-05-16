@@ -6,6 +6,7 @@ namespace app\controllers;
 use app\models\Movies;
 use app\models\Movies_has_genre;
 use app\models\UserIdentity;
+use app\models\UserJoinForm;
 use app\models\UserRecord;
 use Yii;
 use yii\web\Controller;
@@ -45,10 +46,11 @@ class SiteController extends Controller
         /*$userRecord = new UserRecord();
         $userRecord->setTestUser();
         $userRecord->save();*/
-        $uid = UserIdentity::findIdentity(1);
-        Yii::$app->user->login($uid);
+        /*$uid = UserIdentity::findIdentity(1);
+        Yii::$app->user->login($uid);*/
+        $userJoinForm = new UserJoinForm();
 
-        return $this->render('authorization');
+        return $this->render('authorization', ['userJoinFrom' => $userJoinForm]);
     }
 
     public function actionGetmovies ( $q )
