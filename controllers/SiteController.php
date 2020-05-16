@@ -7,6 +7,7 @@ use app\models\Movies;
 use app\models\Movies_has_genre;
 use app\models\UserIdentity;
 use app\models\UserRecord;
+use Yii;
 use yii\web\Controller;
 use app\models\Sqlquery;
 
