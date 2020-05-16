@@ -64,6 +64,7 @@ class SiteController extends Controller
                 $userRecord = new UserRecord();
                 $userRecord->setUserJoinForm($userJoinForm);
                 $userRecord->save();
+                return $this->redirect('/authorization');
             }
         return $this->render('authorization', ['userJoinForm' => $userJoinForm]);
     }
