@@ -23,8 +23,8 @@ class UserJoinForm extends Model
             ['name', 'string', 'min' => 3, 'max' => 30],
             ['email', 'email'],
             ['password', 'string', 'min' => 6],
-            ['password2', 'compare', 'compareAttribute' => 'password']/*,
-            ['email', 'errorIfEmailUsed']*/
+            ['password2', 'compare', 'compareAttribute' => 'password'],
+            ['email', 'errorIfEmailUsed']
         ];
     }
 
