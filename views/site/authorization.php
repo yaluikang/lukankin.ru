@@ -20,11 +20,27 @@ $this->registerCssFIle("@web/css/authorization.css");
         <div class="col-lg-auto shipping-form display-none" id="registration">
             <h5 class="color-white font-weight-600">Регистрация</h5>
             <form class="form-authorization" action="/authorization" method="post">
-                <input class="form-control mr-sm-2 authorization" data-hint="Подсказка" value="" name="UserJoinForm[email]" type="search" placeholder="Mail" />
-                <input class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[name]" type="search" placeholder="Логин" />
-                <input class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[password]" type="password" placeholder="Пароль" />
-                <input class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[password2]" type="password" placeholder="Повторите пароль" />
-                <input class="btn btn-outline-success my-2 my-sm-0 authorization" name="reg_in" type="submit" value="Зарегистрироваться" />
+                <div class="form-group field-userjoinform-email">
+                    <label class="control-label" for="userjoinform-email">Email</label>
+                    <input id="userjoinform-email" class="form-control mr-sm-2 authorization" data-hint="Подсказка" value="" name="UserJoinForm[email]" type="search" placeholder="Mail" />
+                    <div class="help-block"></div>
+                </div>
+                <div class="form-group field-userjoinform-name">
+                    <label class="control-label" for="userjoinform-name">Логин</label>
+                    <input id="userjoinform-name" class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[name]" type="search" placeholder="Логин" />
+                    <div class="help-block"></div>
+                </div>
+                <div class="form-group field-userjoinform-password">
+                    <label class="control-label" for="userjoinform-password">Пароль</label>
+                    <input id="userjoinform-password" class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[password]" type="password" placeholder="Пароль" />
+                    <div class="help-block"></div>
+                </div>
+                <div class="form-group field-userjoinform-password2">
+                    <label class="control-label" for="userjoinform-password2">Пароль</label>
+                    <input id="userjoinform-password2" class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[password2]" type="password" placeholder="Повторите пароль" />
+                    <div class="help-block"></div>
+                </div>
+                <input class="btn btn-outline-success my-2 my-sm-0 authorization" type="submit" value="Зарегистрироваться" />
             </form>
             <div class="registration_authorization row justify-content-center color-white"><div class="toggle-button" style="margin-right: 5px;">Вход </div><div>  в существующую учетную запись</div></div>
         </div>
