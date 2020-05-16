@@ -95,10 +95,13 @@ class AjaxBuilder extends Site
     {
         /*if( this.getUrl() == 'http://lukankin.ru/test' || this.getUrl() == 'http://lukankin.ru/pagination' )
         {*/
+        console.log( this.json.length );
         if( this.json.length < 1 )
         {
+            console.log( 'nothing' );
             this.nothing();
         } else {
+            console.log( 'something' );
             this.addMovies( this.json );
         }
         /*}*/
