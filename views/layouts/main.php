@@ -51,11 +51,11 @@ $action = Yii::$app->controller->action->id;
             <?php
                 if(Yii::$app->user->isGuest)
                 {
-                    echo '<a href="../authorization/authorization.php">Вход</a>';
+                    echo '<a href="/authorization">Вход</a>';
                 } else {
                     $name = Yii::$app->user->getIdentity()->name;
                     $urlLogout = Url::to(['site/logout']);
-                    echo "<a href='../authorization/authorization.php'>Личный кабинет(".$name.")</a><a href='".$urlLogout."' style='margin-left: 10px;'>Выход</a>";
+                    echo "<a href='/authorization'>Личный кабинет(".$name.")</a><a href='".$urlLogout."' style='margin-left: 10px;'>Выход</a>";
                 }
             ?>
         </nav>
