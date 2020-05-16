@@ -19,7 +19,7 @@ $this->registerCssFIle("@web/css/authorization.css");
         </div>
         <div class="col-lg-auto shipping-form display-none" id="registration">
             <h5 class="color-white font-weight-600">Регистрация</h5>
-            <form class="form-authorization" action="/authorization/authorization.php" method="post">
+            <form class="form-authorization" action="/authorization.php" method="post">
                 <input class="form-control mr-sm-2 authorization" data-hint="Подсказка" value="" name="UserJoinForm[email]" type="search" placeholder="Mail" />
                 <input class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[name]" type="search" placeholder="Логин" />
                 <input class="form-control mr-sm-2 authorization" value="" name="UserJoinForm[password]" type="password" placeholder="Пароль" />

@@ -49,7 +49,19 @@ class SiteController extends Controller
         /*$uid = UserIdentity::findIdentity(1);
         Yii::$app->user->login($uid);*/
         $userJoinForm = new UserJoinForm();
+        if(Yii::$app->request->isPost)
+            return $this->actionJoinPost();
+        $userJoinForm = new UserJoinForm();
 
+        return $this->render('authorization', ['userJoinForm' => $userJoinForm]);
+    }
+
+    private function actionJoinPost()
+    {
+        $userJoinForm = new UserJoinForm();
+        if($userJoinForm->load(Yii::$app->request->post()))
+            if($userJoinForm->validate())
+                $userJoinForm->name.= "ok";
         return $this->render('authorization', ['userJoinForm' => $userJoinForm]);
     }
 
