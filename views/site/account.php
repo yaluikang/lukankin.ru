@@ -14,7 +14,12 @@ $this->registerCssFIle("@web/css/account.css");
 
         </div>-->
         <div class="menu col-md-4 col-sm-4 col-lg-4">
-            <div class="color-white font-weight-600">Никнейм</div>
+            <div class="row">
+                <div class="color-white font-weight-600 col-md-6 col-sm-6 col-lg-6">
+                    <img src="../images/pngwing.com.png" id="icon">
+                </div>
+                <div class="color-white font-weight-600 col-md-6 col-sm-6 col-lg-6">Никнейм</div>
+            </div>
             <div>Просмотрено</div>
             <div>Закладки</div>
             <div>Статистика</div>
