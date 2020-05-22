@@ -15,10 +15,10 @@ $this->registerCssFIle("@web/css/account.css");
         </div>-->
         <div class="menu col-md-4 col-sm-4 col-lg-4">
             <div class="row">
-                <div class="color-white font-weight-600 col-md-6 col-sm-6 col-lg-6">
+                <div class="color-white font-weight-600 col-md-3 col-sm-3 col-lg-3">
                     <img src="../images/pngwing.com.png" id="icon">
                 </div>
-                <div class="color-white font-weight-600 col-md-6 col-sm-6 col-lg-6">Никнейм</div>
+                <div class="color-white font-weight-600 col-md-9 col-sm-9 col-lg-9" id="login">Никнейм</div>
             </div>
             <div>Просмотрено</div>
             <div>Закладки</div>
