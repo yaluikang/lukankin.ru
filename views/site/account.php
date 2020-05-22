@@ -26,7 +26,7 @@ $this->registerCssFIle("@web/css/account.css");
             <div>Настройки</div>
         </div>
         <div class="content col-md-8 col-sm-8 col-lg-8">
-            <h5 class="color-white font-weight-600">Контент</h5>
+            <h5 class="font-weight-600">Контент</h5>
         </div>
 
     </div>
