@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 $this->registerCssFIle("@web/css/authorization.css");
+$this->registerCssFIle("@web/css/account.css");
 
  ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
