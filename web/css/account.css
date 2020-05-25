@@ -22,7 +22,9 @@
     margin-bottom: 14px;
     list-style-type: none;
 }
-
+#menu li {
+    display: inline-block;
+}
 #menu div, #menu li a{
     color: white;
 }
