@@ -54,9 +54,9 @@ $name = Yii::$app->user->getIdentity()->name;
         <div class="content col-md-8 col-sm-8 col-lg-8">
             <h5 class="font-weight-600">Контент</h5>
             <?php
-                if( $markerOfMenu == 'setting')
+                if( $markerOfMenu == 'settings')
                 {
-                    echo 'setting';
+                    echo 'settings';
                 } else if( $markerOfMenu == 'viewed' )
                 {
                     echo 'viewed';
