@@ -13,16 +13,16 @@ $this->registerCssFIle("@web/css/account.css");
             <h5 class="color-white font-weight-600">Здесь будет личный кабинет</h5>
 
         </div>-->
-        <div class="menu col-md-4 col-sm-4 col-lg-4">
+        <div class="menu col-md-4 col-sm-4 col-lg-4" id="menu">
             <div class="row">
                 <div class="color-white font-weight-600 col-md-3 col-sm-3 col-lg-3">
                     <img src="../images/pngwing.com.png" id="icon">
                 </div>
                 <div class="color-white font-weight-600 col-md-9 col-sm-9 col-lg-9" id="login">Никнейм</div>
             </div>
+            <div>Статистика</div>
             <div>Просмотрено</div>
             <div>Закладки</div>
-            <div>Статистика</div>
             <div>Настройки</div>
         </div>
         <div class="content col-md-8 col-sm-8 col-lg-8">
