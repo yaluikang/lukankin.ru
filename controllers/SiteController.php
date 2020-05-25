@@ -121,7 +121,7 @@ class SiteController extends Controller
 
     public function actionTest( $m )
     {
-        echo $_SERVER['SCRIPT_FILENAME'];
+        echo preg_match('///account/', $_SERVER['REQUEST_URI'], $matches, PREG_OFFSET_CAPTURE);
     }
 
 }
