@@ -7,6 +7,9 @@ use yii\widgets\ActiveForm;
 $this->registerCssFIle("@web/css/authorization.css");
 $this->registerCssFIle("@web/css/account.css");
 
+
+$name = Yii::$app->user->getIdentity()->name;
+
  ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <div class="account col-md-12 col-sm-12 col-lg-12 text-center row justify-content-center" id="account">
