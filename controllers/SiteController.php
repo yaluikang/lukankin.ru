@@ -119,4 +119,9 @@ class SiteController extends Controller
         return $this->redirect("/");
     }
 
+    public function actionTest( $m )
+    {
+        echo $_SERVER['SCRIPT_FILENAME'];
+    }
+
 }
