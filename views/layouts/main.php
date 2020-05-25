@@ -61,40 +61,46 @@ $action = Yii::$app->controller->action->id;
         </nav>
     </div>
 </header>
-<section class="container">
-    <div class="row">
-        <div class="jumbotron jumbotron-fluid MyCarousel col-md-12 col-sm-12 col-12" id="Karusel">
+<?php
+if($_SERVER['REQUEST_URI'] != '/account')
+{
 
-            <div id="carouselExampleIndicators" class="carousel slide col-md-12 col-sm-12 col-12" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="css/860babe7-f43c-4b69-a54f-20c544d3282e.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="css/6577fdb5-22a2-4952-9cdc-9c6d8a69c2eb.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="css/5bcf14c5-fc1b-484c-acb0-7c07ffaaba29.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+    echo '<section class="container" >
+    <div class="row" >
+        <div class="jumbotron jumbotron-fluid MyCarousel col-md-12 col-sm-12 col-12" id = "Karusel" >
 
-        </div>
-    </div>
-</section>
+            <div id = "carouselExampleIndicators" class="carousel slide col-md-12 col-sm-12 col-12" data - ride = "carousel" >
+                <ol class="carousel-indicators" >
+                    <li data - target = "#carouselExampleIndicators" data - slide - to = "0" class="active" ></li >
+                    <li data - target = "#carouselExampleIndicators" data - slide - to = "1" ></li >
+                    <li data - target = "#carouselExampleIndicators" data - slide - to = "2" ></li >
+                </ol >
+                <div class="carousel-inner" >
+                    <div class="carousel-item active" >
+                        <img src = "css/860babe7-f43c-4b69-a54f-20c544d3282e.jpg" class="d-block w-100" alt = "..." >
+                    </div >
+                    <div class="carousel-item" >
+                        <img src = "css/6577fdb5-22a2-4952-9cdc-9c6d8a69c2eb.jpg" class="d-block w-100" alt = "..." >
+                    </div >
+                    <div class="carousel-item" >
+                        <img src = "css/5bcf14c5-fc1b-484c-acb0-7c07ffaaba29.jpg" class="d-block w-100" alt = "..." >
+                    </div >
+                </div >
+                <a class="carousel-control-prev" href = "#carouselExampleIndicators" role = "button" data - slide = "prev" >
+                    <span class="carousel-control-prev-icon" aria - hidden = "true" ></span >
+                    <span class="sr-only" > Previous</span >
+                </a >
+                <a class="carousel-control-next" href = "#carouselExampleIndicators" role = "button" data - slide = "next" >
+                    <span class="carousel-control-next-icon" aria - hidden = "true" ></span >
+                    <span class="sr-only" > Next</span >
+                </a >
+            </div >
+
+        </div >
+    </div >
+</section >';
+}
+?>
 <?= $content ?>
 <footer class="container postop">
 
