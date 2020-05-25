@@ -19,11 +19,11 @@
     padding-top: 50px;
 }
 
-#account div {
+#account div, #account ul {
     margin-bottom: 14px;
 }
 
-#menu div {
+#menu div, #menu li {
     color: white;
 }
 
