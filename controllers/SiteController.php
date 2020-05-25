@@ -122,6 +122,13 @@ class SiteController extends Controller
     public function actionTest( $m )
     {
         echo preg_match('/\/test/', $_SERVER['REQUEST_URI'], $matches, PREG_OFFSET_CAPTURE);
+        if(preg_match('/\/test/', $_SERVER['REQUEST_URI'], $matches, PREG_OFFSET_CAPTURE))
+        {
+            echo 'yes';
+        } else
+        {
+            echo 'no';
+        }
     }
 
 }
