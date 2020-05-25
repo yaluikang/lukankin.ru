@@ -37,9 +37,10 @@ class SiteController extends Controller
         return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
     }
 
-    public function actionAccount()
+    public function actionAccount( $m )
     {
-        return $this->render('account');
+        $markerOfMenu = $m;
+        return $this->render('account', [ 'markerOfMenu' => $markerOfMenu ]);
     }
     public function actionSearch()
     {

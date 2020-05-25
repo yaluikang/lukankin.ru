@@ -38,21 +38,36 @@ $name = Yii::$app->user->getIdentity()->name;
                 </li>
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo Url::to(['site/films']); ?>">Статистика</a>
+                <a class="nav-link" href="<?php echo Url::to(['site/account?m=statistics']); ?>">Статистика</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo Url::to(['site/tvseries']); ?>">Просмотрено</a>
+                <a class="nav-link" href="<?php echo Url::to(['site/account?m=viewed']); ?>">Просмотрено</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="#">Закладки</a>
+                <a class="nav-link" href="<?php echo Url::to(['site/account?m=bookmarks']); ?>">Закладки</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo Url::to(['site/tvseries']); ?>">Настройки</a>
+                <a class="nav-link" href="<?php echo Url::to(['site/account?m=settings']); ?>">Настройки</a>
             </li>
         </ul>
         <!--</div>-->
         <div class="content col-md-8 col-sm-8 col-lg-8">
             <h5 class="font-weight-600">Контент</h5>
+            <?php
+                if( $markerOfMenu == 'setting')
+                {
+                    echo 'setting';
+                } else if( $markerOfMenu == 'viewed' )
+                {
+                    echo 'viewed';
+                } else if( $markerOfMenu == 'bookmarks' )
+                {
+                    echo 'bookmarks';
+                } else if( $markerOfMenu == 'statistics' )
+                {
+                    echo 'statistics';
+                }
+            ?>
         </div>
 
     </div>
