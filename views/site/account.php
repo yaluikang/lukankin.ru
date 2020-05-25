@@ -38,16 +38,16 @@ $name = Yii::$app->user->getIdentity()->name;
                 </li>
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo Url::to(['site/account?m=statistics']); ?>">Статистика</a>
+                <a class="nav-link" href="<?php echo Url::to(['/account?m=statistics']); ?>">Статистика</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo Url::to(['site/account?m=viewed']); ?>">Просмотрено</a>
+                <a class="nav-link" href="<?php echo Url::to(['/account?m=viewed']); ?>">Просмотрено</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="<?php echo Url::to(['site/account?m=bookmarks']); ?>">Закладки</a>
+                <a class="nav-link" href="<?php echo Url::to(['/account?m=bookmarks']); ?>">Закладки</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo Url::to(['site/account?m=settings']); ?>">Настройки</a>
+                <a class="nav-link" href="<?php echo Url::to(['/account?m=settings']); ?>">Настройки</a>
             </li>
         </ul>
         <!--</div>-->
