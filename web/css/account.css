@@ -23,8 +23,13 @@
     list-style-type: none;
 }
 
-#menu div, #menu li a{
+#menu div {
     color: white;
+}
+
+#menu li a {
+    color: white;
+    display: inline-block;
 }
 
 #icon {
