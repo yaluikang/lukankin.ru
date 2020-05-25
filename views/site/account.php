@@ -33,8 +33,8 @@ $name = Yii::$app->user->getIdentity()->name;
                 <li class="nav-item color-white font-weight-600 col-md-3 col-sm-3 col-lg-3">
                     <a class="nav-link" href="<?php echo Url::to(['site/newItems']); ?>"><img src="../images/pngwing.com.png" id="icon"><span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link color-white font-weight-600 col-md-9 col-sm-9 col-lg-9" id="login" href="<?php echo Url::to(['site/newItems']); ?>"><?php echo $name ?>><span class="sr-only">(current)</span></a>
+                <li class="nav-item" id="login">
+                    <a class="nav-link color-white font-weight-600 col-md-9 col-sm-9 col-lg-9" href="<?php echo Url::to(['site/newItems']); ?>"><?php echo $name ?><span class="sr-only">(current)</span></a>
                 </li>
             </div>
             <li class="nav-item">
