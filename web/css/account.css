@@ -21,9 +21,10 @@
 
 #account div, #account ul {
     margin-bottom: 14px;
+    list-style-type: none;
 }
 
-#menu div, #menu li {
+#menu div, #menu li a{
     color: white;
 }
 
