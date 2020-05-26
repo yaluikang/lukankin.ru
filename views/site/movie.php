@@ -20,13 +20,13 @@ $this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]
         <ul class="film-main-info">
             <li class="row">
                 <div class="col-md-12 col-sm-12 col-12">
-                    <div style="display: inline-block;">
+                    <div class="display-inline">
                         <h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2>
                     </div>
-                    <div style="display: inline-block;">
+                    <div class="display-inline">
                         <img src="../images/bookmark.png" id="bookmark">
                     </div>
-                    <div style="display: inline-block;">
+                    <div class="display-none">
                         <img src="../images/bookmarkused.png" id="bookmarkused">
                     </div>
                 </div>

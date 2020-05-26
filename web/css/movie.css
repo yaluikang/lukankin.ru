@@ -35,5 +35,10 @@ video {
 }
 
 #bookmark, #bookmarkused {
-   max-height: 30px;
+    max-height: 30px;
+    cursor: pointer;
+}
+
+.display-inline {
+    display: inline-block;
 }
