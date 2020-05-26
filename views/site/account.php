@@ -56,8 +56,44 @@ $name = Yii::$app->user->getIdentity()->name;
             <?php
                 if( $markerOfMenu == 'settings')
                 {
-                    echo 'settings';
-                } else if( $markerOfMenu == 'viewed' )
+                    echo '<div id="one-setting-block" class="row">
+                            <div class="col-md-12 col-sm-12 col-12">Редактирование профиля</div>
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <ul class="row">
+                                    <li class="col-md-4 col-sm-4 col-4">
+                                        <img src="../images/pngwing.com.png" id="icon-2">
+                                    </li>
+                                    <li class="col-md-8 col-sm-8 col-8">
+                                        <input accept="image/*" type="file">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <form class="row">
+                                    <div class="col-md-12 col-sm-12 col-12">
+                                        <input type="text" name="name" value="Lukash" placeholder="Ваше имя" class="">
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-12">
+                                        <input type="button" value="Сохранить">
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                            <div id="two-setting-block" class="row">
+                                <div class="col-md-12 col-sm-12 col-12">Изменение пароля</div>
+                                <div class="col-md-12 col-sm-12 col-12">
+                                    <input type="password" name="old_password" placeholder="Старый пароль" class="input-orange">
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-12">
+                                    <input type="password" name="new_password" placeholder="Новый пароль" class="input-orange">
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-12">
+                                    <input type="password" name="new_password_2" placeholder="Повторите новый пароль" class="input-orange">
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-12">
+                                    <input type="button" value="Изменить">
+                                </div>
+                            </div>';
                 {
                     echo 'viewed';
                 } else if( $markerOfMenu == 'bookmarks' )
@@ -68,6 +104,7 @@ $name = Yii::$app->user->getIdentity()->name;
                     echo 'statistics';
                 }
             ?>
+
         </div>
 
     </div>
