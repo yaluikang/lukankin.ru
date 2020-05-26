@@ -94,9 +94,10 @@ $name = Yii::$app->user->getIdentity()->name;
                                     <input type="button" value="Изменить">
                                 </div>
                             </div>';
+                } else if( $markerOfMenu == 'viewed' )
                 {
                     echo 'viewed';
-                } else if( $markerOfMenu == 'bookmarks' )
+                }
                 {
                     echo 'bookmarks';
                 } else if( $markerOfMenu == 'statistics' )
