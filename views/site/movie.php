@@ -20,7 +20,7 @@ $this->registerCssFIle("@web/css/movie.css");
             <li class="row">
                 <span class="col-md-6 col-sm-6 col-6"><h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2></span>
                 <img src="../images/bookmark.png" class="col-md-6 col-sm-6 col-6" id="bookmark">
-            <p>The Ticket</p>
+            <p class="col-md-12 col-sm-12 col-12">The Ticket</p>
             </li>
             <li>
                 <span class="key">Качество:</span>
