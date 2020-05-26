@@ -26,7 +26,7 @@ $this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]
                     <div class="display-inline">
                         <img src="../images/bookmark.png" id="bookmark">
                     </div>
-                    <div class="display-none">
+                    <div class="display-inline">
                         <img src="../images/bookmarkused.png" id="bookmarkused">
                     </div>
                 </div>
