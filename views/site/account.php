@@ -63,7 +63,7 @@ $name = Yii::$app->user->getIdentity()->name;
                                         <img src="../images/pngwing.com.png" id="icon-2">
                                     </li>
                                     <li class="col-md-8 col-sm-8 col-8" id="files-submit">
-                                        <input accept="image/*" type="file">
+                                        <input accept="image/*" value="Изменить аватар" type="file">
                                     </li>
                                 </ul>
                             </div>
