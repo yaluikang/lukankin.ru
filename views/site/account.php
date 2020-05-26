@@ -70,7 +70,7 @@ $name = Yii::$app->user->getIdentity()->name;
                             <div class="col-md-12 col-sm-12 col-12">
                                 <form class="row">
                                     <div class="col-md-12 col-sm-12 col-12">
-                                        <input type="text" name="name" value="Lukash" placeholder="Ваше имя" class="">
+                                        <input type="text" name="name" value="' . $name . '" placeholder="Ваше имя" class="">
                                     </div>
                                     <div class="col-md-12 col-sm-12 col-12">
                                         <input type="button" value="Сохранить">
