@@ -47,6 +47,6 @@
     text-align: left;
 }
 
-.one-setting-block, .two-setting-block {
+#one-setting-block, #two-setting-block {
     font-size: 25px;
 }
