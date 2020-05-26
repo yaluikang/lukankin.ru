@@ -57,7 +57,7 @@ $name = Yii::$app->user->getIdentity()->name;
                 if( $markerOfMenu == 'settings')
                 {
                     echo '<div id="one-setting-block" class="row">
-                            <div class="col-md-12 col-sm-12 col-12">Редактирование профиля</div>
+                            <div class="col-md-12 col-sm-12 col-12 title">Редактирование профиля</div>
                             <div class="col-md-12 col-sm-12 col-12">
                                 <ul class="row">
                                     <li class="col-md-4 col-sm-4 col-4">
@@ -80,7 +80,7 @@ $name = Yii::$app->user->getIdentity()->name;
                             </div>
                             </div>
                             <div id="two-setting-block" class="row">
-                                <div class="col-md-12 col-sm-12 col-12">Изменение пароля</div>
+                                <div class="col-md-12 col-sm-12 col-12 title">Изменение пароля</div>
                                 <div class="col-md-12 col-sm-12 col-12">
                                     <input type="password" name="old_password" placeholder="Старый пароль" class="input-orange">
                                 </div>

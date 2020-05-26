@@ -47,6 +47,6 @@
     text-align: left;
 }
 
-#one-setting-block, #two-setting-block {
+.title {
     font-size: 25px;
 }
