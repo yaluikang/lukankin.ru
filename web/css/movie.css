@@ -33,3 +33,7 @@
 video {
     width: 100%;
 }
+
+#bookmark {
+    max-height: 30px;
+}

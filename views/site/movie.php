@@ -18,50 +18,50 @@ $this->registerCssFIle("@web/css/movie.css");
     <div class="col-lg-6">
         <ul class="film-main-info">
             <li>
-                <span><h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2></span>
-<p>The Ticket</p>
-</li>
-<li>
-    <span class="key">Качество:</span>
-    <span class="value">HD</span>
-</li>
-<li>
-    <span class="key">Год:</span>
-    <span class="value"><?php echo $contentForMovie[0]['movies_date'] ?></span>
-</li>
-<li>
-    <span class="key">Время:</span>
-    <span class="value">время</span>
-</li>
-<li>
-    <span class="key">Страна:</span>
-    <span class="value">США,Великобритания</span>
-</li>
-<li>
-    <span class="key">Слоган:</span>
-    <span class="value">Фраза</span>
-</li>
-<li>
-    <span class="key">Жанр:</span>
-    <span class="value"><?php echo implode($contentForMovie[0]['genres_name']) ?></span>
-</li>
-<li>
-    <span class="key">Перевод:</span>
-    <span class="value">Перевод</span>
-</li>
-<li>
-    <span class="key">Бюджет:</span>
-    <span class="value">Бюджет</span>
-</li>
-<li>
-    <span class="key">Актёры:</span>
-    <span class="value">Актёры</span>
-</li>
-<li>
-    <span class="key">Режиссёр:</span>
-    <span class="value">Режиссёр</span>
-</li>
-</ul>
+                <span><h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2><img src="../images/bookmark.png" id="bookmark"></span>
+            <p>The Ticket</p>
+            </li>
+            <li>
+                <span class="key">Качество:</span>
+                <span class="value">HD</span>
+            </li>
+            <li>
+                <span class="key">Год:</span>
+                <span class="value"><?php echo $contentForMovie[0]['movies_date'] ?></span>
+            </li>
+            <li>
+                <span class="key">Время:</span>
+                <span class="value">время</span>
+            </li>
+            <li>
+                <span class="key">Страна:</span>
+                <span class="value">США,Великобритания</span>
+            </li>
+            <li>
+                <span class="key">Слоган:</span>
+                <span class="value">Фраза</span>
+            </li>
+            <li>
+                <span class="key">Жанр:</span>
+                <span class="value"><?php echo implode($contentForMovie[0]['genres_name']) ?></span>
+            </li>
+            <li>
+                <span class="key">Перевод:</span>
+                <span class="value">Перевод</span>
+            </li>
+            <li>
+                <span class="key">Бюджет:</span>
+                <span class="value">Бюджет</span>
+            </li>
+            <li>
+                <span class="key">Актёры:</span>
+                <span class="value">Актёры</span>
+            </li>
+            <li>
+                <span class="key">Режиссёр:</span>
+                <span class="value">Режиссёр</span>
+            </li>
+        </ul>
 </div>
 <div class="col-lg-12">
     <p class="films-text">Джеймс слеп с юных лет врачи констатировали, что у юноши опухоль мозга, невзирая на недуг, судьба была благосклонна, парень смог создать семью и обзавестись наследниками. Супруга ухаживала за избранником, но паренек тяготился неполноценностью, однажды друг рассказал притчу, она настолько впечатлила героя, что он решил действовать, картина «Билет» покажет, что в итоге получилось. Герой с мольбами обращается к Великому Господу, прося о помиловании и исцелении. Всевышний Творец услышал искренние молитвы и послал исцеление, приняв великий дар, мужчина несказанно рад бурным переменам, однако забыл произнести слова благодарности.</p>
