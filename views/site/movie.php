@@ -18,8 +18,8 @@ $this->registerCssFIle("@web/css/movie.css");
     <div class="col-lg-6">
         <ul class="film-main-info">
             <li class="row">
-                <span class="col-md-6 col-sm-6 col-6"><h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2></span>
-                <img src="../images/bookmark.png" class="col-md-6 col-sm-6 col-6" id="bookmark">
+                <span class="col-md-9 col-sm-9 col-9"><h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2></span>
+                <img src="../images/bookmark.png" class="col-md-3 col-sm-3 col-3" id="bookmark">
             <p class="col-md-12 col-sm-12 col-12">The Ticket</p>
             </li>
             <li>
