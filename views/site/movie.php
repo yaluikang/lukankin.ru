@@ -27,7 +27,7 @@ $this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]
                         <img src="../images/bookmark.png" id="bookmark">
                     </div>
                     <div style="display: inline-block;">
-                        <img src="../images/bookmarkused.png.png" id="bookmarkused">
+                        <img src="../images/bookmarkused.png" id="bookmarkused">
                     </div>
                 </div>
                 <p class="col-md-12 col-sm-12 col-12">The Ticket</p>
