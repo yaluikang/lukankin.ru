@@ -97,7 +97,7 @@ $name = Yii::$app->user->getIdentity()->name;
                 } else if( $markerOfMenu == 'viewed' )
                 {
                     echo 'viewed';
-                }
+                } else if( $markerOfMenu == 'bookmarks' )
                 {
                     echo 'bookmarks';
                 } else if( $markerOfMenu == 'statistics' )
