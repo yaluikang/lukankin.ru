@@ -18,13 +18,15 @@ $this->registerCssFIle("@web/css/movie.css");
     <div class="col-lg-6">
         <ul class="film-main-info">
             <li class="row">
-                <div class="col-md-9 col-sm-9 col-9">
-                    <h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2>
+                <div class="col-md-12 col-sm-12 col-12">
+                    <div style="display: inline-block;">
+                        <h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2>
+                    </div>
+                    <div style="display: inline-block;">
+                        <img src="../images/bookmark.png" id="bookmark">
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-3 col-3">
-                    <img src="../images/bookmark.png" id="bookmark">
-                </div>
-            <p class="col-md-12 col-sm-12 col-12">The Ticket</p>
+                <p class="col-md-12 col-sm-12 col-12">The Ticket</p>
             </li>
             <li>
                 <span class="key">Качество:</span>
