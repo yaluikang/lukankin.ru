@@ -4,6 +4,7 @@
 /*echo $contentForMovie[0]['movies_name'];
 echo 'images/' . $contentForMovie[0]['movies_url_poster'];*/
 $this->registerCssFIle("@web/css/movie.css");
+$this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]]);
 ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <h2></h2>
@@ -24,6 +25,9 @@ $this->registerCssFIle("@web/css/movie.css");
                     </div>
                     <div style="display: inline-block;">
                         <img src="../images/bookmark.png" id="bookmark">
+                    </div>
+                    <div style="display: inline-block;">
+                        <img src="../images/bookmarkused.png.png" id="bookmarkused">
                     </div>
                 </div>
                 <p class="col-md-12 col-sm-12 col-12">The Ticket</p>
