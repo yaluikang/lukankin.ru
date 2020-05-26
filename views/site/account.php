@@ -63,7 +63,7 @@ $name = Yii::$app->user->getIdentity()->name;
                                     <li class="col-md-4 col-sm-4 col-4">
                                         <img src="../images/pngwing.com.png" id="icon-2">
                                     </li>
-                                    <li class="col-md-8 col-sm-8 col-8">
+                                    <li class="col-md-8 col-sm-8 col-8" id="files-submit">
                                         <input accept="image/*" type="file">
                                     </li>
                                 </ul>

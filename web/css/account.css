@@ -12,6 +12,14 @@
     padding: 56px 50px 20px;
 }
 
+#icon-2 {
+    max-height: 150px;
+}
+
+#files-submit {
+    align-self: center;
+}
+
 #colorposter {
     padding-top: 50px;
 }
@@ -37,4 +45,8 @@
 #login {
     align-self: center;
     text-align: left;
+}
+
+.one-setting-block, .two-setting-block {
+    font-size: 25px;
 }
