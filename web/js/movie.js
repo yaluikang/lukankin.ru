@@ -1,7 +1,7 @@
 $('#bookmark').on('click', function(){
     $(this).addClass('display-none');
     $('#bookmarkused').removeClass('display-none');
-    let $fimsId = $('#bookmark').attr('data-id');
+    let $fimsId = $('#bookmark').data('id');
     console.log( $fimsId );
     Cookies.set( $fimsId, true, { expires: 1, path: '/' });
     alert(Cookies.get());
