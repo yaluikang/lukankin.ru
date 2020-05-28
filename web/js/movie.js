@@ -28,7 +28,6 @@ class MoviesCookies
 $(window).on('load',function(){
     if(  MoviesCookies.getObjOfMovies()[$('#bookmark').data('movie-id')] )
     {
-        console.log('yes');
         $('#bookmark').addClass('display-none');
         $('#bookmarkused').removeClass('display-none');
     }
@@ -36,7 +35,6 @@ $(window).on('load',function(){
 
 $('#bookmark').on('click', function(){
     MoviesCookies.setMovie($(this).data('movie-id'));
-    console.log( Cookies.get('movies') );
     $(this).addClass('display-none');
     $('#bookmarkused').removeClass('display-none');
 });

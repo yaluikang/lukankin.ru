@@ -14,6 +14,10 @@ class UserBookmarks extends ActiveRecord
         return 'user_bookmarks';
     }
 
-
+    public static function addBookmarksToDb()
+    {
+        $list = UserBookmarks::find()->all();
+        echo json_encode( $list,JSON_UNESCAPED_UNICODE );
+    }
 
 }

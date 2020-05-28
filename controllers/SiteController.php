@@ -5,6 +5,7 @@ namespace app\controllers;
 
 use app\models\Movies;
 use app\models\Movies_has_genre;
+use app\models\UserBookmarks;
 use app\models\UserIdentity;
 use app\models\UserJoinForm;
 use app\models\UserLoginForm;
@@ -121,8 +122,7 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        $cookies = Yii::$app->request->cookies;
-        echo json_encode( $cookies->get('2')->value,JSON_UNESCAPED_UNICODE );
+        UserBookmarks::addBookmarksToDb();
     }
 
 }
