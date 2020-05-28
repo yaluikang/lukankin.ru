@@ -11,13 +11,16 @@ class MoviesCookies
         console.log(Cookies.get('movies'));
         if( !this.cookies )
         {
-            this.cookies = [] + '';
-            console.log(this.cookies);
+            this.cookies = [];
+        } else
+        {
+            this.cookies = this.cookies.parse;
         }
         console.log(this.cookies);
-        let $array = this.cookies.parse;
-        $array.push( id );
-        let $string = $array + '';
+        this.cookies.push( id );
+        console.log(this.cookies);
+        let $string = this.cookies + '';
+        console.log(this.cookies);
         Cookies.set( 'movies', $string, { expires: 1, path: '/' });
     }
 
