@@ -21,7 +21,7 @@ class UserBookmarks extends ActiveRecord
         $list = ArrayHelper::getColumn($list,'movie_id');
         $cookies = \Yii::$app->request->cookies->getValue('movies', (isset($_COOKIE['movies']))? $_COOKIE['movies']: 'movies');
         //echo json_encode( $cookies,JSON_UNESCAPED_UNICODE );
-        echo $cookies["10"] == true;
+        echo $cookies;
     }
 
 }
