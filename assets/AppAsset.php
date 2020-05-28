@@ -23,6 +23,7 @@ class AppAsset extends AssetBundle
         'css/style.css'
     ];
     public $js = [
+        'js/js.cookie.js',
         'js/Site.js',
         'js/AjaxBuilder.js',
         'js/Pagination.js'
