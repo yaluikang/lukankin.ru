@@ -9,7 +9,7 @@ class MoviesCookies
     {
         console.log( this.cookies );
         console.log(Cookies.get('movies'));
-        if( this.cookies)
+        if( !this.cookies )
         {
             this.cookies = [] + '';
             console.log(this.cookies);
