@@ -1,12 +1,22 @@
+$(window).on('load',function(){
+    if( Cookies.get($(this).data('movie-id')) == 'true' )
+    {
+        $('#bookmark').addClass('display-none');
+        $('#bookmarkused').removeClass('display-none');
+    }
+});
+
 $('#bookmark').on('click', function(){
-    let $fimsId = $(this).attr('data-movie-id');
-    console.log( $(this).attr('data-movie-id') );
-    Cookies.set( $fimsId, true, { expires: 1, path: '/' });
+    Cookies.set( $(this).data('movie-id'), true, { expires: 1, path: '/' });
     $(this).addClass('display-none');
     $('#bookmarkused').removeClass('display-none');
 });
 
 $('#bookmarkused').on('click', function(){
+    if( Cookies.get($(this).data('movie-id')) )
+    {
+        Cookies.set( $(this).data('movie-id'), false, { expires: 1, path: '/' });
+    }
     $(this).addClass('display-none');
     $('#bookmark').removeClass('display-none');
 });

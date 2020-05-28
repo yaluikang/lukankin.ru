@@ -24,7 +24,7 @@ $this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]
                         <h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2>
                     </div>
                     <div class="display-inline">
-                        <img src="../images/bookmark.png" id="bookmark">
+                        <img src="../images/bookmark.png" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmark">
                     </div>
                     <div class="display-inline">
                         <img src="../images/bookmarkused.png" class="display-none" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmarkused">
