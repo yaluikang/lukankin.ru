@@ -1,8 +1,5 @@
 $(window).on('load',function(){
-    console.log( Cookies.get($(this).data('movie-id')) == 'true' );
-    let $name = $(this).data('movie-id') + '';
-    console.log( Cookies.get(1) );
-    console.log( Cookies.get('1') );
+    let $name = $('#bookmark').data('movie-id') + '';
     if( Cookies.get( $name ) == 'true' )
     {
         console.log('yes');
