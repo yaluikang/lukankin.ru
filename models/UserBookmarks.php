@@ -19,7 +19,8 @@ class UserBookmarks extends ActiveRecord
     {
         $list = static::find()->select('movie_id')->where(['user_id' => 1])->asArray()->all();
         $list = ArrayHelper::getColumn($list,'movie_id');
-        echo json_encode( $list,JSON_UNESCAPED_UNICODE );
+        $cookies = \Yii::$app->request->cookies->get('movies')->value;
+        echo json_encode( $cookies,JSON_UNESCAPED_UNICODE );
     }
 
 }
