@@ -1,7 +1,9 @@
 $(window).on('load',function(){
     console.log( Cookies.get($(this).data('movie-id')) == 'true' );
-    console.log( Cookies.get($(this).data('movie-id')) );
-    if( Cookies.get($(this).data('movie-id')) == 'true' )
+    let $name = $(this).data('movie-id');
+    console.log( Cookies.get( $name ) );
+    console.log( typeof $name, typeof Cookies.get($(this).data('movie-id')));
+    if( Cookies.get( $name ) == 'true' )
     {
         console.log('yes');
         $('#bookmark').addClass('display-none');
