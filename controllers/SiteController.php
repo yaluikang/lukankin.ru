@@ -119,16 +119,10 @@ class SiteController extends Controller
         return $this->redirect("/");
     }
 
-    public function actionTest( $m )
+    public function actionTest()
     {
-        echo preg_match('/\/test/', $_SERVER['REQUEST_URI'], $matches, PREG_OFFSET_CAPTURE);
-        if(preg_match('/\/test?m=675/', $_SERVER['REQUEST_URI'], $matches, PREG_OFFSET_CAPTURE))
-        {
-            echo 'yes';
-        } else
-        {
-            echo 'no';
-        }
+        $cookies = Yii::$app->request->cookies;
+        echo json_encode( $cookies,JSON_UNESCAPED_UNICODE );
     }
 
 }
