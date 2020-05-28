@@ -12,7 +12,9 @@ class MoviesCookies
         if( this.cookies)
         {
             this.cookies = [] + '';
+            console.log(this.cookies);
         }
+        console.log(this.cookies);
         let $array = this.cookies.parse;
         $array.push( id );
         let $string = $array + '';
