@@ -1,3 +1,25 @@
+class MoviesCookies
+{
+    constructor()
+    {
+        this.cookies = Cookies.get('movies');
+    }
+
+    static setMovie( id )
+    {
+        if( this.cookies.length == 0)
+        {
+            this.cookies = [] + '';
+        }
+        let $array = this.cookies.parse;
+        $array.push( id );
+        let $string = $array + '';
+        Cookies.set( 'movies', $string, { expires: 1, path: '/' });
+    }
+
+
+
+}
 $(window).on('load',function(){
     let $name = $('#bookmark').data('movie-id') + '';
     if( Cookies.get( $name ) == 'true' )
@@ -9,6 +31,8 @@ $(window).on('load',function(){
 });
 
 $('#bookmark').on('click', function(){
+    MoviesCookies.setMovie($(this).data('movie-id'));
+    console.log( Cookies.get('movies') );
     Cookies.set( $(this).data('movie-id'), true, { expires: 1, path: '/' });
     $(this).addClass('display-none');
     $('#bookmarkused').removeClass('display-none');
