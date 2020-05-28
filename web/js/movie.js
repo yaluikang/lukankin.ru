@@ -9,15 +9,15 @@ class MoviesCookies
         this.cookies = Cookies.get('movies');
         if( !this.cookies )
         {
-            this.cookies = [];
+            this.cookies = {};
         } else
         {
-            this.cookies = this.cookies.parse;
+            this.cookies = JSON.parse(this.cookies);
         }
         console.log(this.cookies);
-        this.cookies.push( id );
+        this.cookies[id] = true;
         console.log(this.cookies);
-        let $string = this.cookies + '';
+        let $string = JSON.stringify(this.cookies);
         console.log(this.cookies);
         Cookies.set( 'movies', $string, { expires: 1, path: '/' });
     }
