@@ -2,13 +2,11 @@ class MoviesCookies
 {
     constructor()
     {
-        this.cookies = Cookies.get('movies');
     }
 
     static setMovie( id )
     {
-        console.log( this.cookies );
-        console.log(Cookies.get('movies'));
+        this.cookies = Cookies.get('movies');
         if( !this.cookies )
         {
             this.cookies = [];
