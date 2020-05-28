@@ -1,6 +1,9 @@
 $(window).on('load',function(){
+    console.log( Cookies.get($(this).data('movie-id')) == 'true' );
+    console.log( Cookies.get($(this).data('movie-id')) );
     if( Cookies.get($(this).data('movie-id')) == 'true' )
     {
+        console.log('yes');
         $('#bookmark').addClass('display-none');
         $('#bookmarkused').removeClass('display-none');
     }
