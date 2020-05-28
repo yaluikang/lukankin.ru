@@ -1,5 +1,5 @@
 $('#bookmark').on('click', function(){
-    let $fimsId = $(this).attr('id');
+    let $fimsId = $(this).attr('data-movie-id');
     console.log( $fimsId );
     Cookies.set( $fimsId, true, { expires: 1, path: '/' });
     $(this).addClass('display-none');
