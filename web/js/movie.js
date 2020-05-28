@@ -1,10 +1,9 @@
 $('#bookmark').on('click', function(){
-    $(this).addClass('display-none');
-    $('#bookmarkused').removeClass('display-none');
-    let $fimsId = $('#bookmark').data('id');
+    let $fimsId = $(this).data('id');
     console.log( $fimsId );
     Cookies.set( $fimsId, true, { expires: 1, path: '/' });
-    alert(Cookies.get());
+    $(this).addClass('display-none');
+    $('#bookmarkused').removeClass('display-none');
 });
 
 $('#bookmarkused').on('click', function(){
