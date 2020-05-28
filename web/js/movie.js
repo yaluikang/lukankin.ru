@@ -15,7 +15,7 @@ $('#bookmark').on('click', function(){
 });
 
 $('#bookmarkused').on('click', function(){
-    if( Cookies.get($(this).data('movie-id')) )
+    if( Cookies.get($(this).data('movie-id') + '') )
     {
         Cookies.set( $(this).data('movie-id'), false, { expires: 1, path: '/' });
     }
