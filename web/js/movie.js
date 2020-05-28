@@ -7,14 +7,16 @@ class MoviesCookies
 
     static setMovie( id )
     {
-        if( this.cookies.length == 0)
+        console.log( this.cookies );
+        console.log(Cookies.get('movies'));
+        /*if( this.cookies.length == 0)
         {
             this.cookies = [] + '';
         }
         let $array = this.cookies.parse;
         $array.push( id );
         let $string = $array + '';
-        Cookies.set( 'movies', $string, { expires: 1, path: '/' });
+        Cookies.set( 'movies', $string, { expires: 1, path: '/' });*/
     }
 
 
