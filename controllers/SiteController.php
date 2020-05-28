@@ -122,7 +122,7 @@ class SiteController extends Controller
     public function actionTest()
     {
         $cookies = Yii::$app->request->cookies;
-        echo json_encode( $cookies,JSON_UNESCAPED_UNICODE );
+        echo json_encode( count($cookies),JSON_UNESCAPED_UNICODE );
     }
 
 }
