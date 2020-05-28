@@ -16,7 +16,7 @@ class UserBookmarks extends ActiveRecord
 
     public static function addBookmarksToDb()
     {
-        $list = static::find()->all();
+        $list = static::findAll();
         echo json_encode( $list,JSON_UNESCAPED_UNICODE );
     }
 
