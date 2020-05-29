@@ -24,6 +24,8 @@ class MoviesCookies
         if(Cookies.get('movies'))
         {
             return JSON.parse( Cookies.get('movies') );
+        } else {
+            return {};
         }
     }
 
