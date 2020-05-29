@@ -91,7 +91,7 @@ class UserBookmarks extends ActiveRecord
 
                 }
             }
-            static::deleteCookies();
+            //static::deleteCookies();
         }
 
         //echo $cookies = \Yii::$app->request->cookies->getValue('movies', (isset($_COOKIE['movies']))? $_COOKIE['movies']: 'movies');
