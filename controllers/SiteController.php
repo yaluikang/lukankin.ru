@@ -122,7 +122,7 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        UserBookmarks::addBookmarksToDb();
+        UserBookmarks::addBookmarksToDb(1);
     }
 
 }
