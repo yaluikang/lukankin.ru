@@ -33,6 +33,9 @@ class SiteController extends Controller
 
     public function actionMovie ( $id )
     {
+        if(!Yii::$app->user->isGuest){
+            UserBookmarks::addBookmarksToDb(Yii::$app->user->getId());
+        }
         $contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( $id );
         return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
@@ -40,9 +43,6 @@ class SiteController extends Controller
 
     public function actionAccount( $m = 'statistics')
     {
-        if(!Yii::$app->user->isGuest){
-            UserBookmarks::addBookmarksToDb(Yii::$app->user->getId());
-        }
         $markerOfMenu = $m;
         return $this->render('account', [ 'markerOfMenu' => $markerOfMenu ]);
     }
