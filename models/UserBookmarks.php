@@ -61,39 +61,40 @@ class UserBookmarks extends ActiveRecord
             return;
         } else {
             $cookies = json_decode($cookies,true);
-        }
-        //Если муви из кукис есть и он равен false и такой id фильма есть в бд - удалить из бд
-        //если муви из кукис есть и он равен false и такого id муви не тв бд - ничего не делать
-        //если муви из кукис есть и он равен true и такой id есть в бд - ничего не делать
-        //если муви из кукис есть и он равен true и такого id нет в бд - забить его в бд
-        foreach ( $cookies as $movie_id => $boolean)
-        {
-            if( $cookies[$movie_id] == false && in_array( $movie_id, $list ))
+            //Если муви из кукис есть и он равен false и такой id фильма есть в бд - удалить из бд
+            //если муви из кукис есть и он равен false и такого id муви не тв бд - ничего не делать
+            //если муви из кукис есть и он равен true и такой id есть в бд - ничего не делать
+            //если муви из кукис есть и он равен true и такого id нет в бд - забить его в бд
+            foreach ( $cookies as $movie_id => $boolean)
             {
-                echo $movie_id . ' - Удалить из бд.'. in_array( $movie_id, $list );
-                $result = static::deleteMovieFromBookmarks( $movie_id, $id );
-                echo $result;
+                if( $cookies[$movie_id] == false && in_array( $movie_id, $list ))
+                {
+                    echo $movie_id . ' - Удалить из бд.'. in_array( $movie_id, $list );
+                    $result = static::deleteMovieFromBookmarks( $movie_id, $id );
+                    echo $result;
 
 
-            } elseif ( $cookies[$movie_id] == false && !in_array( $movie_id, $list ))
-            {
-                echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
+                } elseif ( $cookies[$movie_id] == false && !in_array( $movie_id, $list ))
+                {
+                    echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
 
 
-            } elseif ( $cookies[$movie_id] == true && in_array( $movie_id, $list ))
-            {
-                echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
+                } elseif ( $cookies[$movie_id] == true && in_array( $movie_id, $list ))
+                {
+                    echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
 
 
-            } elseif ( $cookies[$movie_id] == true && !in_array( $movie_id, $list ))
-            {
-                echo $movie_id . ' - Забить в бд.'. in_array( $movie_id, $list );
-                static::addMovieToBookmarks( $movie_id, $id );
+                } elseif ( $cookies[$movie_id] == true && !in_array( $movie_id, $list ))
+                {
+                    echo $movie_id . ' - Забить в бд.'. in_array( $movie_id, $list );
+                    static::addMovieToBookmarks( $movie_id, $id );
 
 
+                }
             }
+            static::deleteCookies();
         }
-        static::deleteCookies();
+
         //echo $cookies = \Yii::$app->request->cookies->getValue('movies', (isset($_COOKIE['movies']))? $_COOKIE['movies']: 'movies');
     }
 
