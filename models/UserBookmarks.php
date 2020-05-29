@@ -59,6 +59,8 @@ class UserBookmarks extends ActiveRecord
         if( $cookies == 'movies' )
         {
             return '123';
+        } else {
+            echo $cookies;
         }
         //Если муви из кукис есть и он равен false и такой id фильма есть в бд - удалить из бд
         //если муви из кукис есть и он равен false и такого id муви не тв бд - ничего не делать
