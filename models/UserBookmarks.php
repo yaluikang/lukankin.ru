@@ -56,7 +56,11 @@ class UserBookmarks extends ActiveRecord
 
     public static function deleteMovieFromBookmark( $movie_id )
     {
-        $movie = static::find()->where(['user_id' => 1])->andWhere(['movie_id' => 1])->all()->delete();
+        //$movie = static::find()->where(['user_id' => 1])->andWhere(['movie_id' => 1])->all()->delete();
+        $movie = static::deleteAll([
+            'user_id' => 1,
+            'movie_id' => $movie_id
+        ]);
         return 'deleted';
     }
 
