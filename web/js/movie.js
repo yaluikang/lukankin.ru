@@ -26,24 +26,12 @@ class MoviesCookies
 
 }
 
-function getCookiePHP(name) {
-    var r = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-    console.log(r);
-    var result = '';
-    if (r) {
-        result = PHPUnserialize.unserialize(decodeURIComponent(r[2]).substr(64));
-        console.log(result);
-    }
-    return result;
-}
-
 $(window).on('load',function(){
-    /*if(  MoviesCookies.getObjOfMovies()[$('#bookmark').data('movie-id')] )
+    if(  MoviesCookies.getObjOfMovies()[$('#bookmark').data('movie-id')] )
     {
         $('#bookmark').addClass('display-none');
         $('#bookmarkused').removeClass('display-none');
-    }*/
-    console.log(document.cookie/*.match ( '(^|;) ?' + 'movies' + '=([^;]*)(;|$)' )*/);
+    }
 });
 
 $('#bookmark').on('click', function(){
