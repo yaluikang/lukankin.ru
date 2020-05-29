@@ -6,7 +6,7 @@ echo 'images/' . $contentForMovie[0]['movies_url_poster'];*/
 $this->registerCssFIle("@web/css/movie.css");
 $this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]]);
 
-$id = Yii::$app->user->getIdentity()->id;
+$id = Yii::$app->user->getIdentity()->name;
 ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <h2></h2>
