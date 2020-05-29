@@ -24,7 +24,7 @@ class UserBookmarks extends ActiveRecord
 
     public static function deleteCookies()
     {
-        $cookies = Yii::$app->request->cookies;
+        $cookies = \Yii::$app->request->cookies;
         if(isset($_COOKIE['movies']))
         {
             unset($_COOKIE['movies']);
