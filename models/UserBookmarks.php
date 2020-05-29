@@ -27,18 +27,26 @@ class UserBookmarks extends ActiveRecord
         //если муви из кукис есть и он равен true и такого id нет в бд - забить его в бд
         foreach ( $cookies as $movie_id => $boolean)
         {
-            if( $cookies[$movie_id] == false && array_search( $movie_id, $list ))
+            if( $cookies[$movie_id] == false && in_array( $movie_id, $list ))
             {
-                echo $movie_id . ' - Удалить из бд.'. array_search( $movie_id, $list );
-            } elseif ( $cookies[$movie_id] == false && !array_search( $movie_id, $list ))
+                echo $movie_id . ' - Удалить из бд.'. in_array( $movie_id, $list );
+
+
+            } elseif ( $cookies[$movie_id] == false && !in_array( $movie_id, $list ))
             {
-                echo $movie_id . ' - Ничего не делать.'. array_search( $movie_id, $list );
-            } elseif ( $cookies[$movie_id] == true && array_search( $movie_id, $list ))
+                echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
+
+
+            } elseif ( $cookies[$movie_id] == true && in_array( $movie_id, $list ))
             {
-                echo $movie_id . ' - Ничего не делать.'. array_search( $movie_id, $list );
-            } elseif ( $cookies[$movie_id] == true && !array_search( $movie_id, $list ))
+                echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
+
+
+            } elseif ( $cookies[$movie_id] == true && !in_array( $movie_id, $list ))
             {
-                echo $movie_id . ' - Забить в бд.'. array_search( $movie_id, $list );
+                echo $movie_id . ' - Забить в бд.'. in_array( $movie_id, $list );
+
+
             }
         }
         //echo count($cookies);
