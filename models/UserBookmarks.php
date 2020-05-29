@@ -15,10 +15,42 @@ class UserBookmarks extends ActiveRecord
         return 'user_bookmarks';
     }
 
-    public static function addBookmarksToDb()
+    public static function getListOfMovies()
     {
         $list = static::find()->select('movie_id')->where(['user_id' => 1])->asArray()->all();
         $list = ArrayHelper::getColumn($list,'movie_id');
+        return $list;
+    }
+
+    public static function deleteCookies()
+    {
+        $cookies = Yii::$app->request->cookies;
+        if(isset($_COOKIE['movies']))
+        {
+            unset($_COOKIE['movies']);
+        } elseif($cookies->get('movies')) !== null)
+        {
+            $cookies->remove('movies');
+        }
+    }
+
+    public static function addNewCookies()
+    {
+        $list = static::getListOfMovies();
+        $obj = [];
+        for( $i = 0; $i < count( $list ); $i++ )
+        {
+            $obj[$list[0]] = true;
+        }
+        $cookies = Yii::$app->response->cookies;
+        $cookies->add(new \yii\web\Cookie([
+            'movies' => $obj
+        ]));
+    }
+
+    public static function addBookmarksToDb()
+    {
+        $list = static::getListOfMovies();
         $cookies = \Yii::$app->request->cookies->getValue('movies', (isset($_COOKIE['movies']))? $_COOKIE['movies']: 'movies');
         $cookies = json_decode($cookies,true);
         //Если муви из кукис есть и он равен false и такой id фильма есть в бд - удалить из бд
@@ -52,7 +84,9 @@ class UserBookmarks extends ActiveRecord
 
             }
         }
-        //echo count($cookies);
+        static::deleteCookies();
+        static::addNewCookies();
+        echo $cookies = \Yii::$app->request->cookies->getValue('movies', (isset($_COOKIE['movies']))? $_COOKIE['movies']: 'movies');
     }
 
     public static function deleteMovieFromBookmarks( $movie_id )
