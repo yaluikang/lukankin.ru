@@ -47,7 +47,7 @@ $('#bookmark').on('click', function(){
 });
 
 $('#bookmarkused').on('click', function(){
-    if( MoviesCookies.getObjOfMovies()[$(this).data('movie-id')] || !$('#bookmarkused').hasClass('display-none'))
+    if( MoviesCookies.getObjOfMovies()[$(this).data('movie-id')] || !$(this).hasClass('display-none'))
     {
         MoviesCookies.setMovie($(this).data('movie-id'), false);
     }
