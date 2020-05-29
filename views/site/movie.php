@@ -5,6 +5,8 @@
 echo 'images/' . $contentForMovie[0]['movies_url_poster'];*/
 $this->registerCssFIle("@web/css/movie.css");
 $this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]]);
+
+$id = Yii::$app->user->getIdentity()->id;
 ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <h2></h2>
@@ -27,7 +29,7 @@ $this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]
                         <img src="../images/bookmark.png" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmark">
                     </div>
                     <div class="display-inline">
-                        <img src="../images/bookmarkused.png" class="display-none" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmarkused">
+                        <img src="../images/bookmarkused.png" class="display-none <?php echo $id; ?>" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmarkused">
                     </div>
                 </div>
                 <p class="col-md-12 col-sm-12 col-12">The Ticket</p>

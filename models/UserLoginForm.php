@@ -49,7 +49,7 @@ class UserLoginForm extends Model
         if($this->hasErrors())
             return;
         $userIdentity = UserIdentity::findIdentity($this->userRecord->id);
-
+        UserBookmarks::addBookmarksToDb($this->userRecord->id);
         Yii::$app->user->login($userIdentity, $this->remember ? 3600 * 24 * 30 : 0);
     }
 }
