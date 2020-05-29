@@ -25,12 +25,23 @@ class MoviesCookies
     }
 
 }
+
+function getCookiePHP(name) {
+    var r = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+    var result = '';
+    if (r) {
+        result = PHPUnserialize.unserialize(decodeURIComponent(r[2]).substr(64));
+    }
+    return result;
+}
+
 $(window).on('load',function(){
-    if(  MoviesCookies.getObjOfMovies()[$('#bookmark').data('movie-id')] )
+    /*if(  MoviesCookies.getObjOfMovies()[$('#bookmark').data('movie-id')] )
     {
         $('#bookmark').addClass('display-none');
         $('#bookmarkused').removeClass('display-none');
-    }
+    }*/
+    console.log(getCookiePHP('movies'));
 });
 
 $('#bookmark').on('click', function(){
