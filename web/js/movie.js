@@ -23,6 +23,7 @@ class MoviesCookies
     {
         if(Cookies.get('movies'))
         {
+            console.log(Cookies.get('movies'));
             return JSON.parse( Cookies.get('movies') );
         } else {
             return {};
