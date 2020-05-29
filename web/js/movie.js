@@ -45,7 +45,7 @@ $('#bookmark').on('click', function(){
     $(this).addClass('display-none');
     $('#bookmarkused').removeClass('display-none');
 });
-
+//
 $('#bookmarkused').on('click', function(){
     if( MoviesCookies.getObjOfMovies()[$(this).data('movie-id')] || !$(this).hasClass('display-none'))
     {
