@@ -105,9 +105,10 @@ class UserBookmarks extends ActiveRecord
         ]);
     }
 
-    public static function isInBookmarks( $id )
+    public static function isInBookmarks( $id, $movie_Id )
     {
-
+        $list = static::getListOfMovies( $id );
+        return in_array( $movie_Id, $list );
     }
 
     public function addMovieToBookmarks( $movie_id, $id )

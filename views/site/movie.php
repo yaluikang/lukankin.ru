@@ -5,6 +5,13 @@
 echo 'images/' . $contentForMovie[0]['movies_url_poster'];*/
 $this->registerCssFIle("@web/css/movie.css");
 $this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]]);
+
+//если не гость и если фильм такой есть в бд у пользователя - то усе норм
+$trigger = false;
+if(!Yii::$app->user->isGuest)
+{
+    $trigger = \app\models\UserBookmarks::isInBookmarks(Yii::$app->user->getId(), $contentForMovie[0]['movies_id'] );
+}
 ?>
 <div class="row margin justify-content-around  MyMovies" style="padding-top: 50px;" id="colorposter">
     <h2></h2>
@@ -24,10 +31,10 @@ $this->registerJsFile('js/movie.js', ['depends' => [\app\assets\AppAsset::class]
                         <h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2>
                     </div>
                     <div class="display-inline">
-                        <img src="../images/bookmark.png" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmark">
+                        <img src="../images/bookmark.png" class="<?php echo ($trigger ? '' : 'display-none'); ?>" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmark">
                     </div>
                     <div class="display-inline">
-                        <img src="../images/bookmarkused.png" class="display-none" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmarkused">
+                        <img src="../images/bookmarkused.png" class="<?php echo ($trigger ? 'display-none' : ''); ?>" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmarkused">
                     </div>
                 </div>
                 <p class="col-md-12 col-sm-12 col-12">The Ticket</p>
