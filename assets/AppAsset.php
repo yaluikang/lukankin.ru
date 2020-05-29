@@ -23,7 +23,7 @@ class AppAsset extends AssetBundle
         'css/style.css'
     ];
     public $js = [
-        'php-unserialize.js',
+        'js/php-unserialize.js',
         'js/js.cookie.js',
         'js/Site.js',
         'js/AjaxBuilder.js',
