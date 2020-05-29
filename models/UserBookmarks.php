@@ -42,6 +42,7 @@ class UserBookmarks extends ActiveRecord
         {
             $obj[$list[0]] = true;
         }
+        $obj = json_encode($obj, JSON_FORCE_OBJECT)
         $cookies = \Yii::$app->response->cookies;
         $cookies->add(new \yii\web\Cookie([
             'movies' => $obj
