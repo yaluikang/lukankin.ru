@@ -30,6 +30,8 @@ class UserBookmarks extends ActiveRecord
             if( $cookies[$movie_id] == false && in_array( $movie_id, $list ))
             {
                 echo $movie_id . ' - Удалить из бд.'. in_array( $movie_id, $list );
+                $result = static::deleteMovieFromBookmark( $movie_id );
+                echo $result;
 
 
             } elseif ( $cookies[$movie_id] == false && !in_array( $movie_id, $list ))
@@ -50,6 +52,12 @@ class UserBookmarks extends ActiveRecord
             }
         }
         //echo count($cookies);
+    }
+
+    public static function deleteMovieFromBookmark( $movie_id )
+    {
+        $movie = static::find()->where(['user_id' => 1])->andWhere(['movie_id' => 1])->all()->delete();
+        return 'deleted';
     }
 
 }
