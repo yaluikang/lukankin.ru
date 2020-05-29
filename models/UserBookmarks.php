@@ -68,5 +68,6 @@ class UserBookmarks extends ActiveRecord
         $movie = new UserBookmarks();
         $movie->user_id = 1;
         $movie->movie_id = $movie_id;
+        $movie->save();
     }
 }
