@@ -58,6 +58,7 @@ class UserBookmarks extends ActiveRecord
         //$cookies = json_decode($cookies,true);
         echo '111111111';
         echo $cookies;
+        echo ($cookies == 'movies');
         if( isset($cookies) )
         {
             return '123';
