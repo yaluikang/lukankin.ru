@@ -21,7 +21,10 @@ class MoviesCookies
 
     static getObjOfMovies()
     {
-        return JSON.parse( Cookies.get('movies') );
+        if(Cookies.get('movies'))
+        {
+            return JSON.parse( Cookies.get('movies') );
+        }
     }
 
 }
