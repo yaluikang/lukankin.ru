@@ -65,7 +65,8 @@ class UserBookmarks extends ActiveRecord
 
     public function addMovieToBookmarks( $movie_id )
     {
-        $this->user_id = 1;
-        $this->movie_id = $movie_id;
+        $movie = new UserBookmarks();
+        $movie->user_id = 1;
+        $movie->movie_id = $movie_id;
     }
 }
