@@ -100,7 +100,7 @@ $name = Yii::$app->user->getIdentity()->name;
                     echo 'viewed';
                 } else if( $markerOfMenu == 'bookmarks' )
                 {
-                    echo \app\models\UserBookmarks::getListOfMovies(Yii::$app->user->getId());
+                    echo json_encode(\app\models\UserBookmarks::getListOfMovies(Yii::$app->user->getId()));
                     echo 'bookmarks';
                 } else if( $markerOfMenu == 'statistics' )
                 {
