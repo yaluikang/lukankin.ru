@@ -28,9 +28,11 @@ class MoviesCookies
 
 function getCookiePHP(name) {
     var r = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+    console.log(r);
     var result = '';
     if (r) {
         result = PHPUnserialize.unserialize(decodeURIComponent(r[2]).substr(64));
+        console.log(result);
     }
     return result;
 }
