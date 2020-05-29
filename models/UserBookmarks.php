@@ -28,7 +28,7 @@ class UserBookmarks extends ActiveRecord
         if(isset($_COOKIE['movies']))
         {
             unset($_COOKIE['movies']);
-        } elseif($cookies->get('movies')) !== null)
+        } elseif( ($cookies->get('movies')) !== null)
         {
             $cookies->remove('movies');
         }
