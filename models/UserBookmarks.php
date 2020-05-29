@@ -29,16 +29,16 @@ class UserBookmarks extends ActiveRecord
         {
             if( $cookies[$movie_id] == false && array_search( $movie_id, $list ))
             {
-                echo $movie_id . ' - Удалить из бд.';
+                echo $movie_id . ' - Удалить из бд.'. array_search( $movie_id, $list );
             } elseif ( $cookies[$movie_id] == false && !array_search( $movie_id, $list ))
             {
-                echo $movie_id . ' - Ничего не делать.';
+                echo $movie_id . ' - Ничего не делать.'. array_search( $movie_id, $list );
             } elseif ( $cookies[$movie_id] == true && array_search( $movie_id, $list ))
             {
-                echo $movie_id . ' - Ничего не делать.';
+                echo $movie_id . ' - Ничего не делать.'. array_search( $movie_id, $list );
             } elseif ( $cookies[$movie_id] == true && !array_search( $movie_id, $list ))
             {
-                echo $movie_id . ' - Забить в бд.';
+                echo $movie_id . ' - Забить в бд.'. array_search( $movie_id, $list );
             }
         }
         //echo count($cookies);
