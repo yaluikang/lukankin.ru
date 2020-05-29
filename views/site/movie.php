@@ -31,10 +31,10 @@ if(!Yii::$app->user->isGuest)
                         <h2><?php echo $contentForMovie[0]["movies_name"]; ?></h2>
                     </div>
                     <div class="display-inline">
-                        <img src="../images/bookmark.png" class="<?php echo ($trigger ? '' : 'display-none'); ?>" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmark">
+                        <img src="../images/bookmark.png" class="<?php echo ($trigger ? 'display-none' : ''); ?>" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmark">
                     </div>
                     <div class="display-inline">
-                        <img src="../images/bookmarkused.png" class="<?php echo ($trigger ? 'display-none' : ''); ?>" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmarkused">
+                        <img src="../images/bookmarkused.png" class="<?php echo ($trigger ? '' : 'display-none'); ?>" data-movie-id="<?php echo $contentForMovie[0]['movies_id']; ?>" id="bookmarkused">
                     </div>
                 </div>
                 <p class="col-md-12 col-sm-12 col-12">The Ticket</p>
