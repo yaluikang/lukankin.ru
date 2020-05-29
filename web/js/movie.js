@@ -43,7 +43,7 @@ $(window).on('load',function(){
         $('#bookmark').addClass('display-none');
         $('#bookmarkused').removeClass('display-none');
     }*/
-    console.log(document.cookie.match ( '(^|;) ?' + 'movies' + '=([^;]*)(;|$)' ));
+    console.log(document.cookie/*.match ( '(^|;) ?' + 'movies' + '=([^;]*)(;|$)' )*/);
 });
 
 $('#bookmark').on('click', function(){
