@@ -43,7 +43,7 @@ $(window).on('load',function(){
         $('#bookmark').addClass('display-none');
         $('#bookmarkused').removeClass('display-none');
     }*/
-    console.log(getCookiePHP('movies'));
+    console.log(Cookies.get('movies'));
 });
 
 $('#bookmark').on('click', function(){
