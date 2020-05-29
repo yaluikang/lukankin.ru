@@ -45,7 +45,7 @@ class UserBookmarks extends ActiveRecord
         $obj = serialize($obj);
         $cookies = \Yii::$app->response->cookies;
         $cookies->add(new \yii\web\Cookie([
-            'movies' => $obj
+            'movies' => '123'
         ]));
     }
 
