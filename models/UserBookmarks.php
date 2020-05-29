@@ -68,24 +68,24 @@ class UserBookmarks extends ActiveRecord
             {
                 if( $cookies[$movie_id] == false && in_array( $movie_id, $list ))
                 {
-                    echo $movie_id . ' - Удалить из бд.'. in_array( $movie_id, $list );
+                    //echo $movie_id . ' - Удалить из бд.'. in_array( $movie_id, $list );
                     $result = static::deleteMovieFromBookmarks( $movie_id, $id );
-                    echo $result;
+                    //echo $result;
 
 
                 } elseif ( $cookies[$movie_id] == false && !in_array( $movie_id, $list ))
                 {
-                    echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
+                    //echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
 
 
                 } elseif ( $cookies[$movie_id] == true && in_array( $movie_id, $list ))
                 {
-                    echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
+                    //echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
 
 
                 } elseif ( $cookies[$movie_id] == true && !in_array( $movie_id, $list ))
                 {
-                    echo $movie_id . ' - Забить в бд.'. in_array( $movie_id, $list );
+                    //echo $movie_id . ' - Забить в бд.'. in_array( $movie_id, $list );
                     static::addMovieToBookmarks( $movie_id, $id );
 
 
