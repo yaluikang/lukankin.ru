@@ -46,8 +46,8 @@ class UserBookmarks extends ActiveRecord
         $cookies = \Yii::$app->response->cookies;
         $cookies->add(new \yii\web\Cookie([
             'name' => 'movies',
-            'value' => $obj/*,
-            'expire' => 30,
+            'value' => $obj,
+            'expire' => 30/*,
             'path' => '/'*/
         ]));
     }
