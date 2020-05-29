@@ -52,4 +52,9 @@ class UserLoginForm extends Model
         UserBookmarks::addBookmarksToDb($this->userRecord->id);
         Yii::$app->user->login($userIdentity, $this->remember ? 3600 * 24 * 30 : 0);
     }
+
+    public function getId()
+    {
+        return $this->userRecord->id;
+    }
 }
