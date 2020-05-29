@@ -59,9 +59,9 @@ class UserBookmarks extends ActiveRecord
         echo '111111111';
         echo $cookies;
         echo ($cookies == 'movies1');
-        if( isset($cookies) )
+        if( $cookies == 'movies' )
         {
-            return '123';
+            echo '123';
         } else {
             echo $cookies;
         }
