@@ -128,7 +128,10 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        UserBookmarks::addBookmarksToDb(1);
+        //UserBookmarks::addBookmarksToDb(1);
+        $session = Yii::$app->session;
+        $session->set('movies', 'en-US');
+        return $session->get('movies');
     }
 
 }
