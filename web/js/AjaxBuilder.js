@@ -102,10 +102,12 @@ class AjaxBuilder extends Site
         if( this.getUrl() == 'http://lukankin.ru/setnewcookies' && this.json )
         {
             console.log(this.json);
+            this.json = JSON.parse( this.json );
             for( let $i = 0; $i < this.json.length; $i++ )
             {
                 this.json[$i] = Number( this.json[$i] );
             }
+            this.json = JSON.stringify( this.json );
             Cookies.set( 'added', this.json, { expires: 1, path: '/' });
         } else if( !this.json )
         {
