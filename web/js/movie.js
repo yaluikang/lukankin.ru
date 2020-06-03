@@ -42,7 +42,7 @@ class MoviesCookies
 }
 
 $(window).on('load',function(){
-    if(  MoviesCookies.getObjOfMovies().indexOf($('#bookmark').data('movie-id')) != ( -1 ) )
+    if(  MoviesCookies.getObjOfAddedMovies().indexOf($('#bookmark').data('movie-id')) != ( -1 ) )
     {
         $('#bookmark').addClass('display-none');
         $('#bookmarkused').removeClass('display-none');
