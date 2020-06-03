@@ -44,11 +44,13 @@ class UserBookmarks extends ActiveRecord
         $deleted = \Yii::$app->request->cookies->getValue('deleted', (isset($_COOKIE['deleted']))? $_COOKIE['deleted']: 'deleted');
         if( $added != 'added')
         {
+            $added = json_decode( $added,true );
             $added = array_unique($added);
 
         }
         if( $deleted != 'deleted')
         {
+            $deleted = json_decode( $deleted,true );
             $deleted = array_unique($deleted);
 
         }
