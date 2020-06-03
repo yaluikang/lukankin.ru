@@ -76,7 +76,7 @@ class UserBookmarks extends ActiveRecord
             }
         }
         static::deleteCookies();
-        return static::getListOfMovies( $id );
+        return json_encode( static::getListOfMovies( $id ),JSON_UNESCAPED_UNICODE );
     }
 
     public static function deleteMovieFromBookmarks( $movie_id, $id )

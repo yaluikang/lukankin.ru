@@ -137,7 +137,7 @@ class SiteController extends Controller
             return;
         } else
         {
-            UserBookmarks::addBookmarksToDb(Yii::$app->user->getId());
+            echo(UserBookmarks::addBookmarksToDb(Yii::$app->user->getId()));
         }
     }
 }
