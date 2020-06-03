@@ -62,6 +62,7 @@ $('#bookmark').on('click', function(){
     $(this).addClass('display-none');
     $('#bookmarkused').removeClass('display-none');
     let $ajaxRequest = new AjaxBuilder("http://lukankin.ru/setnewcookies", "GET");
+    $ajaxRequest.ajaxRequest();
 });
 //
 $('#bookmarkused').on('click', function(){
@@ -71,4 +72,5 @@ $('#bookmarkused').on('click', function(){
     $(this).addClass('display-none');
     $('#bookmark').removeClass('display-none');
     let $ajaxRequest = new AjaxBuilder("http://lukankin.ru/setnewcookies", "GET");
+    $ajaxRequest.ajaxRequest();
 });
