@@ -47,12 +47,18 @@ class UserBookmarks extends ActiveRecord
             $added = json_decode( $added,true );
             $added = array_unique($added);
 
+        } else
+        {
+            $added = [];
         }
         if( $deleted != 'deleted')
         {
             $deleted = json_decode( $deleted,true );
             $deleted = array_unique($deleted);
 
+        } else
+        {
+            $deleted = [];
         }
         foreach ( $added as $index => $movie_id)
         {
