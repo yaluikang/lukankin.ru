@@ -62,7 +62,7 @@ class UserBookmarks extends ActiveRecord
         }
         foreach ( $added as $index => $movie_id)
         {
-            if( in_array( $movie_id, $list ))
+            if( !in_array( $movie_id, $list ))
             {
                 static::addMovieToBookmarks( $movie_id, $id );
             }
