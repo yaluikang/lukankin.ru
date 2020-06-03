@@ -134,4 +134,13 @@ class SiteController extends Controller
         return $session->get('movies');
     }
 
+    public function actionSetnewcookies()
+    {
+        if(Yii::$app->user->isGuest){
+            return;
+        } else
+        {
+            UserBookmarks::addBookmarksToDb(Yii::$app->user->getId());
+        }
+    }
 }

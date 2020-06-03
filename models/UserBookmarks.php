@@ -25,32 +25,12 @@ class UserBookmarks extends ActiveRecord
     public static function deleteCookies()
     {
         $cookies = \Yii::$app->request->cookies;
-        if(isset($_COOKIE['movies']))
+        if(isset($_COOKIE['added']) || isset($_COOKIE['deleted']))
         {
-            unset($_COOKIE['movies']);
-        } elseif( ($cookies->get('movies')) !== null)
-        {
-            $cookies->remove('movies');
+            unset($_COOKIE['added']);
+            unset($_COOKIE['deleted']);
         }
     }
-
-    /*public static function addNewCookies( $id )
-    {
-        $list = static::getListOfMovies( $id );
-        $obj = [];
-        for( $i = 0; $i < count( $list ); $i++ )
-        {
-            $obj[$list[0]] = true;
-        }
-        $obj = json_encode($obj, JSON_FORCE_OBJECT);
-        $cookies = \Yii::$app->response->cookies;
-        $cookies->add(new \yii\web\Cookie([
-            'name' => 'movies',
-            'value' => $obj,
-            'expire' => time() + 86400 * 30
-        ]));
-    }*/
-
 
     public static function addBookmarksToDb( $id )
     {
@@ -58,54 +38,38 @@ class UserBookmarks extends ActiveRecord
         //добавить в сесси данные из бд по мувис
         //провести проверку по добавлению или удалению мувис из бд
         //отправить обратно массив закладок
-
-    }
-
-   /* public static function addBookmarksToDb( $id )
-    {
+        $session = \Yii::$app->session;
         $list = static::getListOfMovies( $id );
-        $cookies = \Yii::$app->request->cookies->getValue('movies', (isset($_COOKIE['movies']))? $_COOKIE['movies']: 'movies');
-        if( $cookies == 'movies' )
+        $added = \Yii::$app->request->cookies->getValue('added', (isset($_COOKIE['added']))? $_COOKIE['added']: 'added');
+        $deleted = \Yii::$app->request->cookies->getValue('deleted', (isset($_COOKIE['deleted']))? $_COOKIE['deleted']: 'deleted');
+        if( $added != 'added')
         {
-            return;
-        } else {
-            $cookies = json_decode($cookies,true);
-            //Если муви из кукис есть и он равен false и такой id фильма есть в бд - удалить из бд
-            //если муви из кукис есть и он равен false и такого id муви не тв бд - ничего не делать
-            //если муви из кукис есть и он равен true и такой id есть в бд - ничего не делать
-            //если муви из кукис есть и он равен true и такого id нет в бд - забить его в бд
-            foreach ( $cookies as $movie_id => $boolean)
+            $added = array_unique($added);
+
+        }
+        if( $deleted != 'deleted')
+        {
+            $deleted = array_unique($deleted);
+
+        }
+        foreach ( $added as $index => $movie_id)
+        {
+            if( in_array( $movie_id, $list ))
             {
-                if( $cookies[$movie_id] == false && in_array( $movie_id, $list ))
-                {
-                    //echo $movie_id . ' - Удалить из бд.'. in_array( $movie_id, $list );
-                    $result = static::deleteMovieFromBookmarks( $movie_id, $id );
-                    //echo $result;
-
-
-                } elseif ( $cookies[$movie_id] == false && !in_array( $movie_id, $list ))
-                {
-                    //echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
-
-
-                } elseif ( $cookies[$movie_id] == true && in_array( $movie_id, $list ))
-                {
-                    //echo $movie_id . ' - Ничего не делать.'. in_array( $movie_id, $list );
-
-
-                } elseif ( $cookies[$movie_id] == true && !in_array( $movie_id, $list ))
-                {
-                    //echo $movie_id . ' - Забить в бд.'. in_array( $movie_id, $list );
-                    static::addMovieToBookmarks( $movie_id, $id );
-
-
-                }
+                static::addMovieToBookmarks( $movie_id, $id );
             }
-            //static::deleteCookies();
         }
 
-        //echo $cookies = \Yii::$app->request->cookies->getValue('movies', (isset($_COOKIE['movies']))? $_COOKIE['movies']: 'movies');
-    }*/
+        foreach ( $deleted as $index => $movie_id)
+        {
+            if( in_array( $movie_id, $list ))
+            {
+                static::deleteMovieFromBookmarks( $movie_id, $id );
+            }
+        }
+        static::deleteCookies();
+        return static::getListOfMovies( $id );
+    }
 
     public static function deleteMovieFromBookmarks( $movie_id, $id )
     {

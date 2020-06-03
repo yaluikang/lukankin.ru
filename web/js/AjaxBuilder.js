@@ -96,13 +96,19 @@ class AjaxBuilder extends Site
         /*if( this.getUrl() == 'http://lukankin.ru/test' || this.getUrl() == 'http://lukankin.ru/pagination' )
         {*/
         console.log( $.parseJSON( this.json ).length );
-        if( $.parseJSON( this.json ).length < 1 )
+        if( this.getUrl() == 'http://lukankin.ru/setnewcookies' )
         {
-            console.log( 'nothing' );
-            this.nothing();
-        } else {
-            console.log( 'something' );
-            this.addMovies( this.json );
+            console.log(this.json);
+        } else
+        {
+            if( $.parseJSON( this.json ).length < 1 )
+            {
+                console.log( 'nothing' );
+                this.nothing();
+            } else {
+                console.log( 'something' );
+                this.addMovies( this.json );
+            }
         }
         /*}*/
     }

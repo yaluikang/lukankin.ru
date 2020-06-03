@@ -4,9 +4,8 @@ class MoviesCookies
     {
     }
 
-    static setBookmark( /*id, boolean = true*/ $id, $arr1, $arr2 )
+    static setBookmark( $id, $arr1, $arr2 )
     {
-        //удалить из deleted, добавить в added
         let $deleted  = Cookies.get( $arr2 );
         let $added = Cookies.get( $arr1 );
 
@@ -57,26 +56,19 @@ $(window).on('load',function(){
 });
 
 $('#bookmark').on('click', function(){
-    //проверить есть ли уже закладка в added, проверить, есть ли она в deleted
-    //если есть в deleted - удалить
-    //MoviesCookies.setBookmark($(this).data('movie-id'), 'added');
     MoviesCookies.setBookmark($(this).data('movie-id'), 'added', 'deleted');
     console.log(Cookies.get( 'added' ));
     console.log(Cookies.get( 'deleted' ));
     $(this).addClass('display-none');
     $('#bookmarkused').removeClass('display-none');
+    let $ajaxRequest = new AjaxBuilder("http://lukankin.ru/setnewcookies", "GET");
 });
 //
 $('#bookmarkused').on('click', function(){
-    //проверить есть ли уже закладка в deleted, проверить есть ли в added
-    //если есть в added - удалить
-    /*if( !$(this).hasClass('display-none'))
-    {
-        MoviesCookies.setBookmark($(this).data('movie-id'), 'deleted');
-    }*/
     MoviesCookies.setBookmark($(this).data('movie-id'), 'deleted', 'added');
     console.log(Cookies.get( 'added' ));
     console.log(Cookies.get( 'deleted' ));
     $(this).addClass('display-none');
     $('#bookmark').removeClass('display-none');
+    let $ajaxRequest = new AjaxBuilder("http://lukankin.ru/setnewcookies", "GET");
 });
