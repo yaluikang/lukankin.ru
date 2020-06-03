@@ -43,9 +43,6 @@ class SiteController extends Controller
 
     public function actionAccount( $m = 'statistics')
     {
-        if(!Yii::$app->user->isGuest){
-            UserBookmarks::addBookmarksToDb(Yii::$app->user->getId());
-        }
         $markerOfMenu = $m;
         return $this->render('account', [ 'markerOfMenu' => $markerOfMenu ]);
     }
