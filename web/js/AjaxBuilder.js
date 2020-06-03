@@ -70,7 +70,10 @@ class AjaxBuilder extends Site
             }
             $counter++;
         }
-        this.url += $str;
+        if( $str )
+        {
+            this.url += $str;
+        }
     }
 
     ajaxRequest()
