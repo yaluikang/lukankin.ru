@@ -47,6 +47,7 @@ class MoviesCookies
 }
 
 $(window).on('load',function(){
+    console.log(MoviesCookies.getObjOfAddedMovies().indexOf($('#bookmark').data('movie-id')));
     if(  MoviesCookies.getObjOfAddedMovies().indexOf($('#bookmark').data('movie-id')) != ( -1 ) )
     {
         console.log(MoviesCookies.getObjOfAddedMovies().indexOf($('#bookmark').data('movie-id')));
