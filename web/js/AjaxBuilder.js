@@ -104,7 +104,11 @@ class AjaxBuilder extends Site
         {
             console.log(this.json);
             Cookies.set( 'added', this.json, { expires: 1, path: '/' });
-        } else
+        } else if( !this.json )
+        {
+            return;
+        }
+        else
         {
             if( $.parseJSON( this.json ).length < 1 )
             {
