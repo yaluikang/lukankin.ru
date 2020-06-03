@@ -58,6 +58,7 @@ class AjaxBuilder extends Site
     {
         let $str;
         let $getParameters = this.getGetParameters();
+        console.log( $getParameters );
         let $counter = 0;
         for( let $key in $getParameters )
         {
