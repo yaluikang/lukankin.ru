@@ -22,7 +22,13 @@ class MoviesCookies
             Cookies.set( $arr2, $string, { expires: 1, path: '/' });
         }
 
-        $added = JSON.parse( $added );
+        if( $added )
+        {
+            $added = JSON.parse( $added );
+        } else
+        {
+            $added = [];
+        }
         $added.push( $id );
         let $string = JSON.stringify( $added );
         Cookies.set( $arr1, $string, { expires: 1, path: '/' });
