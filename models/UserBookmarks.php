@@ -51,7 +51,17 @@ class UserBookmarks extends ActiveRecord
         ]));
     }*/
 
+
     public static function addBookmarksToDb( $id )
+    {
+        //обработать кукисы deleted и added - убрать возможные совпадения
+        //добавить в сесси данные из бд по мувис
+        //провести проверку по добавлению или удалению мувис из бд
+        //отправить обратно массив закладок
+
+    }
+
+   /* public static function addBookmarksToDb( $id )
     {
         $list = static::getListOfMovies( $id );
         $cookies = \Yii::$app->request->cookies->getValue('movies', (isset($_COOKIE['movies']))? $_COOKIE['movies']: 'movies');
@@ -95,7 +105,7 @@ class UserBookmarks extends ActiveRecord
         }
 
         //echo $cookies = \Yii::$app->request->cookies->getValue('movies', (isset($_COOKIE['movies']))? $_COOKIE['movies']: 'movies');
-    }
+    }*/
 
     public static function deleteMovieFromBookmarks( $movie_id, $id )
     {

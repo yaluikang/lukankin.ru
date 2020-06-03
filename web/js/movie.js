@@ -4,36 +4,45 @@ class MoviesCookies
     {
     }
 
-    static setMovie( id, boolean = true )
+    static setBookmark( /*id, boolean = true*/ $id, $arr1, $arr2 )
     {
-        this.cookies = Cookies.get('movies');
-        if( !this.cookies )
+        //удалить из deleted, добавить в added
+        let $deleted  = Cookies.get( $arr2 );
+        let $added = Cookies.get( $arr1 );
+
+        if( $deleted )
         {
-            this.cookies = {};
-        } else
-        {
-            this.cookies = JSON.parse(this.cookies);
+            $deleted = JSON.parse( $deleted );
+            let $index = $deleted.indexOf( $id );
+            if( $index != (-1))
+            {
+                $deleted.splice($index, 1);
+            }
+            let $string = JSON.stringify( $deleted );
+            Cookies.set( $arr2, $string, { expires: 1, path: '/' });
         }
-        this.cookies[id] = boolean;
-        let $string = JSON.stringify(this.cookies);
-        Cookies.set( 'movies', $string, { expires: 1, path: '/' });
+
+        $added = JSON.parse( $added );
+        $added.push( $id );
+        let $string = JSON.stringify( $added );
+        Cookies.set( $arr1, $string, { expires: 1, path: '/' });
     }
 
-    static getObjOfMovies()
+    static getObjOfAddedMovies()
     {
-        if(Cookies.get('movies'))
+        if(Cookies.get( 'added' ))
         {
-            console.log(Cookies.get('movies'));
-            return JSON.parse( Cookies.get('movies') );
+            console.log(Cookies.get( 'added' ));
+            return JSON.parse( Cookies.get( 'added' ) );
         } else {
-            return {};
+            return [];
         }
     }
 
 }
 
 $(window).on('load',function(){
-    if(  MoviesCookies.getObjOfMovies()[$('#bookmark').data('movie-id')] )
+    if(  MoviesCookies.getObjOfMovies().indexOf($('#bookmark').data('movie-id')) != ( -1 ) )
     {
         $('#bookmark').addClass('display-none');
         $('#bookmarkused').removeClass('display-none');
@@ -41,16 +50,22 @@ $(window).on('load',function(){
 });
 
 $('#bookmark').on('click', function(){
-    MoviesCookies.setMovie($(this).data('movie-id'));
+    //проверить есть ли уже закладка в added, проверить, есть ли она в deleted
+    //если есть в deleted - удалить
+    //MoviesCookies.setBookmark($(this).data('movie-id'), 'added');
+    MoviesCookies.setBookmark($(this).data('movie-id'), 'added', 'deleted');
     $(this).addClass('display-none');
     $('#bookmarkused').removeClass('display-none');
 });
 //
 $('#bookmarkused').on('click', function(){
-    if( MoviesCookies.getObjOfMovies()[$(this).data('movie-id')] || !$(this).hasClass('display-none'))
+    //проверить есть ли уже закладка в deleted, проверить есть ли в added
+    //если есть в added - удалить
+    /*if( !$(this).hasClass('display-none'))
     {
-        MoviesCookies.setMovie($(this).data('movie-id'), false);
-    }
+        MoviesCookies.setBookmark($(this).data('movie-id'), 'deleted');
+    }*/
+    MoviesCookies.setBookmark($(this).data('movie-id'), 'deleted', 'added');
     $(this).addClass('display-none');
     $('#bookmark').removeClass('display-none');
 });
