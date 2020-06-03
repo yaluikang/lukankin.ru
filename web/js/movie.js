@@ -61,6 +61,8 @@ $('#bookmark').on('click', function(){
     //если есть в deleted - удалить
     //MoviesCookies.setBookmark($(this).data('movie-id'), 'added');
     MoviesCookies.setBookmark($(this).data('movie-id'), 'added', 'deleted');
+    console.log(Cookies.get( 'added' ));
+    console.log(Cookies.get( 'deleted' ));
     $(this).addClass('display-none');
     $('#bookmarkused').removeClass('display-none');
 });
@@ -73,6 +75,8 @@ $('#bookmarkused').on('click', function(){
         MoviesCookies.setBookmark($(this).data('movie-id'), 'deleted');
     }*/
     MoviesCookies.setBookmark($(this).data('movie-id'), 'deleted', 'added');
+    console.log(Cookies.get( 'added' ));
+    console.log(Cookies.get( 'deleted' ));
     $(this).addClass('display-none');
     $('#bookmark').removeClass('display-none');
 });
