@@ -99,7 +99,6 @@ class AjaxBuilder extends Site
     {
         /*if( this.getUrl() == 'http://lukankin.ru/test' || this.getUrl() == 'http://lukankin.ru/pagination' )
         {*/
-        console.log( $.parseJSON( this.json ).length );
         if( this.getUrl() == 'http://lukankin.ru/setnewcookies' )
         {
             console.log(this.json);
