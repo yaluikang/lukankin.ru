@@ -43,3 +43,11 @@ $('.search-genre').each(function(){
         $pagination.ajaxRequest();
     });
 });
+
+if($('#logout'))
+{
+    $('#logout').on('click', function(){
+        let $ajaxRequest = new AjaxBuilder("http://lukankin.ru/setnewcookies", "GET");
+        $ajaxRequest.ajaxRequest();
+    });
+}

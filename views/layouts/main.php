@@ -55,7 +55,7 @@ $action = Yii::$app->controller->action->id;
                 } else {
                     $name = Yii::$app->user->getIdentity()->name;
                     $urlLogout = Url::to(['site/logout']);
-                    echo "<a href='/account'>Личный кабинет(".$name.")</a>/<a href='".$urlLogout."' style='margin-left: 10px;'>Выход</a>";
+                    echo "<a href='/account'>Личный кабинет(".$name.")</a>/<a href='".$urlLogout."' style='margin-left: 10px;' id='logout'>Выход</a>";
                 }
             ?>
         </nav>

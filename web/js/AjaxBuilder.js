@@ -97,8 +97,6 @@ class AjaxBuilder extends Site
 
     controllerOfActions()
     {
-        /*if( this.getUrl() == 'http://lukankin.ru/test' || this.getUrl() == 'http://lukankin.ru/pagination' )
-        {*/
         if( this.getUrl() == 'http://lukankin.ru/setnewcookies' && this.json )
         {
             console.log(this.json);
