@@ -41,16 +41,16 @@ $name = Yii::$app->user->getIdentity()->name;
                 </li>
             </div>
             <li class="nav-item" id="menu-statistics">
-                Статистика
+                <div>Статистика</div>
             </li>
             <li class="nav-item" id="menu-viewd">
-                Просмотрено
+                <div>Просмотрено</div>
             </li>
             <li class="nav-item " id="menu-bookmarks">
-                Закладки
+                <div>Закладки</div>
             </li>
             <li class="nav-item" id="menu-setting">
-                Настройки
+                <div>Настройки</div>
             </li>
         </ul>
         <!--</div>-->
