@@ -140,4 +140,10 @@ class SiteController extends Controller
             echo(UserBookmarks::addBookmarksToDb(Yii::$app->user->getId()));
         }
     }
+
+    public function actionGetbookmarks()
+    {
+        $contentForMovie = new Sqlquery();
+        $contentForMovie = $contentForMovie->getContentForMovie( UserBookmarks::getListOfMovies() );
+    }
 }
