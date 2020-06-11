@@ -54,8 +54,8 @@ $name = Yii::$app->user->getIdentity()->name;
             </li>
         </ul>
         <!--</div>-->
-        <div class="content col-md-8 col-sm-8 col-lg-8">
-            <div id="setting">
+        <div class="content col-md-8 col-sm-8 col-lg-8" id="content">
+            <div id="setting" class="display-none">
                 <div id="one-setting-block" class="row">
                     <div class="col-md-12 col-sm-12 col-12 title font-weight-600">Редактирование профиля</div>
                     <div class="col-md-12 col-sm-12 col-12">
@@ -71,7 +71,7 @@ $name = Yii::$app->user->getIdentity()->name;
                     <div class="col-md-12 col-sm-12 col-12">
                         <form class="row">
                             <div class="col-md-12 col-sm-12 col-12">
-                                <input type="text" name="name" value="' . $name . '" placeholder="Ваше имя" class="">
+                                <input type="text" name="name" value="" placeholder="Ваше имя" class="">
                             </div>
                             <div class="col-md-12 col-sm-12 col-12">
                                 <input type="button" value="Сохранить">
@@ -95,13 +95,13 @@ $name = Yii::$app->user->getIdentity()->name;
                     </div>
                 </div>
             </div>
-            <div id="viewd">
+            <div id="viewd" class="display-none">
                 <p>viewd</p>
             </div>
-            <div id="bookmarks">
+            <div id="bookmarks" class="display-none">
                 <p>bookmarks</p>
             </div>
-            <div id="statistics">
+            <div id="statistics" class="display-none">
                 <p>statistics</p>
             </div>
             <?php

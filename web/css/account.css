@@ -55,5 +55,8 @@
     display: none;
 }
 .active-content {
-
+    display: block!important;
+}
+#content > div {
+    display: none;
 }
