@@ -144,6 +144,6 @@ class SiteController extends Controller
     public function actionGetbookmarks()
     {
         $contentForMovie = new Sqlquery();
-        $contentForMovie = $contentForMovie->getContentForMovie( UserBookmarks::getListOfMovies() );
+        $contentForMovie = $contentForMovie->getContentForMovie( UserBookmarks::getListOfMovies(Yii::$app->user->getId()) );
     }
 }
