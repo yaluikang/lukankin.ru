@@ -27,7 +27,8 @@ class AppAsset extends AssetBundle
         'js/js.cookie.js',
         'js/Site.js',
         'js/AjaxBuilder.js',
-        'js/Pagination.js'
+        'js/Pagination.js',
+        'js/index.js'
     ];
     public $depends = [
         'yii\web\YiiAsset'
