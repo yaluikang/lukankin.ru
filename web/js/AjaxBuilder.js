@@ -91,7 +91,7 @@ class AjaxBuilder extends Site
             }
         });
         this.json = $json;
-        console.log( this.json );
+        alert( this.json );
         this.controllerOfActions();
     }
 
