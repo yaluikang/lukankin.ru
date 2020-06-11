@@ -28,7 +28,7 @@ class Site
     }
 
 
-    addMovies( data )
+    addMovies( data, element )
     {
         let $json = $.parseJSON( data );
         this.checkArray( $json );
@@ -37,7 +37,7 @@ class Site
             let $posterDiv = $('<div>',{
                 class: 'col-md-6 col-sm-12 col-lg-auto text-center new'
             });
-            $posterDiv.appendTo('#colorposter');
+            $posterDiv.appendTo( element );
             let $posterA = $('<a>',{
                 href: "movie?id=" + $json[$i]['movies_id']
             });

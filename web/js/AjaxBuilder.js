@@ -91,7 +91,6 @@ class AjaxBuilder extends Site
             }
         });
         this.json = $json;
-        alert( this.json );
         this.controllerOfActions();
     }
 
@@ -99,7 +98,6 @@ class AjaxBuilder extends Site
     {
         if( this.getUrl() == 'http://lukankin.ru/setnewcookies' && this.json )
         {
-            console.log(this.json);
             this.json = JSON.parse( this.json );
             for( let $i = 0; $i < this.json.length; $i++ )
             {
@@ -110,6 +108,9 @@ class AjaxBuilder extends Site
         } else if( !this.json )
         {
             return;
+        } else if( this.getUrl() == 'http://lukankin.ru/getbookmarks')
+        {
+            this.addMovies( this.json, '#bookmarks' );
         }
         else
         {
@@ -119,7 +120,7 @@ class AjaxBuilder extends Site
                 this.nothing();
             } else {
                 console.log( 'something' );
-                this.addMovies( this.json );
+                this.addMovies( this.json, '#colorposter' );
             }
         }
         /*}*/

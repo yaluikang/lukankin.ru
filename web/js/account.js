@@ -1,11 +1,10 @@
-/*
-$('#content > div').each(function(){
-    $(this).on('click', function(){
-        alert($(this).attr('id'));
-    });
-});*/
+
 $('#menu > li').each(function(){
     $(this).on('click', function(){
+        if($(this).attr('id').slice(5) == 'bookmarks')
+        {
+
+        }
         $('.active-content').each(function(){
             $(this).removeClass('active-content');
         });
