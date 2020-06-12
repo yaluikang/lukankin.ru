@@ -96,7 +96,9 @@ class Site
             });
             $p.appendTo($cardBody);
             let $a = $('<a>',{
-                class: 'btn btn-primary'
+                class: 'btn btn-primary',
+                text: 'Смотреть',
+                href: "movie?id=" + $json[$i]['movies_id']
             });
             $a.appendTo($cardBody);
         }
