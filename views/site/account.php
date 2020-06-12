@@ -87,7 +87,6 @@ $name = Yii::$app->user->getIdentity()->name;
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="card">
-                            <img class="card-img-top" src="../images/Deadpool,2016.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">Special title treatment</h5>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -97,7 +96,6 @@ $name = Yii::$app->user->getIdentity()->name;
                     </div>
                     <div class="col-sm-6">
                         <div class="card">
-                            <img class="card-img-top" src="../images/Deadpool,2016.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">Special title treatment</h5>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
