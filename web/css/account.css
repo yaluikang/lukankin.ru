@@ -52,7 +52,7 @@
 }
 
 .display-none {
-    display: none;
+    display: none!important;
 }
 .active-content {
     display: flex!important;
