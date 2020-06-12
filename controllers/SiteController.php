@@ -145,5 +145,6 @@ class SiteController extends Controller
     {
         $contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( UserBookmarks::getListOfMovies(Yii::$app->user->getId()) );
+        echo json_encode( $contentForMovie,JSON_UNESCAPED_UNICODE );
     }
 }
