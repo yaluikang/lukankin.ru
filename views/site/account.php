@@ -83,8 +83,8 @@ $name = Yii::$app->user->getIdentity()->name;
             <div id="viewd" class="display-none">
                 <p>viewd</p>
             </div>
-            <div id="bookmarks" class="display-none">
-                <div class="card" style="width: 18rem;">
+            <div id="bookmarks" class="display-none row">
+                <div class="card col-md-6 col-sm-12 col-lg-auto text-center new" style="width: 18rem;">
                     <img class="card-img-top" src="..." alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -92,6 +92,39 @@ $name = Yii::$app->user->getIdentity()->name;
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
+                <div class="card col-md-6 col-sm-12 col-lg-auto text-center new" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col-md-6 col-sm-12 col-lg-auto text-center new" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col-md-6 col-sm-12 col-lg-auto text-center new" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col-md-6 col-sm-12 col-lg-auto text-center new" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+
             </div>
             <div id="statistics" class="display-none">
                 <p>statistics</p>
