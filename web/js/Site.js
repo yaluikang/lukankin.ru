@@ -68,6 +68,40 @@ class Site
         }
     }
 
+    addBookmarks( data, element )
+    {
+        let $json = $.parseJSON( data );
+        for( let $i = 0; $i < $json.length; $i++ )
+        {
+            let $cardDiv = $('<div>',{
+                class: 'col-sm-6'
+            });
+            $cardDiv.appendTo( element );
+            let $card = $('<div>',{
+                class: 'card'
+            });
+            $card.appendTo($cardDiv);
+            let $cardBody = $('<div>',{
+                class: 'card-body'
+            });
+            $cardBody.appendTo($card);
+            let $h5 = $('<h5>',{
+                class: 'card-title',
+                text: $json[$i]['movies_name']
+            });
+            $h5.appendTo($cardBody);
+            let $p = $('<p>',{
+                class: 'card-text',
+                text: $json[$i]['genres_name'] + ', ' + $json[$i]['movies_date'] + ' год'
+            });
+            $p.appendTo($cardBody);
+            let $a = $('<a>',{
+                class: 'btn btn-primary'
+            });
+            $a.appendTo($cardBody);
+        }
+    }
+
     nothing()
     {
         $('#h4--result').html('Найдено: Да вообще ничего :( Попробуйте еще раз.');

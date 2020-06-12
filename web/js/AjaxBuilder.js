@@ -110,7 +110,7 @@ class AjaxBuilder extends Site
             return;
         } else if( this.getUrl() == 'http://lukankin.ru/getbookmarks')
         {
-            this.addMovies( this.json, '#bookmarks' );
+            this.addBookmarks( this.json, '#bookmarks' );
         }
         else
         {
