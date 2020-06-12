@@ -57,6 +57,3 @@
 .active-content {
     display: flex!important;
 }
-#content > div {
-    display: none;
-}
