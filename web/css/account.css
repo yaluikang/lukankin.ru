@@ -55,7 +55,7 @@
     display: none;
 }
 .active-content {
-    display: block!important;
+    display: flex!important;
 }
 #content > div {
     display: none;
