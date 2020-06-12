@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
-$this->registerCssFIle("@web/css/authorization.css");
+//$this->registerCssFIle("@web/css/authorization.css");
 $this->registerCssFIle("@web/css/account.css");
 $this->registerJsFile('js/account.js', ['depends' => [\app\assets\AppAsset::class]]);
 
@@ -84,24 +84,6 @@ $name = Yii::$app->user->getIdentity()->name;
                 <p>viewd</p>
             </div>
             <div id="bookmarks" class="display-none row">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
 
             </div>
             <div id="statistics" class="display-none">
