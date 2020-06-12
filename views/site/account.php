@@ -84,7 +84,7 @@ $name = Yii::$app->user->getIdentity()->name;
                 <p>viewd</p>
             </div>
             <div id="bookmarks" class="display-none row">
-                <div class="col-md-6 col-sm-12 col-lg-auto text-center new">
+                <div class="col-md-6 col-sm-6 col-lg-auto text-center new">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
@@ -94,7 +94,7 @@ $name = Yii::$app->user->getIdentity()->name;
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-auto text-center new">
+                <div class="col-md-6 col-sm-6 col-lg-auto text-center new">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
@@ -104,7 +104,7 @@ $name = Yii::$app->user->getIdentity()->name;
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-auto text-center new">
+                <div class="col-md-6 col-sm-6 col-lg-auto text-center new">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
@@ -114,7 +114,7 @@ $name = Yii::$app->user->getIdentity()->name;
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-auto text-center new">
+                <div class="col-md-6 col-sm-6 col-lg-auto text-center new">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
@@ -124,7 +124,7 @@ $name = Yii::$app->user->getIdentity()->name;
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-auto text-center new">
+                <div class="col-md-6 col-sm-6 col-lg-auto text-center new">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
