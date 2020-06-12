@@ -83,8 +83,7 @@ $name = Yii::$app->user->getIdentity()->name;
             <div id="viewd" class="display-none">
                 <p>viewd</p>
             </div>
-            <div id="bookmarks" class="display-none">
-                <div class="row">
+            <div id="bookmarks" class="display-none row">
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
@@ -103,7 +102,6 @@ $name = Yii::$app->user->getIdentity()->name;
                             </div>
                         </div>
                     </div>
-                </div>
 
             </div>
             <div id="statistics" class="display-none">
