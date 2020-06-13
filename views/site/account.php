@@ -49,7 +49,13 @@ $name = Yii::$app->user->getIdentity()->name;
                                 <img src="../images/pngwing.com.png" id="icon-2">
                             </li>
                             <li class="col-md-8 col-sm-8 col-8" id="files-submit">
-                                <input accept="image/*" value="Изменить аватар" type="file">
+                                <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
+
+                                <?= $form->field($model, 'imageFile')->fileInput() ?>
+
+                                <button>Submit</button>
+
+                                <?php ActiveForm::end() ?>
                             </li>
                         </ul>
                     </div>
@@ -89,59 +95,6 @@ $name = Yii::$app->user->getIdentity()->name;
             <div id="statistics" class="display-none">
                 <p>statistics</p>
             </div>
-            <?php
-/*                if( $markerOfMenu == 'settings')
-                {
-                    echo '<div id="one-setting-block" class="row">
-                            <div class="col-md-12 col-sm-12 col-12 title font-weight-600">Редактирование профиля</div>
-                            <div class="col-md-12 col-sm-12 col-12">
-                                <ul class="row">
-                                    <li class="col-md-4 col-sm-4 col-4">
-                                        <img src="../images/pngwing.com.png" id="icon-2">
-                                    </li>
-                                    <li class="col-md-8 col-sm-8 col-8" id="files-submit">
-                                        <input accept="image/*" value="Изменить аватар" type="file">
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-12">
-                                <form class="row">
-                                    <div class="col-md-12 col-sm-12 col-12">
-                                        <input type="text" name="name" value="' . $name . '" placeholder="Ваше имя" class="">
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-12">
-                                        <input type="button" value="Сохранить">
-                                    </div>
-                                </form>
-                            </div>
-                            </div>
-                            <div id="two-setting-block" class="row">
-                                <div class="col-md-12 col-sm-12 col-12 title font-weight-600">Изменение пароля</div>
-                                <div class="col-md-12 col-sm-12 col-12">
-                                    <input type="password" name="old_password" placeholder="Старый пароль" class="input-orange">
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-12">
-                                    <input type="password" name="new_password" placeholder="Новый пароль" class="input-orange">
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-12">
-                                    <input type="password" name="new_password_2" placeholder="Повторите новый пароль" class="input-orange">
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-12">
-                                    <input type="button" value="Изменить">
-                                </div>
-                            </div>';
-                } else if( $markerOfMenu == 'viewed' )
-                {
-                    echo 'viewed';
-                } else if( $markerOfMenu == 'bookmarks' )
-                {
-                    echo json_encode(\app\models\UserBookmarks::getListOfMovies(Yii::$app->user->getId()));
-                    echo 'bookmarks';
-                } else if( $markerOfMenu == 'statistics' )
-                {
-                    echo 'statistics';
-                }
-            */?>
 
         </div>
 
