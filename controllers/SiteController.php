@@ -162,6 +162,6 @@ class SiteController extends Controller
             }
         }
 
-        return $this->render('upload', ['model' => $model]);
+        return $this->render('account', ['model' => $model]);
     }
 }
