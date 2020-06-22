@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 
+use app\models\ChangeLoginForm;
 use app\models\Movies;
 use app\models\Movies_has_genre;
 use app\models\UserBookmarks;
@@ -45,17 +46,25 @@ class SiteController extends Controller
 
     public function actionAccount( $m = 'statistics')
     {
-        $model = new UploadForm();
+        $changeImage = new UploadForm();
+        $changeLogin = new ChangeLoginForm();
 
-        if (Yii::$app->request->isPost) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            if ($model->upload()) {
+        if ($changeImage->load(Yii::$app->request->post())) {
+            $changeImage->imageFile = UploadedFile::getInstance($changeImage, 'imageFile');
+            if ($changeImage->upload()) {
                 return $this->redirect('account');
-                return;
+            }
+        }
+        if ($changeLogin->load(Yii::$app->request->post()))
+        {
+            if($changeLogin->validate())
+            {
+                $changeLogin->changeLogin();
+                return $this->redirect('account');
             }
         }
 
-        return $this->render('account', ['model' => $model]);
+        return $this->render('account', ['changeImage' => $changeImage]);
     }
     public function actionSearch()
     {

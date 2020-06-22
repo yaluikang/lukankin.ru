@@ -54,7 +54,7 @@ echo $image;
                             <li class="col-md-8 col-sm-8 col-8" id="files-submit">
                                 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 
-                                <?= $form->field($model, 'imageFile')->fileInput() ?>
+                                <?= $form->field($changeImage, 'imageFile')->fileInput() ?>
 
                                 <button>Submit</button>
 
@@ -63,6 +63,11 @@ echo $image;
                         </ul>
                     </div>
                     <div class="col-md-12 col-sm-12 col-12">
+                        <?php $form = ActiveForm::begin(['id' => 'change-login-form']); ?>
+                        <?= $form->field($changeLoginForm, 'login')->hint($name)->label(false) ?>
+                        <?= \yii\helpers\Html::submitButton('Сохранить',
+                            ['class' => 'btn']) ?>
+                        <?php ActiveForm::end(); ?>
                         <form class="row">
                             <div class="col-md-12 col-sm-12 col-12">
                                 <input type="text" name="name" value="" placeholder="Ваше имя" class="">

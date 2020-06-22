@@ -61,6 +61,7 @@ class UserRecord extends ActiveRecord
         $image = $customer->image_name;
         return $image;
     }
+
     public static function setImage( $str )
     {
         $id = \Yii::$app->user->id;
