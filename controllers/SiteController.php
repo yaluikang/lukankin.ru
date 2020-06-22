@@ -50,7 +50,7 @@ class SiteController extends Controller
         if (Yii::$app->request->isPost) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
             if ($model->upload()) {
-                // file is uploaded successfully
+                return $this->redirect('account');
                 return;
             }
         }

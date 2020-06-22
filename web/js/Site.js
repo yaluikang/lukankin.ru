@@ -71,6 +71,7 @@ class Site
     addBookmarks( data, element )
     {
         let $json = $.parseJSON( data );
+        $(element).empty();
         for( let $i = 0; $i < $json.length; $i++ )
         {
             let $cardDiv = $('<div>',{

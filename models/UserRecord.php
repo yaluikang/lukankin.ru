@@ -51,4 +51,19 @@ class UserRecord extends ActiveRecord
     {
         return Yii::$app->security->validatePassword($password, $this->passhash);
     }
+
+    public static function getImage()
+    {
+        $id = \Yii::$app->user->id;
+        $customer = static::find()
+            ->where(['id' => $id])
+            ->one();
+        $image = $customer->image_name;
+        return $image;
+    }
+    public static function setImage( $str )
+    {
+        $id = \Yii::$app->user->id;
+        return static::updateAll(['image_name' => $str], ['like', 'id', $id]);
+    }
 }

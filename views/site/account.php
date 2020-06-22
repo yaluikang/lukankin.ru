@@ -1,5 +1,6 @@
 <?php
 
+use app\models\UserRecord;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
@@ -11,6 +12,7 @@ $this->registerJsFile('js/account.js', ['depends' => [\app\assets\AppAsset::clas
 
 $name = Yii::$app->user->getIdentity()->name;
 
+$image = UserRecord::getImage();
 
 
  ?>
@@ -19,7 +21,7 @@ $name = Yii::$app->user->getIdentity()->name;
         <ul class="menu col-md-4 col-sm-4 col-lg-4" id="menu">
             <div class="row">
                 <li class="nav-item color-white font-weight-600 col-md-3 col-sm-3 col-lg-3">
-                    <a class="nav-link" href="<?php echo Url::to(['site/newItems']); ?>"><img src="../images/pngwing.com.png" id="icon"><span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<?php echo Url::to(['site/newItems']); ?>"><img src="<? echo $image; ?>" onError="this.src='../images/pngwing.com.png'"> id="icon"><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item" id="login">
                     <a class="nav-link color-white font-weight-600 col-md-9 col-sm-9 col-lg-9" href="<?php echo Url::to(['site/newItems']); ?>"><?php echo $name ?><span class="sr-only">(current)</span></a>
