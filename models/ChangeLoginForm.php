@@ -28,5 +28,6 @@ class ChangeLoginForm extends UserRecord
             ->one();
         $customer->name = $this->login;
         $customer->save();
+        return $this->login;
     }
 }

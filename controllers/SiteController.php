@@ -61,7 +61,7 @@ class SiteController extends Controller
             if($changeLogin->validate())
             {
                 echo '4321';
-                $changeLogin->changeLogin();
+                echo $changeLogin->changeLogin();
                 //return $this->redirect('account');
             }
         }
