@@ -57,11 +57,12 @@ class SiteController extends Controller
         }
         if ($changeLogin->load(Yii::$app->request->post()))
         {
-            if($changeLogin->validate())
+            echo '1234';
+            /*if($changeLogin->validate())
             {
                 $changeLogin->changeLogin();
                 return $this->redirect('account');
-            }
+            }*/
         }
 
         return $this->render('account', ['changeImage' => $changeImage, 'changeLogin' => $changeLogin]);
