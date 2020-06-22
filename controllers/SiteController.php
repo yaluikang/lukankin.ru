@@ -62,7 +62,7 @@ class SiteController extends Controller
             {
                 echo '4321';
                 $changeLogin->changeLogin();
-                return $this->redirect('account');
+                //return $this->redirect('account');
             }
         }
 
