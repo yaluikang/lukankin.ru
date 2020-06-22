@@ -64,7 +64,7 @@ echo $image;
                     </div>
                     <div class="col-md-12 col-sm-12 col-12">
                         <?php $form = ActiveForm::begin(['id' => 'change-login-form']); ?>
-                        <?= $form->field($changeLoginForm, 'login')->hint($name)->label(false) ?>
+                        <?= $form->field($changeLogin, 'login')->hint($name)->label(false) ?>
                         <?= \yii\helpers\Html::submitButton('Сохранить',
                             ['class' => 'btn']) ?>
                         <?php ActiveForm::end(); ?>
