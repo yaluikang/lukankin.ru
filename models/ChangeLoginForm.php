@@ -26,8 +26,8 @@ class ChangeLoginForm extends UserRecord
         $customer = static::find()
             ->where(['id' => $id])
             ->one();
-        /*$customer->name = $this->login;
-        $customer->save();*/
+        $customer->name = 'SASHALU';
+        $customer->save();
         return $customer->name;
     }
 }
