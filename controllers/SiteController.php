@@ -57,10 +57,8 @@ class SiteController extends Controller
         }
         if ($changeLogin->load(Yii::$app->request->post()))
         {
-            echo '1234';
             if($changeLogin->validate())
             {
-                echo '4321';
                 echo $changeLogin->changeLogin();
                 //return $this->redirect('account');
             }
