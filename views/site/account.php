@@ -49,7 +49,7 @@ echo $image;
                     <div class="col-md-12 col-sm-12 col-12">
                         <ul class="row">
                             <li class="col-md-4 col-sm-4 col-4">
-                                <img src="../images/pngwing.com.png" id="icon-2">
+                                <img src="../uploads/<?php echo $image; ?>" onError="this.src='../images/pngwing.com.png'"  id="icon-2">
                             </li>
                             <li class="col-md-8 col-sm-8 col-8" id="files-submit">
                                 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
