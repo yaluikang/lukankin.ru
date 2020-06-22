@@ -64,7 +64,7 @@ class SiteController extends Controller
             }
         }
 
-        return $this->render('account', ['changeImage' => $changeImage]);
+        return $this->render('account', ['changeImage' => $changeImage, 'changeLogin' => $changeLogin]);
     }
     public function actionSearch()
     {
