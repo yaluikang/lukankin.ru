@@ -13,7 +13,6 @@ $this->registerJsFile('js/account.js', ['depends' => [\app\assets\AppAsset::clas
 $name = Yii::$app->user->getIdentity()->name;
 
 $image = UserRecord::getImage();
-echo $image;
 
 
  ?>
