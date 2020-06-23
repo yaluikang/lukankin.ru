@@ -11,7 +11,7 @@ $this->registerCssFIle("@web/css/authorization.css");
             <?php $form = ActiveForm::begin(['id' => 'user-login-form',
                 'options' => ['class' => 'color-white']]); ?>
             <?= $form->field($userLoginForm, 'email')->textInput(['placeholder' => 'email'])->label(false) ?>
-            <?= $form->field($userLoginForm, 'password')->passwordInput()->label(false)->textInput(['placeholder' => 'Пароль']); ?>
+            <?= $form->field($userLoginForm, 'password')->label(false)->textInput(['placeholder' => 'Пароль'])->passwordInput(); ?>
             <?= $form->field($userLoginForm, 'remember')->label('Запомнить')->checkbox() ?>
             <?= \yii\helpers\Html::submitButton('Enter',
                 ['class' => '']) ?>
