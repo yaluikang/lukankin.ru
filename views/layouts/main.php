@@ -64,12 +64,8 @@ $action = Yii::$app->controller->action->id;
 <?php
 echo preg_match('/\/account/', $_SERVER['REQUEST_URI']);
 echo preg_match('/\/login/', $_SERVER['REQUEST_URI']);
-if(!preg_match('/\/account/', $_SERVER['REQUEST_URI']) || !preg_match('/\/login/', $_SERVER['REQUEST_URI']))
-{
-    echo '123';
-} else {
-    echo "net";
-}
+echo (!preg_match('/\/account/', $_SERVER['REQUEST_URI']) || !preg_match('/\/login/', $_SERVER['REQUEST_URI']));
+
 if( !preg_match('/\/account/', $_SERVER['REQUEST_URI']) || !preg_match('/\/login/', $_SERVER['REQUEST_URI']))
 {
 
