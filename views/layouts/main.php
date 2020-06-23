@@ -127,6 +127,6 @@ if( !preg_match('/\/account/', $_SERVER['REQUEST_URI'], $matches, PREG_OFFSET_CA
 </footer>
 <?php $this->EndBody(); ?>
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
 </html>
 <?php $this->endPage(); ?>
