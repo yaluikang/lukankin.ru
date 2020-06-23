@@ -31,7 +31,7 @@ $action = Yii::$app->controller->action->id;
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="padding-left-md navbar-nav mr-auto col-md-auto col-sm-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo Url::to(['site/randommovie']); ?>">Новинки<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?php echo Url::to(['site/news']); ?>">Новинки<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo Url::to(['site/films']); ?>">Фильмы</a>
@@ -40,7 +40,7 @@ $action = Yii::$app->controller->action->id;
                         <a class="nav-link" href="<?php echo Url::to(['site/tvseries']); ?>">Сериалы</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="#">Что посмотреть?</a>
+                        <a class="nav-link" href="<?php echo Url::to(['site/randommovie']); ?>">Что посмотреть?</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 col-md-auto col-sm-auto search" action="<?php echo Url::to(['site/search']); ?>">

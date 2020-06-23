@@ -24,7 +24,7 @@ class SiteController extends Controller
         $count = new Sqlquery();
         $count = $count->getCountOfMovies();
         $randomInt = rand( 1, $count['count']);
-        echo $randomInt;
+        $this->actionMovie( $randomInt );
     }
 
     public function actionIndex ()
@@ -44,9 +44,6 @@ class SiteController extends Controller
 
     public function actionMovie ( $id )
     {
-        /*if(!Yii::$app->user->isGuest){
-            UserBookmarks::addBookmarksToDb(Yii::$app->user->getId());
-        }*/
         $contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( $id );
         return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
