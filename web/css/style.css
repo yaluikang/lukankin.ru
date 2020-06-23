@@ -18,6 +18,16 @@
 }
 .dropdown-menu-container-genres {
 }
+html, body
+{
+    height: 100%;
+}
+
+
+body
+{
+
+}
 html body {
     box-sizing: border-box;
     background-image: url(background28.jpg);
@@ -121,6 +131,7 @@ footer ul {
     padding: 0;
 }
 #colorposter {
+    height: calc(100% - 210px);
     background-color: hsla(0, 0%, 0%, 0.8);
 }
 .figuremaxwidth {
