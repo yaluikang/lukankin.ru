@@ -10,7 +10,7 @@ $this->registerCssFIle("@web/css/authorization.css");
             <h5 class="color-white font-weight-600">Авторизация</h5>
             <?php $form = ActiveForm::begin(['id' => 'user-login-form']); ?>
             <?= $form->field($userLoginForm, 'email') ?>
-            <?= $form->field($userLoginForm, 'password')->passwordInput(); ?>
+            <?= $form->field($userLoginForm, 'password')->passwordInput()->label("Пароль"); ?>
             <?= $form->field($userLoginForm, 'remember')->checkbox() ?>
             <?= \yii\helpers\Html::submitButton('Enter',
                 ['class' => 'btn']) ?>

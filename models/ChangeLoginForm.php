@@ -27,7 +27,7 @@ class ChangeLoginForm extends UserRecord
             ->where(['id' => $id])
             ->one();
         $customer->name = $this->login;
-        if($customer->save())
+        if($customer->update())
         {
             return $customer->name;
         }
