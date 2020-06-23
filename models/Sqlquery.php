@@ -21,8 +21,8 @@ class Sqlquery extends Query
 
     public function getCountOfMovies()
     {
-        $count = $this->select("COUNT(*) AS count")->FROM("movies")->all();
-        return json_encode( $count['count'],JSON_UNESCAPED_UNICODE );
+        $count = $this->select("COUNT(*) AS count")->FROM("movies")->one();
+        return $count;
     }
 
     public function getMovieBySearch( $search )

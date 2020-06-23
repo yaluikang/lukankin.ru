@@ -23,7 +23,8 @@ class SiteController extends Controller
     {
         $count = new Sqlquery();
         $count = $count->getCountOfMovies();
-        echo $count;
+        $randomInt = rand( 1, $count['count']);
+        echo $randomInt;
     }
 
     public function actionIndex ()
