@@ -24,7 +24,7 @@ class SiteController extends Controller
         $count = new Sqlquery();
         $count = $count->getCountOfMovies();
         $randomInt = rand( 1, $count['count']);
-        echo '123';
+        echo ($randomInt);
         $this->actionMovie( $randomInt );
         /*$contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( $randomInt );
