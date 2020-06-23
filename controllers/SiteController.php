@@ -24,7 +24,7 @@ class SiteController extends Controller
         $count = new Sqlquery();
         $count = $count->getCountOfMovies();
         $randomInt = rand( 1, $count['count']);
-        echo ($randomInt);
+        echo 'randomint: ', $randomInt;
         $this->actionMovie( $randomInt );
         /*$contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( $randomInt );
@@ -48,7 +48,7 @@ class SiteController extends Controller
 
     public function actionMovie ( $id )
     {
-        echo '123';
+        echo 'id:', $id;
         $contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( $id );
         return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
