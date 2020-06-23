@@ -62,10 +62,14 @@ $image = UserRecord::getImage();
                         </ul>
                     </div>
                     <div class="col-md-12 col-sm-12 col-12">
-                        <?php $form = ActiveForm::begin(['id' => 'change-login-form']); ?>
+                        <?php $form = ActiveForm::begin(['id' => 'change-login-form', 'class' => 'row']); ?>
+                        <div class="col-md-12 col-sm-12 col-12">
                         <?= $form->field($changeLogin, 'login')->label(false)->textInput(['placeholder' => $name]) ?>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-12">
                         <?= \yii\helpers\Html::submitButton('Сохранить',
-                            ['class' => 'btn']) ?>
+                            ['class' => '']) ?>
+                        </div>
                         <?php ActiveForm::end(); ?>
                         <form class="row">
                             <div class="col-md-12 col-sm-12 col-12">
