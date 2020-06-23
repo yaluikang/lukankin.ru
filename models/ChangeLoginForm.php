@@ -18,18 +18,10 @@ class ChangeLoginForm extends UserRecord
         ];
     }
 
-    public function changeLogin()
+    public function setNewLogin()
     {
         if ($this->hasErrors())
             return;
-        $id = \Yii::$app->user->id;
-        $customer = static::find()
-            ->where(['id' => $id])
-            ->one();
-        $customer->name = $this->login;
-        if($customer->update())
-        {
-            return $customer->name;
-        }
+        UserRecord::changeLogin( $this->login );
     }
 }

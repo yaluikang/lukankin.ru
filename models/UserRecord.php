@@ -67,4 +67,17 @@ class UserRecord extends ActiveRecord
         $id = \Yii::$app->user->id;
         return static::updateAll(['image_name' => $str], ['like', 'id', $id]);
     }
+
+    public static function changeLogin( $login )
+    {
+        $id = \Yii::$app->user->id;
+        $customer = static::find()
+            ->where(['id' => $id])
+            ->one();
+        $customer->name = $login;
+        if($customer->save())
+        {
+            return $customer->name;
+        }
+    }
 }
