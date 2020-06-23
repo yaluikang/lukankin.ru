@@ -51,6 +51,7 @@ class SiteController extends Controller
         echo 'id:', $id;
         $contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( $id );
+        echo $contentForMovie;
         return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
     }
 
