@@ -18,10 +18,6 @@
 }
 .dropdown-menu-container-genres {
 }
-html, body
-{
-    height: 100%;
-}
 
 
 body
@@ -131,7 +127,6 @@ footer ul {
     padding: 0;
 }
 #colorposter {
-    height: calc(100% - 210px);
     background-color: hsla(0, 0%, 0%, 0.8);
 }
 .figuremaxwidth {

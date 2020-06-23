@@ -1,3 +1,9 @@
+
+html, body
+{
+    height: 100%;
+}
+
 .menu {
     text-align: left;
     font-size: 20px;
@@ -21,6 +27,7 @@
 }
 
 #colorposter {
+    height: calc(100% - 210px);
     padding-top: 50px;
 }
 
