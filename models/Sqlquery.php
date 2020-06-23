@@ -19,6 +19,12 @@ class Sqlquery extends Query
         echo json_encode( $moviesWithGenres,JSON_UNESCAPED_UNICODE );
     }
 
+    public function getCountOfMovies()
+    {
+        $count = $this->select("COUNT(*)")->FROM("movies")->all();
+        return $count;
+    }
+
     public function getMovieBySearch( $search )
     {
         //провести поиск запроса по названиям фильма, году

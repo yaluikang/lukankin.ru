@@ -19,6 +19,13 @@ use yii\web\UploadedFile;
 
 class SiteController extends Controller
 {
+    public function actionRandommovie()
+    {
+        $count = new Sqlquery();
+        $count = $count->getCountOfMovies();
+        echo $count;
+    }
+
     public function actionIndex ()
     {
         return $this->render('index');

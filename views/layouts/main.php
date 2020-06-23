@@ -31,7 +31,7 @@ $action = Yii::$app->controller->action->id;
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="padding-left-md navbar-nav mr-auto col-md-auto col-sm-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo Url::to(['site/newItems']); ?>">Новинки<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?php echo Url::to(['site/randommovie']); ?>">Новинки<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo Url::to(['site/films']); ?>">Фильмы</a>
