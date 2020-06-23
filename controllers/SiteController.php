@@ -23,11 +23,11 @@ class SiteController extends Controller
     {
         $count = new Sqlquery();
         $count = $count->getCountOfMovies();
-        $randomInt = rand( 1, $count['count']);/*
-        $this->actionMovie( $randomInt );*/
-        $contentForMovie = new Sqlquery();
+        $randomInt = rand( 1, $count['count']);
+        $this->actionMovie( $randomInt );
+        /*$contentForMovie = new Sqlquery();
         $contentForMovie = $contentForMovie->getContentForMovie( $randomInt );
-        return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);
+        return $this->render('movie.php', [ 'contentForMovie' => $contentForMovie ]);*/
     }
 
     public function actionIndex ()
