@@ -70,7 +70,7 @@ if(!preg_match('/\/account/', $_SERVER['REQUEST_URI']) || !preg_match('/\/login/
 } else {
     echo "net";
 }
-if( !preg_match('/\/account/', $_SERVER['REQUEST_URI']))
+if( !preg_match('/\/account/', $_SERVER['REQUEST_URI']) || !preg_match('/\/login/', $_SERVER['REQUEST_URI']))
 {
 
     echo '<section class="container" >
