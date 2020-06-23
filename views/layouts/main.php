@@ -62,7 +62,7 @@ $action = Yii::$app->controller->action->id;
     </div>
 </header>
 <?php
-if( !preg_match('/\/(account)(login)(join)/', $_SERVER['REQUEST_URI'], $matches, PREG_OFFSET_CAPTURE))
+if( !preg_match('/\/account/', $_SERVER['REQUEST_URI']))
 {
 
     echo '<section class="container" >
