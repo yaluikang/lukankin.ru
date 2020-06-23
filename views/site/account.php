@@ -71,29 +71,6 @@ $image = UserRecord::getImage();
                             ['class' => '']) ?>
                         </div>
                         <?php ActiveForm::end(); ?>
-                        <form class="row">
-                            <div class="col-md-12 col-sm-12 col-12">
-                                <input type="text" name="name" value="" placeholder="Ваше имя" class="">
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-12">
-                                <input type="button" value="Сохранить">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div id="two-setting-block" class="row">
-                    <div class="col-md-12 col-sm-12 col-12 title font-weight-600">Изменение пароля</div>
-                    <div class="col-md-12 col-sm-12 col-12">
-                        <input type="password" name="old_password" placeholder="Старый пароль" class="input-orange">
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-12">
-                        <input type="password" name="new_password" placeholder="Новый пароль" class="input-orange">
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-12">
-                        <input type="password" name="new_password_2" placeholder="Повторите новый пароль" class="input-orange">
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-12">
-                        <input type="button" value="Изменить">
                     </div>
                 </div>
             </div>
