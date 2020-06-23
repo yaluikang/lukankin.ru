@@ -69,7 +69,7 @@ class SiteController extends Controller
         {
             if($changeLogin->validate())
             {
-                echo $changeLogin->changeLogin();
+                echo $changeLogin->setNewLogin();
                 //return $this->redirect('account');
             }
         }
